@@ -36,7 +36,7 @@ Document Intelligence Studio を開いたままにします。
 これで、架空の Northwind Traders 小売企業のレシートを分析する準備ができました。
 
 1. [**https://aka.ms/mslearn-receipt**](https://aka.ms/mslearn-receipt) を選択して、サンプル ドキュメントをコンピューターにダウンロードします。  フォルダーを開きます。 
-1. **Form Recognizer Studio** を選択して **[Document Intelligence Studio の利用を始める]** ページに戻り、[Receipts] の **[Try It Out]\(試してみる\)** を選択します。
+1. **Document Intelligence Studio** を選択して **[Document Intelligence Studio の利用を始める]** ページに戻り、[Receipts] の **[Try It Out]\(試してみる\)** を選択します。
 1. [事前構築済み] ドロップダウン リストで、**[Receipts]** が選択されていることを確認します。
 1. **[ファイルを参照する]** を選び、画像を保存したフォルダーに移動します。 レシートの画像を、次に **[開く]** を選択します。 画像が画面の左側に表示されます。
 

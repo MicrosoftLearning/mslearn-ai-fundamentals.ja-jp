@@ -29,7 +29,7 @@ lab:
 
 1. [**https://aka.ms/mslearn-speech-files**](https://aka.ms/mslearn-speech-files) を選択して **speech.zip** をダウンロードします。  フォルダーを開きます。 
 
-1. [音声の利用を始める] ページの *[音声]* で、[リアルタイム音声テキスト変換] を見つけます。 **[Real-time speech to text]\(リアルタイム音声テキスト変換を試す\)** を選択します。
+1. [音声の利用を始める] ページの [音声テキスト変換] で、[リアルタイム音声テキスト変換] を見つけます。**** **[Real-time speech to text]\(リアルタイム音声テキスト変換を試す\)** を選択します。
 
     ![音声の利用を始める](media/recognize-synthesize-speech/try-out-speech-to-text.png)
 
