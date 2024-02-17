@@ -1,19 +1,19 @@
 ---
 lab:
-  title: Vision Studio でテキストを読み取る
+  title: Vision Studio で顔を検出する
 ---
 
-# Vision Studio でテキストを読み取る
+# Vision Studio で顔を検出する
 
-この演習では、Azure AI サービスを使用して、Azure AI Vision の光学式文字認識機能を確認します。 Vision Studio を使用して、コードを記述することなく、画像からテキストを抽出する実験を行います。
+Vision ソリューションは、多くの場合、AI が人間の顔を検出できることを必要とします。 架空の小売企業 Northwind Traders が、最適な支援を提供するために、顧客が店舗内のどこに立っているかを特定するとします。 これを実現する 1 つの方法は、画像内に顔があるかどうかを判別し、ある場合は、その場所を示す境界ボックス座標を返すことです。
 
-画像中に埋め込まれているテキストの検出と解釈は、コンピューター ビジョン共通の課題です。 これは、光学式文字認識 (OCR) と呼ばれます。 この演習では、Azure AI Vision サービスを含む Azure AI サービス リソースを使用します。 次に、Vision Studio を使用して、さまざまな種類の画像で OCR を試します。
+Azure AI Face サービスの顔検出機能をテストするために、[Azure Vision Studio](https://portal.vision.cognitive.azure.com/) を使用します。 これは UI ベースのプラットフォームであり、コードを記述しなくても Azure AI Vision の機能を確認できます。
 
 ## "Azure AI サービス" リソースを作成する**
 
-Azure AI Vision の OCR 機能は、**Azure AI サービス**のマルチサービス リソースで使用できます。 まだ作成していない場合は、Azure サブスクリプションで **Azure AI サービス** リソースを作成します。
+Azure AI Face サービスは、**Azure AI サービス**のマルチサービス リソースで使用できます。 まだ作成していない場合は、Azure サブスクリプションで **Azure AI サービス** リソースを作成します。
 
-1. 別のブラウザー タブで **Azure portal** ([https://portal.azure.com](https://portal.azure.com?azure-portal=true)) を開き、ご使用の Azure サブスクリプションに関連付けられている Microsoft アカウントを使用してサインインします。
+1. 別のブラウザー タブで Azure portal ([https://portal.azure.com](https://portal.azure.com?azure-portal=true)) を開き、ご使用の Azure サブスクリプションに関連付けられている Microsoft アカウントを使用してサインインします。
 
 1. **[&#65291;リソースの作成]** ボタンをクリックし、「Azure AI サービス」を検索してください。** **[Azure AI** **サービスの作成]** プランを選択してください。 Azure AI サービス リソースを作成するためのページに移動します。 これを以下の設定で構成します。
     - **[サブスクリプション]**: *お使いの Azure サブスクリプション*。
@@ -45,29 +45,37 @@ Azure AI Vision の OCR 機能は、**Azure AI サービス**のマルチサー�
 
 1. 画面の右上にある [x] を選択して、設定ページを閉じます。
 
-## Vision Studio で画像からテキストを抽出する
-    
+## Vision Studio で顔を検出する 
+
 1. Web ブラウザーで、**Vision Studio** ([https://portal.vision.cognitive.azure.com](https://portal.vision.cognitive.azure.com?azure-portal=true)) に移動します。
 
-1. **[Vision の使用を始める]** ランディング ページで、**[光学式文字認識]** を、次に **[画像からテキストを抽出する]** タイルを選択します。
+1. **[Vision の使用を始める]** ランディング ページで、**[Face]** タブを選択し、次に **[Detect Faces in an image]\(画像内の顔を検出する\)** タイルを選択します。
 
 1. **[Try It Out]\(試してみる\)** 小見出しで、リソース利用ポリシーを読んでチェック ボックスをオンにすることで承諾します。  
 
-1. [**https://aka.ms/mslearn-ocr-images**](https://aka.ms/mslearn-ocr-images) を選択して **ocr-images.zip** をダウンロードします。 次に、このフォルダーを開きます。
+1. 各サンプル画像を選択し、返される顔検出データを確認します。
 
-1. ポータルで、**[ファイルを参照する]** を選択し、**ocr-images.zip** をダウンロードしたコンピューターで、そのフォルダーに移動します。 **[advert.jpg]** を選択し、**[開く]** を選択します。
+1. ここで、独自の画像をいくつか試してみましょう。 [**https://aka.ms/mslearn-detect-faces**](https://aka.ms/mslearn-detect-faces) を選択して、**detect-faces.zip** をダウンロードします。 次に、ご使用のコンピューターでそのフォルダーを開きます。
 
-1. ここで、返された内容を確認します。
-    - **[Detected attributes]\(検出された属性\)** には、画像中に見つかったテキストが領域、行、単語の階層構造で整理されています。
-    - 画像では、次に示すように、テキストの場所は境界ボックスによって示されます。
+1. **store-camera-1.jpg** という名前のファイルを見つけます。これには次の画像が含まれています。
 
-    ![画像内のテキストの画像の概要](media/read-text-computer-vision/text-bounding-boxes.png)
+    ![店舗内の人物の画像。](./media/create-face-solutions/store-camera-1.jpg)
 
-1. ここで、別の画像を試してみましょう。 **[ファイルを参照する]** を選び、GitHub のファイルを保存したフォルダーに移動します。 **letter.jpg** を選択します。
+1. **store-camera-1.jpg** をアップロードし、返される顔検出の詳細を確認します。
 
-    ![入力された文字の画像。](media/read-text-computer-vision/letter.jpg)
+1. **store-camera-2.jpg** という名前のファイルを見つけます。これには次の画像が含まれています。
 
-1. 2 つめの画像の結果を確認します。 テキストと、テキストの境界ボックスが返されるはずです。 時間がある場合は、**note.jpg** と **receipt.jpg** を試してください。
+    ![店舗内の人物が増えた画像。](./media/create-face-solutions/store-camera-2.jpg)
+
+1. **store-camera-2.jpg** をアップロードし、返される顔検出の詳細を確認します。
+
+1. **store-camera-3.jpg** という名前のファイルを見つけます。これには次の画像が含まれています。
+
+    ![植物が顔を隠している店舗内の人物の画像。](./media/create-face-solutions/store-camera-3.jpg)
+
+1. **store-camera-3.jpg** をアップロードし、返される顔検出の詳細を確認します。 隠れている顔が Azure AI Face によってどのように検出されなかったかについて注目してください。
+
+この演習では、Azure AI サービスが画像内の顔をどれだけ検出できるかについて説明しました。 時間がある場合は、サンプル画像や独自の画像をいくつか自由にお試しください。
 
 ## クリーンアップ
 
@@ -78,4 +86,4 @@ Azure AI Vision の OCR 機能は、**Azure AI サービス**のマルチサー�
 
 ## 詳細情報
 
-このサービスでできることの詳細については、[光学式文字認識](https://learn.microsoft.com/azure/ai-services/computer-vision/overview-ocr)に関する Azure AI Vision のドキュメントを参照してください。
+このサービスでできることについて詳しくは、[Azure AI Face サービスに関するページ](https://learn.microsoft.com/azure/ai-services/computer-vision/overview-identity)を参照してください。
