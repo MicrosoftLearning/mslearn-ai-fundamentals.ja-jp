@@ -61,7 +61,7 @@ Azure AI Vision の OCR 機能は、**Azure AI サービス**のマルチサー�
     - **[Detected attributes]\(検出された属性\)** には、画像中に見つかったテキストが領域、行、単語の階層構造で整理されています。
     - 画像では、次に示すように、テキストの場所は境界ボックスによって示されます。
 
-    ![画像内のテキストの画像の概要](media/read-text-computer-vision/text-bounding-boxes.png)
+    ![枠線で囲まれた画像内のテキストの画像。](media/read-text-computer-vision/advert-bounding-boxes.jpg)
 
 1. ここで、別の画像を試してみましょう。 **[ファイルを参照する]** を選び、GitHub のファイルを保存したフォルダーに移動します。 **letter.jpg** を選択します。
 
