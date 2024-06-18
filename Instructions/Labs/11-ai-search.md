@@ -124,7 +124,7 @@ Azure AI 検索リソースと同じ場所にある **Azure AI サービス** �
 
 1. **[次へ: コグニティブ スキルの追加 (省略可能)]** を選択します。
 
-1. **[Cognitive Services をアタッチする]** セクションで、利用する Azure AI サービス リソースを選択します。  
+1. **[AI サービスのアタッチ]** セクションで、ご利用の Azure AI サービス リソースを選択します。  
 
 1. **[エンリッチメントの追加]** セクションで、次のことを行います。
     - **[スキルセット名]** を **coffee-skillset** に変更します。
@@ -156,7 +156,8 @@ Azure AI 検索リソースと同じ場所にある **Azure AI サービス** �
     >
     > ![[既存の接続を選択します] が選択された [ストレージ アカウント接続] 画面の警告を示すスクリーンショット。](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
     >
-    > 1. **[既存の接続を選択します]** を選択します。 先ほど作成したストレージ アカウントを選びます。
+
+1. **[既存の接続を選択します]** を選択します。 先ほど作成したストレージ アカウントを選びます。
     > 1. **[+ コンテナー]** をクリックし、プライバシー レベルが **[プライベート]** に設定された **knowledge-store** という新しいコンテナーを作成し、**[作成]** を選択します。
     > 1. **knowledge-store** コンテナーを選択し、画面の下部にある **[選択]** をクリックします。
 
@@ -166,7 +167,7 @@ Azure AI 検索リソースと同じ場所にある **Azure AI サービス** �
 
 1. **[キー]** が **metadata_storage_path** に設定されていることを確かめます。 **[Suggester 名]** は空白のままにし、**[検索モード]** は自動設定されたままにします。
 
-1. インデックス フィールドの既定の設定を確認します。 既定で既に選択されているすべてのフィールドに対して **[フィルター可能]** を選択します。
+1. インデックス フィールドの既定の設定を確認します。 既定で既に選択されているすべてのフィールドに対して **[フィルター可能]** を選択します。 *フィルター可能*としてマークする必要があるフィールド名には、content、locations、keyphrases、sentiment、merged_content、text、layoutText、imageTags、imageCaption などがあります。
 
     ![インデックス名が入力され、既定のインデックス フィールドに対して [フィルター可能] が選択されている、インデックスのカスタマイズ ペインを示すスクリーンショット。](media/create-cognitive-search-solution/6a-azure-cognitive-search-customize-index.png)
 
@@ -238,11 +239,11 @@ Search エクスプローラーを使ってクエリを記述し、テストし�
 
 1. Azure portal で、Azure ストレージ アカウントに戻ります。
 
-2. 左側のメニュー ウィンドウで、**[コンテナー]** を選択します。 **knowledge-store** コンテナーを選択します。
+2. 左側のメニュー ウィンドウで、**[コンテナー]** を選択します。 **knowledge-store** コンテナーを選択します。 
 
     ![knowledge-store コンテナーのスクリーンショット。](media/create-cognitive-search-solution/knowledge-store-blob-0.png)
 
-3. 任意の項目を選んでから、**objectprojection.json** ファイルをクリックします。
+3. フォルダーの一覧が表示されます。 レビュー ドキュメントごとにすべてのメタデータに対して 1 つのフォルダーがあります。 **任意のフォルダーを選択します**。 フォルダー内で、**objectprojection.json** ファイルをクリックします。
 
     ![objectprojection.json のスクリーンショット。](media/create-cognitive-search-solution/knowledge-store-blob-1.png)
 
