@@ -40,7 +40,7 @@ lab:
     How do I setup a new business in New York?
     ```
 
-1. 応答を確認し、必要に応じて、引き続き追加の質問をします。 応答に満足したら、応答の下にある **[コピー]** (&#128461;) アイコンを使用してクリップボードにコピーします。 それを Word ドキュメントに貼り付け、すべてのテキストを選択してから [Copilot] アイコンを選択し、テキストをテーブルとして視覚化します。
+1. 応答を確認し、必要に応じて、引き続き追加の質問をします。 応答に満足したら、応答の下にある **[コピー]** (&#128461;) アイコンを使用してクリップボードにコピーします。 それを Word ドキュメントに貼り付け、すべてのテキストを選択してから (選択したテキストの下部にある) [Copilot] アイコンを選択し、テキストをテーブルとして視覚化します。
 
     ![テーブル形式で視覚化するように Copilot に求めるスクリーンショット。](./media/generative-ai/copilot-rewrite-as-table.png)
 
@@ -75,59 +75,57 @@ lab:
 
     ![Copilot によって生成されたビジネス プランを含む Word ドキュメントのスクリーンショット。](./media/generative-ai/copilot-draft-business-plan-response.png)
 
-1. ビジネス プランの財務予測がテーブルとして書式設定されていない場合は、それを選択し、Copilot を使用して予測をテーブルとして視覚化します。
+1. ビジネス プランの財務予測がテーブルとして書式設定されていない場合は、それらを選択し、Copilot を使用して予測をテーブルとして視覚化します。
 1. 財務予測のテーブルを選択して、クリップボードにコピーします。
-1. Word ドキュメントを保存します。
+1. Word 文書を保存し、閉じます。
 
 ## Copilot for Excel で財務予測を視覚化する
 
 ビジネス プランが準備できたので、財務予測のそのデータの一部を取得し、投資家へのメールやプレゼンテーションに含めることができるように、そのデータを視覚化するよう Copilot in Excel に求めます。
 
-1. Microsoft 365 アプリがインストールされている PC で **Excel** を開き、新しい空白のブックを作成します。 そのブックをすぐに **Financial Projetions.xlsx** としてOneDrive に保存します。そうでないと、Copilot は機能しません。
+1. **Excel** を開き、新しい空白のブックを作成します。 そのブックをすぐに **Financial Projections.xlsx** としてOneDrive に保存してください。そうしないと、Copilot は機能しません。
 1. **Business Idea.docx** の売上予測のテーブルを Excel スプレッドシートに貼り付け、**それをテーブルとして書式設定**します。 手順は次のとおりです。
     1. データ内の**セル**を選択します。
     1. **[ホーム]** を選択し、[スタイル] で **[テーブルとして書式設定]** を選択します。 
     1. テーブルのスタイルを選択します。
     1. **[テーブルの作成]** ダイアログ ボックスで、セル範囲を確認または設定します。
     1. テーブルにヘッダーがあるかどうかをマークし、**[OK]** を選択します。
-1. 売上予測をテーブルとして書式設定した状態で、Excel リボンから [Copilot] ペインを開き、次のプロンプトを入力します。
+1. 売上予測をテーブルとして書式設定した状態で、Excel リボンの **[ホーム]** タブから [Copilot] ペインを開き、次のプロンプトを入力します。
 
     ```
     Suggest ways to visualize these financial projections.
     ```
     
-1. Copilot から、データを視覚化する方法が 1 つまたは 2 つ提案され、新しいシートにピボット グラフを追加するように提示されます。
+1. Copilot から、データを視覚化する方法が提案され、新しいシートにピボット グラフを追加するように提示されます。
 
     ![財務予測を視覚化する Copilot in Excel のスクリーンショット。](./media/generative-ai/copilot-excel-visualize-projections.png)
-
-1. ただし、グラフ内に表示するデータを増やして前年比の変化を表示したい場合は、次のプロンプトを入力して内容を追加します。
-
-    ```
-    Visualize these financial projections in a line chart to show year-over-year revenue and profits.
-    ```
-
-    ![財務予測を視覚化する Copilot in Excel のスクリーンショット。](./media/generative-ai/copilot-excel-visualize-more.png)
 
 1. ピボット グラフを新しいシートに追加して開きます。 グラフを選択し、**[デザイン]** を選択してスタイルの適用、グラフの種類の変更、その他のアクションを行います。 最終的に、次のようになります。
 
     ![ピボットグラフを追加する Copilot in Excel のスクリーンショット。](./media/generative-ai/copilot-excel-chart-design.png)
 
-1. ファイルを OneDrive に保存し、Excel を閉じます。
+1. ブックを保存し、Excel を終了します。
 
 これで、Copilot in Word から作成されたデータを使用して Excel で視覚化しました。 次の演習では、Copilot in Outlook の使用に進み、行った作業に関するメールを作成して送信します。
 
 ## Copilot を使用してメールを作成する
 
-ビジネスを始めるための資料をいくつか作成してきました。 この段階で、スタートアップ企業に資金提供しようとしている投資家にアピールします。
+ビジネスを始めるための資料をいくつか作成してきました。 次は、スタートアップ企業に資金提供しようとしている投資家にアピールします。
 
-1. Microsoft 365 アプリがインストールされている PC で、**Outlook** を開きます。 Microsoft 365 アカウントを使って Outlook を設定していない場合は、[Microsoft サポートの「Outlook を設定して使用する」](https://support.microsoft.com/office/set-up-and-use-outlook-4636f361-d5e3-4a87-9cd4-382858de55fa)を参照してください。
-1. **新しい Outlook** エクスペリエンスを有効にします。 Outlook で最新の Copilot 機能を取得するには、"新しい Outlook" エクスペリエンスを使用する必要があります。 使用しているバージョンを確認するには、[Microsoft サポートの「所有している Outlook のバージョンが不明な場合」](https://support.microsoft.com/office/what-version-of-outlook-do-i-have-b3a9568c-edb5-42b9-9825-d48d82b2257c)を参照してください。
+1. **Outlook** を開きます。 Microsoft 365 アカウントで Outlook をセットアップしていない場合は、セットアップします。
+
+    > **ヒント**: 詳細については、「[Outlook を設定して使用する - Microsoft サポート](https://support.microsoft.com/office/set-up-and-use-outlook-4636f361-d5e3-4a87-9cd4-382858de55fa)」を参照してください。
+
+1. ツール バーで、まだアクティブでない場合は、**新しい Outlook **エクスペリエンスに 切り替えます。
+
+    > **注**:Outlook で最新の Copilot 機能を取得するには、"新しい Outlook" エクスペリエンスを使用する必要があります。 使用しているバージョンを確認するには、[Microsoft サポートの「所有している Outlook のバージョンが不明な場合」](https://support.microsoft.com/office/what-version-of-outlook-do-i-have-b3a9568c-edb5-42b9-9825-d48d82b2257c)を参照してください。
+
 1. 新しいメールを作成し、**[宛先]** ボックスにご自分のメール アドレスを入力します。
 1. 最初に、メールの下書きを、[Copilot] ペインから、またはメールの本文内から作成できます。
 
     ![Outlook と、Copilot でメールの下書きを作成するためのオプションを示すスクリーンショット。](./media/generative-ai/copilot-draft-email-outlook.png)
     
-1. 次のプロンプトを入力し、トーンを [Formal] (丁寧)、長さを [中間] に調整します。
+1. 次のプロンプトを入力し、トーンを [Formal] (丁寧)、長さを [中間] に調整してオプションを設定します。
 
     ```
     Request a meeting with an investment bank to discuss funding for a commercial cleaning business.
@@ -160,11 +158,7 @@ Copilot の支援を得て、クリーニング事業のアイデアに関する
 
     ![Word ドキュメントから Copilot によって作成された PowerPoint プレゼンテーションのスクリーンショット。](./media/generative-ai/copilot-powerpoint-create-image.png)
 
-1. プレゼンテーションの最後から 2 番目のスライドを選択します。 次に、[Copilot] ペインで、次のプロンプトを使用して新しいスライドを追加するように求めます。
-
-    ```
-    Add a slide that describes the benefits of an eco-friendly approach to cleaning. 
-    ```
+1. プレゼンテーションの最後から 2 番目のスライドを選択します。 次に、[Copilot] ペインで、**[...のスライドを追加]** プロンプトを使用して、`the benefits of an eco-friendly approach to cleaning.` に関する新しいスライドを作成します
 
     ![PowerPoint プレゼンテーションで新しいスライドが作成されたスクリーンショット。](./media/generative-ai/copilot-powerpoint-add-new-slide.png)
 
@@ -174,12 +168,12 @@ Copilot の支援を得て、クリーニング事業のアイデアに関する
 
 これまで、Copilot for Microsoft 365 をいくつかの異なるアプリで 使用してどのようにアイデアを調査し、内容を生成するかを見てきました。それでは、さらに詳しく探っていきましょう。 Copilot を使って、地元の図書館で子どもの読み書きの能力を伸ばすイベントを計画してみてください。 試すことができる内容として、次のようなことが考えられます。
 
-- 子供たちが幼い年齢で読書するように奨励するためのヒントを調査する。
+- 幼い年齢からの読書を奨励するためのヒントを調査する。
 - イベントのチラシまたはポスターを作成する。
-- キャンペーンのメールを作成し、地元にいる児童書の著者にイベントに来て講演してもらうように依頼する。
+- 地元の児童文学作家をイベントに招待し、講演してもらうためのキャンペーン用メールを作成する。
 - イベントを始めるためのプレゼンテーションを作成する。
 
-自由に独創性を発揮してください。そして、Copilot が、情報を見つけ、文章を生成して練り上げ、画像を作成し、質問に答えることで、どのように自分を支援してくれるかを探ってください。
+独創性を自由に発揮しましょう。そして、Copilot が、情報を見つけ、文章を生成して練り上げ、画像を作成し、質問に答えることで、どのように自分を支援してくれるかを探ってください。
 
 ## まとめ
 
