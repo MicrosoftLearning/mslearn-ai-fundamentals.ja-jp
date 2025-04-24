@@ -1,11 +1,3 @@
-#README
-
-We've turned off the ability to report issues directly on this repo and do not monitor PRs.
-
-Provide feedback here: https://aka.ms/provide-feedback
-
-Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
-
 # Microsoft Azure AI の基礎コースの演習
 
 このリポジトリには、[Microsoft Certified:Azure AI Fundamentals](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/) 認定資格をサポートする Microsoft Official Courseware のハンズオン演習のための手順と資産が含まれています。 演習は [Microsoft Learn](https://learn.microsoft.com/training) の関連トレーニング モジュールを補完するように設計されていて、これらの演習の<u>サブセット</u>は、講師による公式の指導付きトレーニング コース「[AI-900:Microsoft Azure AI Fundamentals](https://learn.microsoft.com/en-us/training/courses/ai-900t00)」のハンズオン ラボで構成されています。
