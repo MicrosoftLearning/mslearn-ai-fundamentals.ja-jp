@@ -1,8 +1,3 @@
----
-lab:
-  title: Azure AI Foundry の Content Safety について確認する
----
-
 # Azure AI Foundry の Content Safety について確認する
 
 Azure AI サービスは、ユーザーがすぐに使用できる、事前構築済みでカスタマイズ可能な API とモデルを使用して、AI アプリケーションを作成するのに役立ちます。 この演習では、テキストと画像のコンテンツを管理できるサービスの 1 つである Azure AI Content Safety について説明します。 インテリジェントなアプリケーションを作成するための Microsoft のプラットフォームである Azure AI Foundry ポータルで、Azure AI Content Safety を使用してテキストを分類し、重大度スコアを割り当てます。 
