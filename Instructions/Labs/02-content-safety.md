@@ -33,13 +33,13 @@ Azure AI サービスをアプリケーションに組み込むには、開発�
 
 ## Azure AI サービスの仕組みを確認します
 
-1. ブラウザー タブ内で、[Azure AI Foundry](https://ai.azure.com?azure-portal=true) に移動します。
+まず、Azure AI Foundry プロジェクトを作成します。
 
-1. ご自分のアカウントでサインインします。 
+1. Web ブラウザーで [Azure AI Foundry ポータル](https://ai.azure.com) (`https://ai.azure.com`) を開き、Azure 資格情報を使用してサインインします。 初めてサインインするときに開いたヒントまたはクイック スタート ウィンドウを閉じます。また、必要に応じて左上にある **Azure AI Foundry** ロゴを使用してホーム ページに移動します。それは次の画像のようになります (**[ヘルプ]** ウィンドウが開いている場合は閉じます)。
 
-1. *[プロジェクト外の作業]* で、**[AI サービスを表示]** タイルを選択します。
+    ![エージェントの作成が選択されている Azure AI Foundry ホーム ページのスクリーンショット。](./media/azure-ai-foundry-home-page.png)
  
-    ![[AI サービス] が選択されているプロジェクト画面の左側のメニューのスクリーンショット。](./media/view-ai-foundry-outside-project.png)  
+1. 新しいブラウザー ウィンドウで、 [Azure AI サービスの探索ページ](https://ai.azure.com/explore/aiservices)を開きます。
 
 1. *[AI サービス]* ページで、*[Vision + Document]* タイルを選択して、Azure AI Vision とドキュメントの機能を試します。
 
@@ -64,12 +64,4 @@ Azure AI サービスをアプリケーションに組み込むには、開発�
 ## クリーンアップ 
 
 完了したら、Azure portal から Azure AI サービス リソースを削除します。 リソースを削除することは、サブスクリプション内にリソースが存在する場合に生じるコストを削減する 1 つの方法です。 これを行うには、Azure AI サービス リソースの **[概要]** ページに移動します。 画面の上部で **[削除]** を選択します。
-
-
-
-
-
-
-
-
 
