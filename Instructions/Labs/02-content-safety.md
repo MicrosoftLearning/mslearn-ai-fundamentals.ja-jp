@@ -35,9 +35,7 @@ Azure AI サービスをアプリケーションに組み込むには、開発�
 
 まず、Azure AI Foundry プロジェクトを作成します。
 
-1. Web ブラウザーで [Azure AI Foundry ポータル](https://ai.azure.com) (`https://ai.azure.com`) を開き、Azure 資格情報を使用してサインインします。 初めてサインインするときに開いたヒントまたはクイック スタート ウィンドウを閉じます。また、必要に応じて左上にある **Azure AI Foundry** ロゴを使用してホーム ページに移動します。それは次の画像のようになります (**[ヘルプ]** ウィンドウが開いている場合は閉じます)。
-
-    ![エージェントの作成が選択されている Azure AI Foundry ホーム ページのスクリーンショット。](./media/azure-ai-foundry-home-page.png)
+1. Web ブラウザーで [Azure AI Foundry ポータル](https://ai.azure.com) (`https://ai.azure.com`) を開き、Azure 資格情報を使用してサインインします。 初めてサインインしたときに開かれたヒントまたはクイック スタート ペインを閉じます。
  
 1. 新しいブラウザー ウィンドウで、 [Azure AI サービスの探索ページ](https://ai.azure.com/explore/aiservices)を開きます。
 
