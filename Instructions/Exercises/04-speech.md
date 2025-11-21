@@ -1,21 +1,21 @@
 ---
 lab:
-  title: Azure AI Foundry ポータルで音声を調べる
+  title: Microsoft Foundry で音声を探索する
 ---
 
-# Azure AI Foundry ポータルで音声を調べる
+# Microsoft Foundry で音声を探索する
 
 Azure AI 音声サービスは、音声をテキストに、テキストを可聴音声に変換します。 AI 音声を使用して、会議のメモを文字起こししたり、インタビューの録音からテキストを生成したりできるアプリケーションを作成したり、音声によるコマンドやクエリに応答できる対話型の AI アシスタントをサポートしたりできます。
 
-この演習では、インテリジェントなアプリケーションを作成するための Microsoft のプラットフォームである Azure AI Foundry ポータルで Azure AI 音声を使用して、中核となる Azure AI 音声の機能を探ります。 
+この演習では、インテリジェント アプリケーションを作成するための Microsoft のプラットフォームである Foundry で Azure AI 音声を使用して、Azure AI 音声のコア機能を探索します。 
 
 この演習の所要時間はおよそ **15** 分です。
 
-## Azure AI Foundry ポータルでプロジェクトを作成する
+## Microsoft Foundry でプロジェクトを作成する
 
-1. Web ブラウザーで [Azure AI Foundry ポータル](https://ai.azure.com) (`https://ai.azure.com`) を開き、Azure 資格情報を使用してサインインします。 初めてサインインするときに開いたヒントまたはクイック スタート ウィンドウを閉じます。また、必要に応じて左上にある **Azure AI Foundry** ロゴを使用してホーム ページに移動します。それは次の画像のようになります (**[ヘルプ]** ウィンドウが開いている場合は閉じます)。
+1. Web ブラウザーで、[Microsoft Foundry](https://ai.azure.com) (`https://ai.azure.com`) を開き、Azure 資格情報を使用してサインインします。 初めてサインインする場合に開かれるヒントまたはクイック スタートのペインを閉じ、必要に応じて、左上にある **[Foundry]** ロゴを使用してホーム ページに移動します。次の図のようなページが表示されます (**[ヘルプ]** ペインが表示される場合は閉じます)。
 
-    ![Azure AI Foundry ポータルのホーム ページのスクリーンショット。](./media/ai-foundry-portal.png)
+    ![Microsoft Foundry のホーム ページのスクリーンショット。](./media/ai-foundry-portal.png)
 
 1. ページの下部までスクロールし、**[Azure AI サービスを探す]** タイルを選択します。
 

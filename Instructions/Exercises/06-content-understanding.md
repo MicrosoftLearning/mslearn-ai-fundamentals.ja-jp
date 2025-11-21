@@ -1,21 +1,21 @@
 ---
 lab:
-  title: Azure AI Foundry ポータルでコンテンツ解釈を使用してデータを抽出する
+  title: Microsoft Foundry で Content Understanding を使用してデータを抽出する
 ---
 
-# Azure AI Foundry ポータルでコンテンツ解釈を使用してデータを抽出する
+# Microsoft Foundry で Content Understanding を使用してデータを抽出する
 
 Azure AI コンテンツ解釈では、ドキュメント、オーディオ ファイル、ビデオ、画像をマルチモーダルで分析して情報を抽出できます。
 
-この演習では、インテリジェント アプリケーションを作成するための Microsoft のプラットフォーム、Azure AI Foundry ポータルで、Azure AI コンテンツ解釈を使用して、請求書の情報を抽出します。 
+この演習では、インテリジェント アプリケーションを作成するための Microsoft のプラットフォームである Foundry で、Azure AI Content Understanding を使用して、請求書から情報を抽出します。 
 
 この演習の所要時間はおよそ **25** 分です。
 
-## コンテンツ解釈のための Azure AI Foundry プロジェクトを作成する
+## コンテンツの解釈用の Microsoft Foundry プロジェクトを作成する
 
-1. Web ブラウザーで [Azure AI Foundry ポータル](https://ai.azure.com) (`https://ai.azure.com`) を開き、Azure 資格情報を使用してサインインします。 初めてサインインするときに開いたヒントまたはクイック スタート ウィンドウを閉じます。また、必要に応じて左上にある **Azure AI Foundry** ロゴを使用してホーム ページに移動します。それは次の画像のようになります (**[ヘルプ]** ウィンドウが開いている場合は閉じます)。
+1. Web ブラウザーで、[Microsoft Foundry](https://ai.azure.com) (`https://ai.azure.com`) を開き、Azure 資格情報を使用してサインインします。 初めてサインインする場合に開かれるヒントまたはクイック スタートのペインを閉じ、必要に応じて、左上にある **[Foundry]** ロゴを使用してホーム ページに移動します。次の図のようなページが表示されます (**[ヘルプ]** ペインが表示される場合は閉じます)。
 
-    ![Azure AI Foundry ポータルのホーム ページのスクリーンショット。](./media/ai-foundry-portal.png)
+    ![Foundry のホーム ページのスクリーンショット。](./media/ai-foundry-portal.png)
 
 1. ページの下部までスクロールし、**[Azure AI サービスを探す]** タイルを選択します。
 
