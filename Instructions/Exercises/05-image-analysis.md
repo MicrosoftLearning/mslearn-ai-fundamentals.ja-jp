@@ -1,13 +1,13 @@
 ---
 lab:
-  title: Azure AI Foundry ポータルで画像を分析する
+  title: Microsoft Foundry で画像を分析する
 ---
 
-# Azure AI Foundry ポータルで画像を分析する
+# Microsoft Foundry で画像を分析する
 
-**Azure AI Vision** には、画像のコンテンツとコンテキストを理解し、画像から情報を抽出するための多数の機能が含まれています。 この演習では、インテリジェント なアプリケーションを作成するための Microsoft のプラットフォームである Azure AI Foundry ポータルで Azure AI Vision を使用し、組み込みの試行エクスペリエンスを使って画像を分析します。 
+**Azure Vision** には、画像のコンテンツとコンテキストを理解し、画像から情報を抽出するための多数の機能が含まれています。 この演習では、インテリジェント アプリケーションを作成するための Microsoft のプラットフォームである Microsoft Foundry で Azure Vision を使用して、組み込みの評価エクスペリエンスを使って画像を分析します。 
 
-AI サービスが店舗を監視して支援を必要とする顧客を特定し、従業員に支援を指示する "スマート ストア" を実装することを架空の小売業者 *Northwind Traders* が決定したとします。 Azure AI Vision を使用すると、カメラで撮影した店舗全体の画像が分析されて、画像が表す内容のわかりやすい説明を受け取ることができます。
+AI サービスが店舗を監視して支援を必要とする顧客を特定し、従業員に支援を指示する "スマート ストア" を実装することを架空の小売業者 *Northwind Traders* が決定したとします。 Azure Vision を使用すると、カメラで撮影した店舗全体の画像を分析して、そこに写し出されたものについてわかりやすい説明を得ることができます。
 
 この演習は約 **20** 分かかります。
 
@@ -16,11 +16,11 @@ AI サービスが店舗を監視して支援を必要とする顧客を特定�
 1. `https://aka.ms/mslearn-images-for-analysis` から **[image-analysis.zip](https://aka.ms/mslearn-images-for-analysis)** をダウンロードします。
 1. ダウンロードした zip ファイルをコンピューター上のフォルダーに抽出します。
 
-## Azure AI Foundry ポータルでプロジェクトを作成する
+## Microsoft Foundry でプロジェクトを作成する
 
-1. Web ブラウザーで [Azure AI Foundry ポータル](https://ai.azure.com) (`https://ai.azure.com`) を開き、Azure 資格情報を使用してサインインします。 初めてサインインするときに開いたヒントまたはクイック スタート ウィンドウを閉じます。また、必要に応じて左上にある **Azure AI Foundry** ロゴを使用してホーム ページに移動します。それは次の画像のようになります (**[ヘルプ]** ウィンドウが開いている場合は閉じます)。
+1. Web ブラウザーで、[Microsoft Foundry](https://ai.azure.com) (`https://ai.azure.com`) を開き、Azure 資格情報を使用してサインインします。 初めてサインインする場合に開かれるヒントまたはクイック スタートのペインを閉じ、必要に応じて、左上にある **[Foundry]** ロゴを使用してホーム ページに移動します。次の図のようなページが表示されます (**[ヘルプ]** ペインが表示される場合は閉じます)。
 
-    ![Azure AI Foundry ポータルのホーム ページのスクリーンショット。](./media/ai-foundry-portal.png)
+    ![Foundry のホーム ページのスクリーンショット。](./media/ai-foundry-portal.png)
 
 1. ページの下部までスクロールし、**[Azure AI サービスを探す]** タイルを選択します。
 
@@ -47,13 +47,13 @@ AI サービスが店舗を監視して支援を必要とする顧客を特定�
     - **[Azure AI サービスの接続]**: *有効な名前を持つ新しい Azure AI サービス リソースを作成します*
     - **Azure AI 検索への接続**:接続をスキップする
 
-    \**執筆時点では、Azure AI Vision は、これらのリージョンのハブでサポートされています*。
+    \*"この演習の執筆時点では、Azure Vision がサポートされているのは、上記のリージョン内のハブです"**。
 
 1. ハブが作成されると、プロジェクトを作成するように求められます。 適切なプロジェクト名を入力して **[プロジェクトの作成]** を選択します。
 
 ## 画像のキャプションを生成する
 
-Azure AI Vision の画像キャプション機能を使用して、*Northwind Traders* ストア内のカメラで撮影された画像を分析してみましょう。 画像のキャプションには、**キャプション**機能と**高密度キャプション**機能からアクセスできます。
+Azure Vision の画像キャプション機能を使用して、*Northwind Traders* の店舗内のカメラで撮影された画像を分析してみましょう。 画像のキャプションには、**キャプション**機能と**高密度キャプション**機能からアクセスできます。
 
 1. 左側の作業ペインで、**[AI サービス]** を選択します。
 
@@ -114,4 +114,4 @@ Azure AI Vision の画像キャプション機能を使用して、*Northwind Tr
 
 ## 詳細情報
 
-このサービスでできることについて詳しくは、[Azure AI Vision に関するページ](https://learn.microsoft.com/azure/ai-services/computer-vision/overview)を参照してください。
+このサービスで実行できる機能の詳細については、[Azure Vision のページ](https://learn.microsoft.com/azure/ai-services/computer-vision/overview)を参照してください。

@@ -12,11 +12,11 @@ AI-900 練習ラボは、Microsoft Learn で見られる AI-900 ラボのサブ�
 
 | AI-900 練習ラボ番号 | トピック | 手順 |
 | --- | --- | --- |
-| AI-900 生成 AI | Azure AI Foundry ポータルで生成 AI を探索する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2249955) |
-| AI-900 自然言語処理 | Azure AI Foundry ポータルでテキストを分析する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2250314) |
-| AI-900 音声認識 | Azure AI Foundry ポータルで音声を調べる | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2250148) |
-| AI-900 Computer Vision | Azure AI Foundry ポータルで画像を分析する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2250145) |
-| AI-900 情報抽出 | Azure AI Foundry ポータルでコンテンツ解釈を使用してデータを抽出する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2320420) |
+| AI-900 生成 AI | Microsoft Foundry で生成 AI を探索する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2249955) |
+| AI-900 自然言語処理 | Microsoft Foundry を使用してテキストを分析する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2250314) |
+| AI-900 音声認識 | Microsoft Foundry で音声を探索する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2250148) |
+| AI-900 Computer Vision | Microsoft Foundry で画像を分析する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2250145) |
+| AI-900 情報抽出 | Microsoft Foundry で Content Understanding を使用してデータを抽出する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2320420) |
 
 
 
