@@ -23,7 +23,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
 Computer Vision のモデルを使うと、AI システムは画像ベースのデータ (写真、ビデオ、その他の視覚要素など) を解釈できます。 この演習では、意欲的なシェフがビジョン対応モデルを使って食材の画像を解釈して関連するレシピを提案するのを、AI エージェントの開発者が支援する方法について説明します。
 
-1. 新しいブラウザー タブで、**[images.zip](https://graememalcolm.github.io/ai-labs/data/images.zip){:target="_blank"}** をローカル コンピューターにダウンロードします。
+1. 新しいブラウザー タブで、**[images.zip](https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/images.zip){:target="_blank"}** `https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/images.zip` をローカル コンピューターにダウンロードします。
 1. ダウンロードしたアーカイブをローカル フォルダーに抽出し、それに含まれるファイルを確認します。 これらのファイルは、AI を使って分析する画像です。
 1. Microsoft Foundry プロジェクトが含まれるブラウザー タブに戻ります。 次に、**[ビルドの開始]** メニューの **[モデルの参照]** を選んで、Microsoft Foundry のモデル カタログを表示します。
 1. `gpt-4.1-mini` モデルを検索し、既定の設定を使ってデプロイします。 デプロイには 1 分ほどかかる場合があります。
@@ -85,7 +85,7 @@ Computer Vision のモデルを使うと、AI システムは画像ベースの�
     print(f"answer: {response.output[0]}")
     ```
 
-    > **ヒント**: 職場または学校アカウントを使って Azure にサインインしていて、Azure サブスクリプションに十分なアクセス許可がある場合は、VS Code for Web でサンプル コードを開いて実行し、画像ベースの入力内容を試すことができます。 モデル プレイグラウンドの **[コード]** タブでサービスの**キー**を取得でき (サンプル コードの上)、`https://graememalcolm.github.io/ai-labs/data/orange.jpg` で画像を使用できます。 OpenAI API を使用した画像の分析について詳しくは、[OpenAI のドキュメント](https://platform.openai.com/docs/guides/images-vision#analyze-images)をご覧ください。
+    > **ヒント**: 職場または学校アカウントを使って Azure にサインインしていて、Azure サブスクリプションに十分なアクセス許可がある場合は、VS Code for Web でサンプル コードを開いて実行し、画像ベースの入力内容を試すことができます。 サービスの **key** は、(サンプル コードの上にある) モデル のプレイグラウンドの **Code** タブで取得できます。また、画像 **[orange.jpg](https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/orange.jpg){:target="_blank"}** を `https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/orange.jpg`で使用できます。 OpenAI API を使用した画像の分析について詳しくは、[OpenAI のドキュメント](https://platform.openai.com/docs/guides/images-vision#analyze-images)をご覧ください。
 
 ## 生成 AI モデルを使って新しい画像を作成する
 

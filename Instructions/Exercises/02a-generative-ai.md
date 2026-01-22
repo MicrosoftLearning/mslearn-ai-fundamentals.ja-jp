@@ -12,7 +12,7 @@ lab:
 
 ## Microsoft Foundry プロジェクトを作成する
 
-Microsoft Foundry で "プロジェクト" を使用して、AI ソリューションの開発に使用されるモデル、リソース、データ、その他の資産を整理します。**
+Microsoft Foundry では "プロジェクト" を使って、AI ソリューションの開発に使われるモデル、リソース、データ、その他の資産を整理します。**
 
 1. Web ブラウザーで [Microsoft Foundry](https://ai.azure.com){:target="_blank"} (`https://ai.azure.com`) を開き、Azure の資格情報を使ってサインインします。 初めてサインインすると開くヒントやクイック スタートのペインをすべて閉じ、必要な場合は、左上にある **Foundry** のロゴを使ってホーム ページに移動します。
 1. まだ有効になっていない場合は、ページ上部のツール バーで **[新しい Foundry]** オプションを有効にします。 次に、メッセージが表示されたら、既定のオプションを使用して、任意の一意の名前で新しいプロジェクトを作成します。 新しい Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。
@@ -177,7 +177,7 @@ Microsoft Foundry で "プロジェクト" を使用して、AI ソリューシ�
 
 エージェントは、タスクを実行したり情報を検索したりするために "ツール" を使用します。** 一般的な Web 検索ツールまたは単純なファイル検索ツールを使用してナレッジ ソースを提供できます。また、より包括的なエージェント ソリューションが必要な場合は、エージェントを企業内のデータ ソースに接続する *Microsoft Foundry IQ* ナレッジ ストアを作成することもできます。 この演習では、簡単なファイル検索ツールを使用します。
 
-1. 新しいブラウザー タブを開き、**[expenses_policy.docx](https://graememalcolm.github.io/ai-labs/data/expenses_policy.docx){:target="_blank"}** (`https://graememalcolm.github.io/ai-labs/data/expenses_policy.docx`) を表示します。 これを使用して、エージェントが経費精算に関する質問に回答できるようになるナレッジ ソースを提供します。
+1. 新しいブラウザー タブを開き、**[expenses_policy.docx](https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/expenses_policy.docx){:target="_blank"}** (`https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/expenses_policy.docx`) を表示します。 これを使用して、エージェントが経費精算に関する質問に回答できるようになるナレッジ ソースを提供します。
 1. **expenses_policy.docx** をローカル コンピューターにダウンロードします。
 1. エージェント プレイグラウンドを含むタブに戻り、左ペインで、まだ展開されていない場合は **[ツール]** セクションを展開します。
 1. **expenses_policy.docx** ファイルをアップロードし、既定のインデックス名で新しいインデックスを作成します。 インデックスが作成されたら、それをエージェントにアタッチします。
