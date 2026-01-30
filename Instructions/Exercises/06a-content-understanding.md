@@ -77,11 +77,13 @@ Azure Content Understanding を使用すると、ドキュメント、オーデ�
 
 >**注**:演習のこのセクションでは、Visual Studio Code (VS Code) にアクセスできる必要があります。  
 
-1. Foundry のリソース キーとエンドポイントを特定します。 (クラシック) Foundry ポータルの、左側のメニューに移動します。 上部のアイコンをクリックしてメニューを*展開*し、オプションを表示します。 **[概要]** を選択して、Foundry プロジェクトのホーム ページに移動します。 プロジェクトのホーム ページで、プロジェクトの API キーをコピーして貼り付けられるか、またはサブスクリプションにこれらのアクセス許可がないことを示すメモが表示されます。 参照用にページを開いたままにします。 
+1. Foundry のリソース キーとエンドポイントを特定します。 (クラシック) Foundry ポータルの、左側のメニューに移動します。 上部のアイコンをクリックしてメニューを*展開*します。 **[概要]** を選択して Foundry プロジェクトのホーム ページに移動します。 プロジェクトのホーム ページで、プロジェクトの API キーをコピーして貼り付けられるか、またはサブスクリプションにこれらのアクセス許可がないことを示すメモが表示されます。 参照用にページを開いたままにします。 
 
 >**注**:演習のこのセクションを実行するには、API キーを使用するためのアクセス許可を持つ Azure サブスクリプションが必要になります。 アクセス許可がない場合は、モデルを自分でテストすることができません。 ただし、ステップを確認するために、演習の残りの部分を読むことはできます。 
 
-1. Visual Studio Code (VS Code) を開きます。 VS Code で、**Ctrl + Shift + P** キー(Windows/Linux) または [表示] メニューのコマンド パレットを押して、コマンド パレットを開きます。 「**Git:Clone**」と入力して選択します。 リポジトリの URL `https://github.com/MicrosoftLearning/mslearn-ai-fundamentals.git` を貼り付け、**Enter** キーを押します。  
+1. VS Code を開き、**Ctrl + Shift + P** キー (Windows/Linux) を押してコマンド パレットを開きます (または、メニューから *[表示]* を選択し、*[コマンド パレット]* を選択することもできます)。 
+
+1. コマンド パレットで、「**Git: Clone**」と入力して選択します。 リポジトリの URL `https://github.com/MicrosoftLearning/mslearn-ai-fundamentals.git` を貼り付け、**Enter** キーを押します。  
 
 1. リポジトリをクローンするローカル フォルダーを選択します。 メッセージが表示されたら **[開く]** をクリックして、VS Code でクローンされたプロジェクトの作業を開始します。 
 
@@ -91,11 +93,13 @@ Azure Content Understanding を使用すると、ドキュメント、オーデ�
 
 1. *[content-understanding]* フォルダーで、**[.env]** ファイルを開きます。 Foundry プロジェクトの API キーをコピーして貼り付けます。 Foundry プロジェクトのエンドポイントをコピーして貼り付けます。 *ai.azure.com* の後のテキストを削除して、エンドポイントを編集します。 エンドポイントは、`https://...ai.azure.com` のようになるはずです。 ファイルを保存します。 
 
-1. Foundry ポータルに戻り、Foundry リソースに GPT-4.1、GPT-4.1-mini、text-embedding-3-large の Foundry モデル デプロイを作成します。 (クラシック) Foundry ポータルで、左側のメニューから **[モデルとエンドポイント]** を選択します (注: メニューを展開して項目の名前を表示するには、上部にある最初のアイコンを選択しなければならない場合があります)。 **[モデル デプロイ]** 画面で、**[+ モデルのデプロイ]** を選択してから、**[基本モデルのデプロイ]** を選択します。 **[GPT-4.1]** を検索して選択してから、**[確認]** を選択します。 既定の名前と既定のデプロイの種類をそのまま使用します。 **[デプロイ]** を選択します。 
+1. Foundry ポータルに戻り、Foundry リソースに *GPT-4.1*、*GPT-4.1-mini*、*text-embedding-3-large* の Foundry モデル デプロイを作成します。 (クラシック) Foundry ポータルで、左側のメニューから **[モデルとエンドポイント]** を選択します。
+
+1. **[モデル デプロイ]** 画面で、**[+ モデルのデプロイ]** を選択します。 次に、**[基本モデルのデプロイ]** を選択します。 **[GPT-4.1]** を検索して選択してから、**[確認]** を選択します。 既定の名前と既定のデプロイの種類をそのまま使用します。 **[デプロイ]** を選択します。 
 
     >**ヒント**: モデルがデプロイされると、モデルの詳細ページが表示されます。 左側のメニューに戻り、その他のモデルのデプロイを続けます。
 
-1. 左側のメニューから **[モデルとエンドポイント]** を選択して、**[モデル デプロイ]** ページに戻ります。 **GPT-4.1-mini** と **text-embedding-3-large** でも繰り返します。 モデルがデプロイされたら、モデルの名前をメモします (名前をカスタマイズしない限り、GPT-4.1、GPT-4.1-mini、text-embedding-3-large になるはずです)。 
+1. 左側のメニューから **[モデルとエンドポイント]** を選択して、**[モデル デプロイ]** ページに戻ります。 **GPT-4.1-mini** と **text-embedding-3-large** でも繰り返します。 モデルがデプロイされたら、モデルの名前をメモします。 
 
     ![モデル名のスクリーンショット。](./media/0-content-understanding-model-names.png)
 
@@ -104,15 +108,15 @@ Azure Content Understanding を使用すると、ドキュメント、オーデ�
     - コンテンツを分析するため 
     - 分析の結果を取得するため  
 
-1. Foundry リソースで Content Understanding と Foundry のモデルの間に接続を設定しましょう。 VS Code に戻ります。 VS Code エクスプローラーで、**[set-up-connection.sh]** ファイルを開きます。 プロジェクト エンドポイント、キー、およびモデル デプロイ名の変数がスクリプトのどこに含まれているかを確認してください。 スクリプトは次のようになります。
+1. Foundry リソースで Content Understanding と Foundry のモデルの間に接続を設定します。 VS Code に戻ります。 VS Code エクスプローラーで、**[set-up-connection.sh]** ファイルを開きます。 プロジェクト エンドポイント、キー、およびモデル デプロイ名の変数がスクリプトのどこに含まれているかを確認してください。 スクリプトは次のようになります。
 
     ![set-up-connection スクリプトのスクリーンショット。](./media/0-setup-curl-1.png)
 
     >**注**:.sh ファイルの上部に、.env からスクリプトの環境にすべてをエクスポートするスクリプトも含まれています。 この情報は、**.sh** ファイルの上部の **#!/bin/bash** の後に表示されます。 ファイルのこの部分は編集しないでください。  
     
-1. `{myGPT41Deployment}`、`{myGPT41MiniDeployment}`、`{myEmbeddingDeployment}` のプレースホルダーをデプロイ済みのモデルの名前に置き換えて、curl スクリプトを更新します。 
+1. `{myGPT41Deployment}`、`{myGPT41MiniDeployment}`、`{myEmbeddingDeployment}` のプレースホルダーをデプロイ済みのモデルの名前に置き換えて、curl スクリプトを更新します。 変更を保存。
 
-    >**ヒント**: 変更を加えない限り、モデル名はそれぞれ `gpt-4.1`、`gpt-4.1-mini`、および `text-embedding-3-large` になるはずです。 変更を保存。
+    >**ヒント**: 変更を加えない限り、モデル名はそれぞれ `gpt-4.1`、`gpt-4.1-mini`、および `text-embedding-3-large` になるはずです。 
 
 1. VS Code で、新しい bash ターミナルを開きます。 **Ctrl + Shift + P** (または [表示] メニューのコマンド パレット) を押します。 タイプ:「**Terminal: Create New Terminal (With Profile)**」と入力します。 一覧から **[Git Bash]** プロファイルを選択します。 ターミナルが VS Code 画面の下部に表示されます。 
 
@@ -132,7 +136,7 @@ Azure Content Understanding を使用すると、ドキュメント、オーデ�
 
     その後、*Enter* キーを押して、Content Understanding とプロファイルにデプロイ済みのモデルの間に接続を形成するスクリプトを実行します。
 
-1. 次は、prebuilt-invoice アナライザーを使用してコンテンツを分析し、請求書ドキュメントから構造化データを抽出してみましょう。 ポータルで行ったのと同じドキュメント `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-fundamentals/refs/heads/main/data/content-understanding/contoso-invoice-1.pdf` を分析します。 
+1. 次は、prebuilt-invoice アナライザーを使用して、請求書ドキュメントから構造化データを抽出します。 ポータルで行ったのと同じドキュメント `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-fundamentals/refs/heads/main/data/content-understanding/contoso-invoice-1.pdf` を分析します。 
 
 1. VS Code エクスプローラーで、**[extract-data.sh]** ファイルを開きます。 プロジェクト エンドポイントとキーの変数がスクリプトのどこに含まれているかを確認してください。 *ドキュメントの URL* が入力のどこに含まれているかを特定します。 スクリプトは次のようになります。
 
