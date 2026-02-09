@@ -1,8 +1,3 @@
----
-lab:
-  title: Microsoft Foundry で画像を分析する
----
-
 # Microsoft Foundry で画像を分析する
 
 **Azure Vision** には、画像のコンテンツとコンテキストを理解し、画像から情報を抽出するための多数の機能が含まれています。 この演習では、インテリジェント アプリケーションを作成するための Microsoft のプラットフォームである Microsoft Foundry で Azure Vision を使用して、組み込みの評価エクスペリエンスを使って画像を分析します。 

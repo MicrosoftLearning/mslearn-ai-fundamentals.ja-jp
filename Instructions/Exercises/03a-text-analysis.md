@@ -2,6 +2,8 @@
 lab:
   title: Microsoft Foundry でテキスト分析を開始する
   description: Microsoft Foundry を使用して、さまざまな種類のテキスト分析を試します。
+  level: 100
+  duration: 20 minutes
 ---
 
 # Microsoft Foundry でテキスト分析を開始する
