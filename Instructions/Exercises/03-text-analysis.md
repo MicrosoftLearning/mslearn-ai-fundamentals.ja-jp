@@ -1,8 +1,3 @@
----
-lab:
-  title: Microsoft Foundry でテキストを分析する
----
-
 # Microsoft Foundry でテキストを分析する
 
 Azure Language サービスには、エンティティ認識、キー フレーズ抽出、要約、感情分析などの機能を備えた Text Analytics が含まれています。 たとえば、架空の旅行会社 Margie's Travel が、ホテル滞在のレビューを送信するように顧客に勧めているとします。 Language サービスを使用すると、名前付きエンティティの抽出、キー フレーズの識別、テキストの要約などを実行できます。

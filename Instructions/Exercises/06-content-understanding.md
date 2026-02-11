@@ -1,8 +1,3 @@
----
-lab:
-  title: Microsoft Foundry で Content Understanding を使用してデータを抽出する
----
-
 # Microsoft Foundry で Content Understanding を使用してデータを抽出する
 
 Azure Content Understanding を使用すると、ドキュメント、オーディオ ファイル、ビデオ、画像のマルチモーダル分析を行って情報を抽出することができます。

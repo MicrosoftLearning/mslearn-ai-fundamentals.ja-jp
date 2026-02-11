@@ -2,6 +2,8 @@
 lab:
   title: Microsoft Foundry での情報抽出に関する概要
   description: AI モデルを使用して、ビジュアル データから情報を抽出します。
+  level: 100
+  duration: 40 minutes
 ---
 
 # Microsoft Foundry での情報抽出に関する概要
@@ -71,108 +73,43 @@ Azure Content Understanding を使用すると、ドキュメント、オーデ�
 
     ![Contoso の請求書の分析結果のスクリーンショット。](./media/invoice-analysis-json.png)
 
-## REST API を使用して情報を抽出する
-
-情報を抽出するクライアント アプリまたはエージェントを開発するために、いくつかの Foundry モデルと REST API を使用できます。
-
->**注**:演習のこのセクションでは、Visual Studio Code (VS Code) にアクセスできる必要があります。  
-
-1. Foundry のリソース キーとエンドポイントを特定します。 (クラシック) Foundry ポータルの、左側のメニューに移動します。 上部のアイコンをクリックしてメニューを*展開*します。 **[概要]** を選択して Foundry プロジェクトのホーム ページに移動します。 プロジェクトのホーム ページで、プロジェクトの API キーをコピーして貼り付けられるか、またはサブスクリプションにこれらのアクセス許可がないことを示すメモが表示されます。 参照用にページを開いたままにします。 
-
->**注**:演習のこのセクションを実行するには、API キーを使用するためのアクセス許可を持つ Azure サブスクリプションが必要になります。 アクセス許可がない場合は、モデルを自分でテストすることができません。 ただし、ステップを確認するために、演習の残りの部分を読むことはできます。 
-
-1. VS Code を開き、**Ctrl + Shift + P** キー (Windows/Linux) を押してコマンド パレットを開きます (または、メニューから *[表示]* を選択し、*[コマンド パレット]* を選択することもできます)。 
-
-1. コマンド パレットで、「**Git: Clone**」と入力して選択します。 リポジトリの URL `https://github.com/MicrosoftLearning/mslearn-ai-fundamentals.git` を貼り付け、**Enter** キーを押します。  
-
-1. リポジトリをクローンするローカル フォルダーを選択します。 メッセージが表示されたら **[開く]** をクリックして、VS Code でクローンされたプロジェクトの作業を開始します。 
-
-1. VS Code エクスプローラーで、**[data]** フォルダーを選択してから、**[content-understanding]** フォルダーを選択します。 
-
-    ![VS Code のエクスプローラーのスクリーンショット。](./media/0-content-understanding-file-navigation.png)
-
-1. *[content-understanding]* フォルダーで、**[.env]** ファイルを開きます。 Foundry プロジェクトの API キーをコピーして貼り付けます。 Foundry プロジェクトのエンドポイントをコピーして貼り付けます。 *ai.azure.com* の後のテキストを削除して、エンドポイントを編集します。 エンドポイントは、`https://...ai.azure.com` のようになるはずです。 ファイルを保存します。 
-
-1. Foundry ポータルに戻り、Foundry リソースに *GPT-4.1*、*GPT-4.1-mini*、*text-embedding-3-large* の Foundry モデル デプロイを作成します。 (クラシック) Foundry ポータルで、左側のメニューから **[モデルとエンドポイント]** を選択します。
-
-1. **[モデル デプロイ]** 画面で、**[+ モデルのデプロイ]** を選択します。 次に、**[基本モデルのデプロイ]** を選択します。 **[GPT-4.1]** を検索して選択してから、**[確認]** を選択します。 既定の名前と既定のデプロイの種類をそのまま使用します。 **[デプロイ]** を選択します。 
-
-    >**ヒント**: モデルがデプロイされると、モデルの詳細ページが表示されます。 左側のメニューに戻り、その他のモデルのデプロイを続けます。
-
-1. 左側のメニューから **[モデルとエンドポイント]** を選択して、**[モデル デプロイ]** ページに戻ります。 **GPT-4.1-mini** と **text-embedding-3-large** でも繰り返します。 モデルがデプロイされたら、モデルの名前をメモします。 
-
-    ![モデル名のスクリーンショット。](./media/0-content-understanding-model-names.png)
-
-1. Content Understanding を使用してコンテンツから情報を抽出するには、*curl* コマンドを使用して REST エンドポイントを呼び出します。 次の 3 つの呼び出しを行う必要があります。 
-    - Content Understanding と Foundry のモデルの間に接続を設定するため 
-    - コンテンツを分析するため 
-    - 分析の結果を取得するため  
-
-1. Foundry リソースで Content Understanding と Foundry のモデルの間に接続を設定します。 VS Code に戻ります。 VS Code エクスプローラーで、**[set-up-connection.sh]** ファイルを開きます。 プロジェクト エンドポイント、キー、およびモデル デプロイ名の変数がスクリプトのどこに含まれているかを確認してください。 スクリプトは次のようになります。
-
-    ![set-up-connection スクリプトのスクリーンショット。](./media/0-setup-curl-1.png)
-
-    >**注**:.sh ファイルの上部に、.env からスクリプトの環境にすべてをエクスポートするスクリプトも含まれています。 この情報は、**.sh** ファイルの上部の **#!/bin/bash** の後に表示されます。 ファイルのこの部分は編集しないでください。  
-    
-1. `{myGPT41Deployment}`、`{myGPT41MiniDeployment}`、`{myEmbeddingDeployment}` のプレースホルダーをデプロイ済みのモデルの名前に置き換えて、curl スクリプトを更新します。 変更を保存。
-
-    >**ヒント**: 変更を加えない限り、モデル名はそれぞれ `gpt-4.1`、`gpt-4.1-mini`、および `text-embedding-3-large` になるはずです。 
-
-1. VS Code で、新しい bash ターミナルを開きます。 **Ctrl + Shift + P** (または [表示] メニューのコマンド パレット) を押します。 タイプ:「**Terminal: Create New Terminal (With Profile)**」と入力します。 一覧から **[Git Bash]** プロファイルを選択します。 ターミナルが VS Code 画面の下部に表示されます。 
-
-1. ターミナルで、[content-understanding] フォルダーに移動します。 次をコピーしてターミナルに貼り付けます。 
+    開発者が REST API を使用して構築したアプリで分析対象のドキュメントを送信することができ、これには POST 操作を使用します。 たとえば、請求書を分析するには次のような cUrl コマンドを使用します。
 
     ```bash
-    cd data/content-understanding
+   curl -i -X POST "{endpoint}/contentunderstanding/analyzers/{analyzerId}:analyze?api-version=2025-11-01" \
+      -H "Ocp-Apim-Subscription-Key: {key}" \
+      -H "Content-Type: application/json" \
+      -d '{
+            "inputs":[
+              {
+                "url": "https://{url_path}/invoice.png"
+              }          
+            ]
+          }'
     ```
-    
-    その後、*Enter* キーを押してコマンドを実行し、適切なフォルダーに移動します。
- 
-1. 次をコピーしてターミナルに貼り付けて、スクリプトを実行します。 
+
+    分析は非同期で実行されるため、次のように応答には結果をポーリングして取得するのに使用できる **id** の値が含まれています。
+
+    ```json
+   {
+      "id": {resultId},
+      "status": "Running",
+      "result": {
+        "analyzerId": {analyzerId},
+        "apiVersion": "2025-11-01",
+        "createdAt": "YYYY-MM-DDTHH:MM:SSZ",
+        "warnings": [],
+        "contents": []
+      }
+    }
+    ```
+
+    この ID を使用して結果を取得するには、次のようにクライアントが GET 要求を送信する必要があります。
 
     ```bash
-    bash set-up-connection.sh
+   curl -i -X GET "{endpoint}/contentunderstanding/analyzerResults/{resultId}?api-version=2025-11-01" \
+      -H "Ocp-Apim-Subscription-Key: {key}"
     ```
-
-    その後、*Enter* キーを押して、Content Understanding とプロファイルにデプロイ済みのモデルの間に接続を形成するスクリプトを実行します。
-
-1. 次は、prebuilt-invoice アナライザーを使用して、請求書ドキュメントから構造化データを抽出します。 ポータルで行ったのと同じドキュメント `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-fundamentals/refs/heads/main/data/content-understanding/contoso-invoice-1.pdf` を分析します。 
-
-1. VS Code エクスプローラーで、**[extract-data.sh]** ファイルを開きます。 プロジェクト エンドポイントとキーの変数がスクリプトのどこに含まれているかを確認してください。 *ドキュメントの URL* が入力のどこに含まれているかを特定します。 スクリプトは次のようになります。
-
-    ![extract-data スクリプトのスクリーンショット。](./media/0-extract-data-curl-1.png)
-
-1. 次をコピーしてターミナルに貼り付けて、スクリプトを実行します。 
-
-    ```bash
-    bash extract-data.sh
-    ```
-
-    次に、*Enter* キーを押して、コンテンツを分析する POST 要求を行うスクリプトを実行します。
-
-1. POST 応答は次のようになるはずです。 
-
-    ![request-id が強調表示されている POST 応答のスクリーンショット。](./media/0-content-post-response-1.png)
-
-1. POST 応答から `request-id` をコピーします。 
-
-1. VS Code エクスプローラーで、**[get-results.sh]** を開き、ファイルをレビューします。 プロジェクト エンドポイントとキーの変数がスクリプトのどこに含まれているかを確認してください。 スクリプトは次のようになります。 
-
-    ![request-id のプレースホルダーが強調表示されている get-results スクリプトのスクリーンショット。](./media/0-get-results-curl-1.png)
-
-
-1. *[get-results.sh]* ファイルで、`{request-id}` を削除し、POST 応答から `request-id` を貼り付けます。 忘れずにファイルを保存してください。  
-    
-1. 次をコピーしてターミナルに貼り付けて、スクリプトを実行します。 
-
-    ```bash
-    bash get-results.sh
-    ```
-
-    次に、*Enter* キーを押して、GET 結果スクリプトを実行します。 POST 応答から `request-id` を使用すると、分析の結果を取得できます。
- 
-1. 返された JSON を確認します。 同じドキュメントを分析した後、Foundry ポータルの *[結果]* タブで確認したのと同じ情報がどのように提供されるかを確認します。
-
 ## クリーンアップ
 
 コンテンツ解釈サービスの操作が終わったら、不要な Azure コストが発生しないように、この演習で作成したリソースを削除する必要があります。
