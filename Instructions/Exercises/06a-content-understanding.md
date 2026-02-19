@@ -3,7 +3,7 @@ lab:
   title: Microsoft Foundry での情報抽出に関する概要
   description: AI モデルを使用して、ビジュアル データから情報を抽出します。
   level: 100
-  duration: 40 minutes
+  duration: 25 minutes
 ---
 
 # Microsoft Foundry での情報抽出に関する概要
@@ -12,7 +12,7 @@ Azure Content Understanding を使用すると、ドキュメント、オーデ�
 
 この演習では、インテリジェント アプリケーションを作成するための Microsoft のプラットフォームである Foundry で、Azure Content Understanding を使用して、請求書から情報を抽出します。 次に、REST API を使用して Foundry Tools の Azure Content Understanding を試します。
 
-この演習は約 **40** 分かかります。
+この演習の所要時間はおよそ **25** 分です。
 
 >**注**:この演習では、クラシック Foundry ポータルのエクスペリエンスを利用します。 新しい Foundry ポータルを使用している場合は、クラシックに戻す必要があります。 
 

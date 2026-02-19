@@ -3,14 +3,14 @@ lab:
   title: Microsoft Foundry で生成 AI とエージェントの使用を開始する
   description: Microsoft Foundry を使用して、生成 AI モデルをデプロイし、エージェントを作成します。
   level: 100
-  duration: 45 minutes
+  duration: 35 minutes
 ---
 
 # Microsoft Foundry で生成 AI とエージェントの使用を開始する
 
 この演習では、Microsoft Foundry を使用して、生成 AI モデルをデプロイし、確認します。 次に、ユーザーの質問に回答するナレッジ ツールを備えたエージェントでモデルを使用します。
 
-この演習の所要時間は約 **45** 分です。
+この演習の所要時間は約 **35** 分です。
 
 ## Microsoft Foundry プロジェクトを作成する
 

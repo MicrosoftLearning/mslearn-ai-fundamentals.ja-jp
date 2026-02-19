@@ -3,7 +3,7 @@ lab:
   title: Microsoft Foundry で音声の使用を開始する
   description: Microsoft Foundry を使用して、Azure Speech - 音声ライブを試します。
   level: 100
-  duration: 30 minutes
+  duration: 25 minutes
 ---
 
 # Microsoft Foundry で音声の使用を開始する
@@ -12,7 +12,7 @@ lab:
 
 この演習では、AI アプリケーションを作成するための Microsoft のプラットフォームである Microsoft Foundry を使用して、生成 AI モデルと音声を使用して対話します。 リアルタイム音声ベースのエージェントを構築するために使用されるサービスである Azure Speech 音声ライブを使用した、音声テキスト変換 (STT) とテキスト音声変換 (TTS) について見ていきます。 音声プレイグラウンドの音声ライブでは、音声認識と音声合成の両方がサポートされているため、モデルと音声ベースの会話ができます。
 
-この演習は約 **30** 分かかります。
+この演習の所要時間はおよそ **25** 分です。
 
 ## Microsoft Foundry プロジェクトを作成する
 

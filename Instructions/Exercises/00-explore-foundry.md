@@ -41,7 +41,7 @@ Microsoft Foundry プロジェクトは、Azure サブスクリプション内�
     各プロジェクトには "親" リソースがあり、そのサービスと構成を複数の子プロジェクトに適用できます。**
 
 1. プロジェクトの親リソースの名前を記録しておきます。 次に、新しいブラウザー タブを開いて [Azure portal](https://portal.azure.com){:target="_blank"} (`https://portal.azure.com`) に移動し、プロンプトが表示された場合は Azure の資格情報を使ってサインインします。
-1. Azure poral のホーム ページの上部にある検索ボックスで、Microsoft Foundry 親リソースを検索します。
+1. Azure portal のホーム ページの上部にある検索ボックスで、Microsoft Foundry 親リソースを検索します。
 
     ![Azure portal での検索結果のスクリーンショット。](./media/0-azure-portal-search.png)
 
@@ -150,7 +150,7 @@ Microsoft Foundry ポータルでは、アプリケーション用のエージ�
 
 ## 自分の Foundry リソース エンドポイントを使用する
 
-Azure 内に Microsoft Foundry リソースを持つ状態になったので、そのモデルとツールをクライアント アプリケーションから使用できます。
+Azure 内に Microsoft Foundry リソースを持つ状態になったので、そのモデルとツールをクライアント アプリケーションから使用できます。 この演習では、提供されている単純な AI チャット アプリケーションを使用します。
 
 1. Foundry ポータルの上部にあるツール バーで、自分のプロジェクトを選択してホーム ページに戻ります。
 1. プロジェクトに関する次の詳細情報を確認します。
