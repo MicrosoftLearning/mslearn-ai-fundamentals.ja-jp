@@ -3,7 +3,7 @@ lab:
   title: Microsoft Foundry で音声の使用を開始する
   description: Microsoft Foundry を使用して、Azure Speech - 音声ライブを試します。
   level: 100
-  duration: 30 minutes
+  duration: 25 minutes
 ---
 
 # Microsoft Foundry で音声の使用を開始する
@@ -12,7 +12,7 @@ lab:
 
 この演習では、AI アプリケーションを作成するための Microsoft のプラットフォームである Microsoft Foundry を使用して、生成 AI モデルと音声を使用して対話します。 リアルタイム音声ベースのエージェントを構築するために使用されるサービスである Azure Speech 音声ライブを使用した、音声テキスト変換 (STT) とテキスト音声変換 (TTS) について見ていきます。 音声プレイグラウンドの音声ライブでは、音声認識と音声合成の両方がサポートされているため、モデルと音声ベースの会話ができます。
 
-この演習は約 **30** 分かかります。
+この演習の所要時間はおよそ **25** 分です。
 
 ## Microsoft Foundry プロジェクトを作成する
 
@@ -53,7 +53,7 @@ Microsoft Foundry でプロジェクトを使用して、AI ソリューショ�
 
     ![音声プレイグラウンドに移動して [Azure Speech - 音声ライブ] をテストする方法のスクリーンショット。](./media/0126-new-foundry-ai-services-voice-live.png)
 
-1. Azure Speech - Voice Live の音声プレイグラウンド設定ウィンドウでサンプルを順にクリックし、独自のアシスタントを作成する方法として **[空白から開始]** を選択します。
+1. Azure Speech - Voice Live の音声プレイグラウンド設定ペインでサンプルを順にクリックし、独自のアシスタントを作成する方法として **[空白から開始]** を選択します。
 
 1. プレイグラウンドの設定ウィンドウで、アシスタントで使用される **[生成 AI モデル]** を変更します。 **[GPT-4.1 Mini]** を選択します。 **[変更の適用]** を選択して、更新内容を保存します。 
 
