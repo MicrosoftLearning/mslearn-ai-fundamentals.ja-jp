@@ -2,7 +2,7 @@
 lab:
   title: Microsoft Foundry の概要
   description: Microsoft Foundry プロジェクトを作成して調べます。
-  level: 100
+  level: 200
   duration: 30 minutes
 ---
 

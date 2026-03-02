@@ -2,7 +2,7 @@
 lab:
   title: Microsoft Foundry で Foundry IQ の使用を開始する
   description: Foundry IQ を使用して、エージェントをナレッジに接続します。
-  level: 100
+  level: 200
   duration: 20 minutes
 ---
 
