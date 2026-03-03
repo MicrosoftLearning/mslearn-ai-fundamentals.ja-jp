@@ -2,7 +2,7 @@
 lab:
   title: Microsoft Foundry で音声の使用を開始する
   description: Microsoft Foundry を使用して、Azure Speech - 音声ライブを試します。
-  level: 100
+  level: 200
   duration: 25 minutes
 ---
 

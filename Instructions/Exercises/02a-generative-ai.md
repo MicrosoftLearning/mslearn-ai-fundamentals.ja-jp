@@ -2,7 +2,7 @@
 lab:
   title: Microsoft Foundry で生成 AI とエージェントの使用を開始する
   description: Microsoft Foundry を使用して、生成 AI モデルをデプロイし、エージェントを作成します。
-  level: 100
+  level: 200
   duration: 35 minutes
 ---
 

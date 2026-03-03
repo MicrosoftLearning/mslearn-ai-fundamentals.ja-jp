@@ -2,7 +2,7 @@
 lab:
   title: Microsoft Foundry での情報抽出に関する概要
   description: AI モデルを使用して、ビジュアル データから情報を抽出します。
-  level: 100
+  level: 200
   duration: 25 minutes
 ---
 
