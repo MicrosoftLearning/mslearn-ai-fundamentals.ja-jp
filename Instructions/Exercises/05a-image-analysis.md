@@ -4,6 +4,9 @@ lab:
   description: 生成 AI モデルを使って、ビジュアル データを解釈および生成します。
   level: 200
   duration: 30 minutes
+  islab: true
+  primarytopics:
+    - Microsoft Foundry
 ---
 
 # Microsoft Foundry で Computer Vision の使用を開始する

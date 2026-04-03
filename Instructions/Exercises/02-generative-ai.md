@@ -1,3 +1,14 @@
+---
+lab:
+  title: Microsoft Foundry で生成 AI を探索する
+  description: '"生成" AI は、AI の機能のうち、コンテンツを作成する機能のカテゴリを表します。 人々はよく、チャット アプリケーションに組み込まれている生成 AI と対話します。 この演習では、インテリジェント アプリケーションを作成するための Microsoft のプラットフォームである Microsoft Foundry ポータルで生成 AI を試します。'
+  duration: 20 minutes
+  level: 100
+  islab: false
+  primarytopics:
+    - Microsoft Foundry
+---
+
 # Microsoft Foundry で生成 AI を探索する
 
 "生成" AI は、AI の機能のうち、コンテンツを作成する機能のカテゴリを表します。 人々はよく、チャット アプリケーションに組み込まれている生成 AI と対話します。 この演習では、インテリジェント アプリケーションを作成するための Microsoft のプラットフォームである Microsoft Foundry ポータルで生成 AI を試します。 

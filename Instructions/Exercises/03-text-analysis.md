@@ -1,3 +1,16 @@
+---
+lab:
+  title: Microsoft Foundry でテキストを分析する
+  description: この演習では、インテリジェント アプリケーションを作成するための Microsoft のプラットフォームである Foundry で Azure Language を使用してホテルのレビューを分析します。
+  duration: 20 minutes
+  level: 100
+  islab: false
+  primarytopics:
+    - Azure
+    - Microsoft Foundry
+    - Azure Language
+---
+
 # Microsoft Foundry でテキストを分析する
 
 Azure Language サービスには、エンティティ認識、キー フレーズ抽出、要約、感情分析などの機能を備えた Text Analytics が含まれています。 たとえば、架空の旅行会社 Margie's Travel が、ホテル滞在のレビューを送信するように顧客に勧めているとします。 Language サービスを使用すると、名前付きエンティティの抽出、キー フレーズの識別、テキストの要約などを実行できます。

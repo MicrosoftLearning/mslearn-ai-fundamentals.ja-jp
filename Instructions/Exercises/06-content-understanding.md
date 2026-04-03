@@ -1,3 +1,15 @@
+---
+lab:
+  title: Microsoft Foundry で Content Understanding を使用してデータを抽出する
+  description: コンテンツ解釈サービスの操作が終わったら、不要な Azure コストが発生しないように、この演習で作成したリソースを削除する必要があります。
+  duration: 25 minutes
+  level: 100
+  islab: false
+  primarytopics:
+    - Azure
+    - Microsoft Foundry
+---
+
 # Microsoft Foundry で Content Understanding を使用してデータを抽出する
 
 Azure Content Understanding を使用すると、ドキュメント、オーディオ ファイル、ビデオ、画像のマルチモーダル分析を行って情報を抽出することができます。

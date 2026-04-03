@@ -1,3 +1,14 @@
+---
+lab:
+  title: Microsoft Foundry で画像を分析する
+  description: 次に試す機能は、タグの抽出機能です。 タグの抽出は、数千個の認識可能な物体 (生物、風景、行動など) に基づきます。
+  duration: 20 minutes
+  level: 100
+  islab: false
+  primarytopics:
+    - Microsoft Foundry
+---
+
 # Microsoft Foundry で画像を分析する
 
 **Azure Vision** には、画像のコンテンツとコンテキストを理解し、画像から情報を抽出するための多数の機能が含まれています。 この演習では、インテリジェント アプリケーションを作成するための Microsoft のプラットフォームである Microsoft Foundry で Azure Vision を使用して、組み込みの評価エクスペリエンスを使って画像を分析します。 

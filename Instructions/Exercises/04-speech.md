@@ -1,3 +1,15 @@
+---
+lab:
+  title: Microsoft Foundry で音声を探索する
+  description: この演習では、インテリジェント アプリケーションを作成するための Microsoft のプラットフォームである Foundry で Azure 音声を使用して、Azure 音声のコア機能を探索します。
+  duration: 10 minutes
+  level: 100
+  islab: false
+  primarytopics:
+    - Azure
+    - Microsoft Foundry
+---
+
 # Microsoft Foundry で音声を探索する
 
 Azure 音声は、音声をテキストに、テキストを可聴音声に変換します。 音声を使用して、会議メモの文字起こしや、インタビュー録音からのテキストの生成を行うことができるアプリケーションを作成したり、音声によるコマンドやクエリに応答できる対話型の AI アシスタントをサポートしたりすることができます。
