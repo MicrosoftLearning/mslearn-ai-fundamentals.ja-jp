@@ -9,12 +9,19 @@ layout: home
 
 <hr>
 
-{% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Exercises'" %} {% for activity in labs  %} {% if activity.lab.title %}
-### [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }})
+{% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Exercises'" %}
+{% for activity in labs  %}
+{% if activity.lab.islab == true %}
+{% if activity.lab.title %}
 
+### [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }})
 
 {% if activity.lab.level %}**レベル**: {{activity.lab.level}} \| {% endif %}{% if activity.lab.duration %}**期間**: {{activity.lab.duration}}{% endif %}
 
-{% if activity.lab.description %} *{{activity.lab.description}}* {% endif %}
+{% if activity.lab.description %}
+*{{activity.lab.description}}*
+{% endif %}
 <hr>
-{% endif %} {% endfor %}
+{% endif %}
+{% endif %}
+{% endfor %}
