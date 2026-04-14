@@ -1,6 +1,6 @@
 ---
 lab:
-  title: Microsoft Foundry での情報抽出に関する概要
+  title: Microsoft Foundry で Content Understanding の使用を開始する
   description: AI モデルを使用して、ビジュアル データから情報を抽出します。
   level: 200
   duration: 25 minutes
