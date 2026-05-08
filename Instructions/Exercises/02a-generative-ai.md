@@ -295,24 +295,23 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
     > **ヒント**: 認証の問題が発生した場合は、Azure CLI `az login` コマンドを使用して VS Code ターミナルで Azure へのサインインが必要になることがあります。 詳細については、[Azure CLI のドキュメント](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively){:target="_blank"} を参照してください。
 
-<!-- TEMPORARY REMOVAL DUE TO KNOWN ISSUE
-## Publish the agent and use it in a client app
+## エージェントを公開してクライアント アプリで使用する
 
-When you're satisfied with your agentic solution, you can *publish* the agent to its own dedicated endpoint, and adapt client applications to use it from there. Publishing the agent makes it available independently from the project, making it a more suitable way to deploy the agent in production.
+エージェント ソリューションに問題がなければ、専用のエンドポイントにエージェントを "公開し"、そこから使用するようにクライアント アプリケーションを調整できます。** エージェントを公開すると、プロジェクトとは別にエージェントを使用できるようになり、運用環境でエージェントをデプロイするのにより適した方法になります。
 
-1. Keep the VS Code for the Web tab open, but switch back to the Foundry portal tab.
-1. In the agent playground, in the **Publish** drop-down list, select **Publish agent**.
+1. Web 用 VS Code のタブは開いたままにしておきますが、[Foundry ポータル] タブに戻ります。
+1. エージェントのプレイグラウンドの **[公開]** ドロップダウン リストで、**[エージェントの公開]** を選択します。
 
-    When prompted, confirm you want to publish the agent to production, and after a few seconds, view the published agent details. In particular, note the Responses API endpoint that clients apps can use to connect to your agent.
+    プロンプトが入力されると、エージェントを運用環境に公開することを確認し、数秒後に公開されたエージェントの詳細を表示します。 特に、クライアント アプリがエージェントへの接続に使用できる Responses API エンドポイントに注目してください。
 
-    ![Screenshot of the agent publishing confirmation message.](./media/published-agent.png)
+    ![エージェントの公開の確認メッセージのスクリーンショット。](./media/published-agent.png)
 
-1. Note that you can perform additional steps to publish your agent for integration with Teams and Microsoft 365 Copilot. However, in this exercise, select **Close**.
+1. Teams および Microsoft 365 Copilot との統合のためにエージェントを公開するには追加の手順を実行する必要があります。 ただし、この演習では **[閉じる]** を選択します。
 
-    > **Tip**: You can use the **View details** option in the **Publish** drop-down list to re-open the agent details.
+    > **ヒント**: **[公開]** ドロップダウン リストの **[詳細表示]** オプションを使用して、エージェントの詳細を再び開くことができます。
 
-1. Switch back to the VS Code for the Web tab, and in the Explorer pane, add a new file named `expenses-client.py`.
-1. Add the following code to the new **expenses-client.py** file.
+1. Web 用 VS Code のタブに戻り、[エクスプローラー] ペインで、`expenses-client.py` という名前の新しいファイルを追加します。
+1. 新しい **expenses-client.py** ファイルに次のコードを追加します。
 
     ```python
    from openai import OpenAI
@@ -335,26 +334,25 @@ When you're satisfied with your agentic solution, you can *publish* the agent to
    print(f"Response output:\n{response.output_text}")
     ```
 
-    This code uses the **Open AI Responses** API with Entra ID authentication. Since the agent is published in its own production endpoint, there's no need to connect to the Foundry project using the **Azure.AI.Projects** library or to specify agent details in the **responses.create** method call.
+    このコードでは、Entra ID 認証で **Open AI Responses API** を使用します。 エージェントは独自の運用エンドポイントで公開されるため、**Azure.AI.Projects** ライブラリを使用して Foundry プロジェクトに接続したり、**responses.create** メソッド呼び出しでエージェントの詳細を指定したりする必要はありません。
 
-1. Replace the **YOUR_AGENT_ENDPOINT** placeholder with the Responses API endpoint for your agent (copied from the published agent details in the Foundry portal).
-1. Save the changes to the **expenses-client.py** code file (CTRL+S).
-1. In the VS Code terminal pane, enter the following command to run the code.
+1. **YOUR_AGENT_ENDPOINT** プレースホルダーを、エージェントの Responses API エンドポイントに置き換えます (Foundry ポータルの公開済みエージェントの詳細からコピーされます)。
+1. 変更を **expenses-client.py** コード ファイルに保存します (Ctrl + S)。
+1. VS Code のターミナル ペインで次のコマンドを入力してコードを実行します。
 
     ```
    python expenses-client.py
     ```
 
-1. When prompted, enter the following prompt:
+1. メッセージが表示されたら、次のプロンプトを入力します。
 
     ```
    How do I submit an expense claim?
     ```
 
-    The code uses our published agent to get a response, and displays it.
+    このコードでは、公開されたエージェントを使用して応答を取得し、それを表示します。
 
-    ![Screenshot of the agent publishing confirmation message.](./media/vs-code-agent-client.png)
--->
+    ![エージェントの公開の確認メッセージのスクリーンショット。](./media/vs-code-agent-client.png)
 
 ## まとめ
 
@@ -369,6 +367,5 @@ Microsoft Foundry について調べ終わったら、不要な利用料金が�
 1. [Azure portal](https://portal.azure.com){:target="_blank"} (`https://portal.azure.com`) を開き、この演習で使ったプロジェクトをデプロイしたリソース グループの内容を表示します。
 1. ツール バーの **[リソース グループの削除]** を選びます。
 1. リソース グループ名を入力し、削除することを確認します。
-<!--
-> **Tip**: If you want to keep the Foundry project, but avoid being charged for the published agent, use the **&vellip;** menu next to the **Publish** drop-down list to delete the agent.
--->
+
+> **ヒント**: Foundry プロジェクトを保持するが、公開されたエージェントに対して課金されないようにする場合は、**[公開]** ドロップダウン リストの横にある **&vellip;** メニューを使用してエージェントを削除します。
