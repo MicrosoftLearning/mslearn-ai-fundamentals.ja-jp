@@ -53,7 +53,7 @@ Contoso Corp の人事部門は、従業員のサポート作業を減らし、�
 
 1. メッセージが表示されたら、次を入力します。
     - Azure AI 検索をデプロイするリソース グループ
-    - Azure AI 検索をデプロイするリージョン
+    - **[こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}にあるリージョンのいずれか
     - Azure AI 検索リソースの一意の名前
 
 1. スクリプトで Azure AI 検索がデプロイされ、この演習で使用するインデックスが作成されるまで待ちます。
