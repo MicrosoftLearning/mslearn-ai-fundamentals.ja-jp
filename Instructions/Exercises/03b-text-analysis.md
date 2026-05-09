@@ -8,11 +8,11 @@ lab:
 
 # Microsoft Foundry でテキスト分析を開始する
 
-この演習では、Microsoft の AI アプリケーション作成用プラットフォームである **Microsoft Foundry** を使って、一般的な "テキスト分析手法" を調べます。** 
+この演習では、Microsoft の AI アプリケーション作成用プラットフォームである **Microsoft Foundry** を使って、一般的な "テキスト分析手法" を調べます。**
 
 Foundry でテキストを分析するには、"2 つのアプローチ" があります。自然言語プロンプトを使って幅広いタスクを処理する**汎用 AI モデル**と、特定のタスクについての構造化された確定的な結果を返す**専用言語ツール**です。** 両方を調べると、各アプローチを使用すべきときをより明確に理解できます。
 
-この演習の最初の部分では、"新しい" Foundry ポータルのチャット プレイグラウンドで汎用 AI モデルを使います。** この演習の 2 番目の部分では、Foundry ツールでの Azure Language の機能をいくつか調べます。 
+この演習の最初の部分では、"新しい" Foundry ポータルのチャット プレイグラウンドで汎用 AI モデルを使います。** この演習の 2 番目の部分では、Foundry ツールでの Azure Language の機能をいくつか調べます。
 
 この演習は約 **20** 分かかります。
 
@@ -24,15 +24,15 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
     - **Foundry リソース**: *AI Foundry リソースに有効な名前を入力します。*
     - **[サブスクリプション]**:"*ご自身の Azure サブスクリプション*"
     - **リソース グループ**: *リソース グループを作成または選択します*
-    - **[リージョン]**: **[AI Foundry 推奨]** のリージョンのいずれかを選択します。
+    - **リージョン**: **[こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
 
 3. **［作成］** を選択します プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 新しい Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。
 
     ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
 
-    >**注意**: プロジェクトの Foundry ホーム ページにアクセスするには、クイック スタート ペインをすべて閉じてください。 
+    >**注意**: プロジェクトの Foundry ホーム ページにアクセスするには、クイック スタート ペインをすべて閉じてください。
 
-## パート 1: 汎用 AI モデルのテキスト分析機能を調べる 
+## パート 1: 汎用 AI モデルのテキスト分析機能を調べる
 
 演習のこのパートでは、"新しい" Foundry ポータルと汎用言語モデルを使って、自然言語プロンプトによりテキスト分析を実行します。** 言語モデルでは、プロンプトだけでさまざまなタスクを処理できます。
 
@@ -44,7 +44,7 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
     ![既定の設定のデプロイ オプションが強調されている gpt-4.1 モデル ページのスクリーンショット。](./media/0-gpt-4.1.png)
 
-3. **[デプロイ]** ボタンを使い、"既定の設定" を使ってモデルをデプロイします。** デプロイが完了するまで待ちます。 デプロイが完了するとチャット プレイグラウンドに自動的に移動し、そこでモデルの機能をテストできます。 
+3. **[デプロイ]** ボタンを使い、"既定の設定" を使ってモデルをデプロイします。** デプロイが完了するまで待ちます。 デプロイが完了するとチャット プレイグラウンドに自動的に移動し、そこでモデルの機能をテストできます。
 
 ### 感情を分析する
 
@@ -73,7 +73,7 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
     ---
     ```
 
-    独自のプロンプトを作成し、さらに実験してかまいません。 
+    独自のプロンプトを作成し、さらに実験してかまいません。
 
 ### 名前付きエントリの抽出
 
@@ -128,9 +128,9 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
 **Foundry Tools の Azure Language** は統計的技法を使って構造化された確定的な結果を返す専用のアナライザーを備えており、自動化されたパイプラインでの一貫性のある出力に最適です。
 
-1. "新しい" Foundry ポータルで画面上部のメニューに移動し、**[ビルド]** を選びます。** 
+1. "新しい" Foundry ポータルで画面上部のメニューに移動し、**[ビルド]** を選びます。**
 
-2. [ビルド] ページで、画面の左側にあるメニューに移動します (メニューの下部にある展開アイコンをクリックして展開することが必要な場合があります)。** 左側のメニューから、**[モデル]** を選びます。 次に、[モデル] ページの上部にある **[AI サービス]** を選びます。** 
+2. [ビルド] ページで、画面の左側にあるメニューに移動します (メニューの下部にある展開アイコンをクリックして展開することが必要な場合があります)。** 左側のメニューから、**[モデル]** を選びます。 次に、[モデル] ページの上部にある **[AI サービス]** を選びます。**
 
     ![新しい Foundry Models ページに一覧表示されている言語機能のスクリーンショット。](./media/foundry-ai-services.png)
 
@@ -154,7 +154,7 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
     ¡Hola! Me llamo Josefina y vivo en Madrid, España. Soy doctora en un hospital, ¡lo que me mantiene muy ocupada!
     ```
 
-4. 独自の入力で実験します。 
+4. 独自の入力で実験します。
 
     > **ヒント**: `https://www.bing.com/translator` にある [Bing 翻訳ツール](https://www.bing.com/translator){:target="_blank"} を使って、自分では話せない言語のテキストを生成できます。
 
@@ -180,7 +180,7 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
     Maria Garcia called from 020 7946 0958 and asked to send documents to 42 Market Road, London, UK, SW1A 1AA.
     ```
 
-4. 独自の入力で実験します。 Azure Language では、PII の広範な一覧を認識できます。 クラスの全リストは[ここ](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list)で確認できます。 そのようなエンティティの一部を次に示します。 
+4. 独自の入力で実験します。 Azure Language では、PII の広範な一覧を認識できます。 クラスの全リストは[ここ](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list)で確認できます。 そのようなエンティティの一部を次に示します。
 
     - 人名
     - 電子メール アドレス
@@ -189,9 +189,9 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
 ### サンプル コードを確認する
 
-Foundry には、Azure Language のいくつかの機能のサンプル コードが用意されています。 サンプル コードを使って、独自のクライアント アプリケーションの作成を開始できます。 
+Foundry には、Azure Language のいくつかの機能のサンプル コードが用意されています。 サンプル コードを使って、独自のクライアント アプリケーションの作成を開始できます。
 
-1. 右側の **[コード]** タブを選んで、PII 識別のサンプル コードを表示します。 
+1. 右側の **[コード]** タブを選んで、PII 識別のサンプル コードを表示します。
 
     ![プレイグラウンドで開かれている [コード] タブのスクリーンショット。](./media/text-05-code.png)
 
@@ -244,6 +244,6 @@ Microsoft Foundry の調査が完了したら、不要になったリソース�
 
 ## 詳細情報
 
-- [Foundry の進化](https://learn.microsoft.com/azure/foundry/what-is-foundry#evolution-of-foundry)を確認する 
+- [Foundry の進化](https://learn.microsoft.com/azure/foundry/what-is-foundry#evolution-of-foundry)を確認する
 - [Foundry Tools の Azure Language](https://learn.microsoft.com/azure/ai-services/language-service/overview) についての詳細を確認する
 - [個人を特定できる情報 (PII) の検出](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/overview)についての詳細を確認する

@@ -27,7 +27,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
     - **Foundry リソース**: *AI Foundry リソースに有効な名前を入力します。*
     - **[サブスクリプション]**:"*ご自身の Azure サブスクリプション*"
     - **リソース グループ**: *リソース グループを作成または選択します*
-    - **[リージョン]**: **[AI Foundry 推奨]** のリージョンのいずれかを選択します。
+    - **リージョン**: **[こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
 
 1. **［作成］** を選択します プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 新しい Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。
 
@@ -233,7 +233,19 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
 1. `What about a hotel?` や `Can I claim the cost of my dinner?` など、経費関連のプロンプトをいくつか試してみてください
 
-    お疲れさまでした。 必要なナレッジにアクセスできる作業エージェントがあります。 これで、それを使用するアプリを開発する準備ができました。
+    お疲れさまでした。 必要なナレッジにアクセスできる作業エージェントがあります。
+
+## エージェントをプレビューする
+
+これで作業エージェントが作成されたので、基本的な Web チャット アプリケーションでプレビューできます。
+
+1. Foundry ポータルのエージェント プレイグラウンドで、チャット ペインの上部にある **[プレビュー]** ドロップダウン リストから **[エージェントのプレビュー]** を選択します。
+
+    プレビュー チャット インターフェイスが新しいブラウザー タブで開きます。
+
+1. `How do I submit an expense claim?` などの新しいプロンプトを入力し、エージェントからの応答を表示します。
+
+    ![エージェントのプレビュー チャット インターフェイスのスクリーンショット。](./media/0-agent-preview.png)
 
 ## プロジェクト内のエージェントにアクセスするためのクライアント コードを表示する
 
@@ -295,68 +307,11 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
     > **ヒント**: 認証の問題が発生した場合は、Azure CLI `az login` コマンドを使用して VS Code ターミナルで Azure へのサインインが必要になることがあります。 詳細については、[Azure CLI のドキュメント](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively){:target="_blank"} を参照してください。
 
-## エージェントを公開してクライアント アプリで使用する
-
-エージェント ソリューションに問題がなければ、専用のエンドポイントにエージェントを "公開し"、そこから使用するようにクライアント アプリケーションを調整できます。** エージェントを公開すると、プロジェクトとは別にエージェントを使用できるようになり、運用環境でエージェントをデプロイするのにより適した方法になります。
-
-1. Web 用 VS Code のタブは開いたままにしておきますが、[Foundry ポータル] タブに戻ります。
-1. エージェントのプレイグラウンドの **[公開]** ドロップダウン リストで、**[エージェントの公開]** を選択します。
-
-    プロンプトが入力されると、エージェントを運用環境に公開することを確認し、数秒後に公開されたエージェントの詳細を表示します。 特に、クライアント アプリがエージェントへの接続に使用できる Responses API エンドポイントに注目してください。
-
-    ![エージェントの公開の確認メッセージのスクリーンショット。](./media/published-agent.png)
-
-1. Teams および Microsoft 365 Copilot との統合のためにエージェントを公開するには追加の手順を実行する必要があります。 ただし、この演習では **[閉じる]** を選択します。
-
-    > **ヒント**: **[公開]** ドロップダウン リストの **[詳細表示]** オプションを使用して、エージェントの詳細を再び開くことができます。
-
-1. Web 用 VS Code のタブに戻り、[エクスプローラー] ペインで、`expenses-client.py` という名前の新しいファイルを追加します。
-1. 新しい **expenses-client.py** ファイルに次のコードを追加します。
-
-    ```python
-   from openai import OpenAI
-   from azure.identity import DefaultAzureCredential, get_bearer_token_provider
-    
-   # Replace with your agent endpoint
-   AGENT_ENDPOINT = "YOUR_AGENT_ENDPOINT"
-    
-   # Create OpenAI client authenticated with Azure credentials
-   openai = OpenAI(
-        api_key=get_bearer_token_provider(DefaultAzureCredential(), "https://ai.azure.com/.default"),
-        base_url=AGENT_ENDPOINT,
-        default_query={"api-version": "2025-11-15-preview"}
-   )
-    
-   # Send a request to the published agent
-   response = openai.responses.create(
-        input=input("Prompt:\n"),
-   )
-   print(f"Response output:\n{response.output_text}")
-    ```
-
-    このコードでは、Entra ID 認証で **Open AI Responses API** を使用します。 エージェントは独自の運用エンドポイントで公開されるため、**Azure.AI.Projects** ライブラリを使用して Foundry プロジェクトに接続したり、**responses.create** メソッド呼び出しでエージェントの詳細を指定したりする必要はありません。
-
-1. **YOUR_AGENT_ENDPOINT** プレースホルダーを、エージェントの Responses API エンドポイントに置き換えます (Foundry ポータルの公開済みエージェントの詳細からコピーされます)。
-1. 変更を **expenses-client.py** コード ファイルに保存します (Ctrl + S)。
-1. VS Code のターミナル ペインで次のコマンドを入力してコードを実行します。
-
-    ```
-   python expenses-client.py
-    ```
-
-1. メッセージが表示されたら、次のプロンプトを入力します。
-
-    ```
-   How do I submit an expense claim?
-    ```
-
-    このコードでは、公開されたエージェントを使用して応答を取得し、それを表示します。
-
-    ![エージェントの公開の確認メッセージのスクリーンショット。](./media/vs-code-agent-client.png)
+    Visual Studio Code で Azure AI Projects SDK と Foundry を統合すると、開発者は効果的なエージェント ソリューションを迅速かつ効率的に構築できます。
 
 ## まとめ
 
-この演習では、Microsoft Foundry ポータルで生成 AI モデルを使用してチャットをデプロイする方法について説明しました。 次に、モデルをエージェントとして保存し、指示とツールを使用してエージェントを構成してから、エージェントをデプロイして使用するためのオプションを確認しました。
+この演習では、Microsoft Foundry ポータルで生成 AI モデルを使用してチャットをデプロイする方法について説明しました。 その後、エージェントをアプリケーションに統合するためのオプションを調べる前に、モデルをエージェントとして保存し、指示とツールを使用してエージェントを構成しました。
 
 この演習で確認したエージェントは、Microsoft Foundry を使用すると生成 AI アプリとエージェントの開発をいかに迅速かつ簡単に開始できるかを示す簡単な例です。 この基盤から、エージェントがツールを使用して情報を検索し、タスクを自動化し、相互に連携して複雑なワークフローを実行する、包括的なエージェント ソリューションを構築できます。
 
@@ -367,5 +322,6 @@ Microsoft Foundry について調べ終わったら、不要な利用料金が�
 1. [Azure portal](https://portal.azure.com){:target="_blank"} (`https://portal.azure.com`) を開き、この演習で使ったプロジェクトをデプロイしたリソース グループの内容を表示します。
 1. ツール バーの **[リソース グループの削除]** を選びます。
 1. リソース グループ名を入力し、削除することを確認します。
-
-> **ヒント**: Foundry プロジェクトを保持するが、公開されたエージェントに対して課金されないようにする場合は、**[公開]** ドロップダウン リストの横にある **&vellip;** メニューを使用してエージェントを削除します。
+<!--
+> **Tip**: If you want to keep the Foundry project, but avoid being charged for the published agent, use the **&vellip;** menu next to the **Publish** drop-down list to delete the agent.
+-->
