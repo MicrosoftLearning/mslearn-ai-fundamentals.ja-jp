@@ -260,7 +260,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
     from azure.identity import DefaultAzureCredential
     from azure.ai.projects import AIProjectClient
     
-    my_endpoint = "https://{your-foundry-resource}}.services.ai.azure.com/api/projects/{your-project}"
+    my_endpoint = "https://{your-foundry-resource}.services.ai.azure.com/api/projects/{your-project}"
     
     project_client = AIProjectClient(
         endpoint=my_endpoint,
@@ -314,6 +314,8 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 この演習では、Microsoft Foundry ポータルで生成 AI モデルを使用してチャットをデプロイする方法について説明しました。 その後、エージェントをアプリケーションに統合するためのオプションを調べる前に、モデルをエージェントとして保存し、指示とツールを使用してエージェントを構成しました。
 
 この演習で確認したエージェントは、Microsoft Foundry を使用すると生成 AI アプリとエージェントの開発をいかに迅速かつ簡単に開始できるかを示す簡単な例です。 この基盤から、エージェントがツールを使用して情報を検索し、タスクを自動化し、相互に連携して複雑なワークフローを実行する、包括的なエージェント ソリューションを構築できます。
+
+> **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton のアバター。](./media/anton-icon.png)<br/>この演習で取り上げるいくつかのトピックについて疑問がある場合、*[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* は生成 AI ベースのエージェントであり、AI の概念や Microsoft Foundry について質問することができます。 **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** でアプリを開き、**[構成]** ボタンを使用して Foundry プロジェクトとモデルの詳細を入力します。<br/><br/>"Ask Anton は、サポートされる Microsoft 製品ではなく、Microsoft Learn や AI スキル ナビゲーターのコンポーネントでもありません。AI で何が可能であるかを学ぶ際に探求できる AI エージェントの一例にすぎません。"**<br/><br/>Ask Anton をお試しいただき、"そのご感想をぜひ[こちらのフォーム](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}にてお寄せください"。****
 
 ## クリーンアップ
 

@@ -231,9 +231,13 @@ Foundry には、Azure Language のいくつかの機能のサンプル コー�
                 print(" Offset: {}".format(entity.offset))
                 print(" Length: {}".format(entity.length))
     pii_recognition_example(client)
-
-
 ```
+
+## まとめ
+
+この演習では、生成 AI モデルと Foundry の Azure Language ツールを使用してテキストを分析する方法を調べました。 多くのシナリオでは、生成 AI モデルのネイティブ言語機能によって、必要なすべての自然言語処理機能が提供されます。 より特殊なシナリオでは、Azure Language ツールにより、NLP タスク専用のサービスが提供されます。
+
+> **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton のアバター。](./media/anton-icon.png)<br/>この演習で取り上げるいくつかのトピックについて疑問がある場合、*[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* は生成 AI ベースのエージェントであり、AI の概念や Microsoft Foundry について質問することができます。 **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** でアプリを開き、**[構成]** ボタンを使用して Foundry プロジェクトとモデルの詳細を入力します。<br/><br/>"Ask Anton は、サポートされる Microsoft 製品ではなく、Microsoft Learn や AI スキル ナビゲーターのコンポーネントでもありません。AI で何が可能であるかを学ぶ際に探求できる AI エージェントの一例にすぎません。"**<br/><br/>Ask Anton をお試しいただき、"そのご感想をぜひ[こちらのフォーム](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}にてお寄せください"。****
 
 ## クリーンアップ
 

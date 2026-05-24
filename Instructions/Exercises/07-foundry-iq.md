@@ -207,6 +207,8 @@ Foundry IQ は、エージェントがナレッジ ベースとして使用で�
 
 Foundry IQ を使用すると、生成 AI ソリューションで普及している検索拡張生成 (RAG) パターンのカスタム実装よりも多くの利点があります。 ナレッジへのアクセスを 1 つのツールに一元化することで、データ ソースの選択と取得ロジックを Foundry IQ にオフロードでき、コードやデータ アクセス ロジックを複製することなく、複数のエージェント間でナレッジ ソースを再利用できます。
 
+> **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton のアバター。](./media/anton-icon.png)<br/>この演習で取り上げるいくつかのトピックについて疑問がある場合、*[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* は生成 AI ベースのエージェントであり、AI の概念や Microsoft Foundry について質問することができます。 **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** でアプリを開き、**[構成]** ボタンを使用して Foundry プロジェクトとモデルの詳細を入力します。<br/><br/>"Ask Anton は、サポートされる Microsoft 製品ではなく、Microsoft Learn や AI スキル ナビゲーターのコンポーネントでもありません。AI で何が可能であるかを学ぶ際に探求できる AI エージェントの一例にすぎません。"**<br/><br/>Ask Anton をお試しいただき、"そのご感想をぜひ[こちらのフォーム](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}にてお寄せください"。****
+
 ## クリーンアップ
 
 Microsoft Foundry について調べ終わったら、不要な利用料金が発生しないように、この演習で作成したリソースを削除する必要があります。
