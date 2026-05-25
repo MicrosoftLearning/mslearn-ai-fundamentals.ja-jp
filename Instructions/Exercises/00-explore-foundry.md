@@ -27,7 +27,7 @@ Microsoft Foundry では、AI ソリューションの開発に使われるモ�
     - **Foundry リソース**: *AI Foundry リソースに有効な名前を入力します。*
     - **[サブスクリプション]**:"*ご自身の Azure サブスクリプション*"
     - **リソース グループ**: *リソース グループを作成または選択します*
-    - **[リージョン]**: **[AI Foundry 推奨]** のリージョンのいずれかを選択します。
+    - **リージョン**: **[こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
 
 1. **［作成］** を選択します プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 新しい Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。
 
@@ -242,7 +242,7 @@ Foundry Models には、既定で、コンテンツ安全性フィルターを�
 
 この演習では、Microsoft Foundry プロジェクトのことを調べ、Microsoft Foundry ポータルについて理解しました。 その後でモデルを展開して、あるクライアント アプリケーションを自分の Foundry リソースに接続しました。
 
-> **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton のアバター。](./media/anton-icon.png)<br/>Foundry プロジェクトでモデルに接続できるもう 1 つのアプリが、AI の概念と Microsoft Foundry について質問できる生成 AI ベースのエージェント、*[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* です。 **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** でアプリを開き、**[構成]** ボタンを使用して Foundry プロジェクトとモデルの詳細を入力します。<br/><br/>*Ask Anton は、サポートされている Microsoft 製品でも、Microsoft Learn または AI スキル ナビゲーターのコンポーネントでもありません。AI で何が可能かを学習するときに調べることができる、AI エージェントの一例にすぎません。*
+> **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton のアバター。](./media/anton-icon.png)<br/>Foundry プロジェクトでモデルに接続できるもう 1 つのアプリが、AI の概念と Microsoft Foundry について質問できる生成 AI ベースのエージェント、*[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* です。 **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** でアプリを開き、**[構成]** ボタンを使用して Foundry プロジェクトとモデルの詳細を入力します。<br/><br/>*Ask Anton は、サポートされている Microsoft 製品でも、Microsoft Learn または AI スキル ナビゲーターのコンポーネントでもありません。AI で何が可能かを学習するときに調べることができる、AI エージェントの一例にすぎません。*<br/><br/>Ask Anton をお試しいただき、"そのご感想をぜひ[こちらのフォーム](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}にてお寄せください"。****
 
 ## クリーンアップ
 

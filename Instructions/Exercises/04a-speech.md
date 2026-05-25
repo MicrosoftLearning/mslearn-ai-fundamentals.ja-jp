@@ -104,6 +104,12 @@ Foundry エージェントの音声モードを有効にすると、Azure Speech
     - 入力と出力用の音声ストリーミング。
     - マイクやスピーカーなどのオーディオ デバイスの使用。
 
+## まとめ
+
+この演習では、Microsoft Foundry の Azure Speech Voice Live ツールと、それを使用して会話型エージェントを構築する方法について説明しました。 Azure Speech には、音声を文字起こししたり、テキストから音声出力を生成したりする AI アプリケーションとエージェントを構築するために使用できる複数の音声機能が含まれています。
+
+> **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton のアバター。](./media/anton-icon.png)<br/>この演習で取り上げるいくつかのトピックについて疑問がある場合、*[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* は生成 AI ベースのエージェントであり、AI の概念や Microsoft Foundry について質問することができます。 **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** でアプリを開き、**[構成]** ボタンを使用して Foundry プロジェクトとモデルの詳細を入力します。<br/><br/>"Ask Anton は、サポートされる Microsoft 製品ではなく、Microsoft Learn や AI スキル ナビゲーターのコンポーネントでもありません。AI で何が可能であるかを学ぶ際に探求できる AI エージェントの一例にすぎません。"**<br/><br/>Ask Anton をお試しいただき、"そのご感想をぜひ[こちらのフォーム](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}にてお寄せください"。****
+
 ## クリーンアップ
 
 Microsoft Foundry の調査が完了したら、不要になったリソースをすべて削除します。 これにより、不要なコストが発生することを防ぎます。

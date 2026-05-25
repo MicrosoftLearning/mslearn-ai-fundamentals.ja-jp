@@ -26,7 +26,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
     - **リソース グループ**: *リソース グループを作成または選択します*
     - **リージョン**: **[こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
 
-1. プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 新しい Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。
+1. プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 "新しい" Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。
 
     ![AI Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
 
@@ -214,6 +214,8 @@ Computer Vision のモデルを使うと、AI システムは画像ベースの�
 ## まとめ
 
 この演習では、視覚データを入力として受け入れることができるモデル、テキストの説明に基づいて静的な画像を生成できるモデル、ビデオを生成できるモデルなど、Microsoft Foundry でのビジョン対応モデルの使用について調べました。
+
+> **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton のアバター。](./media/anton-icon.png)<br/>この演習で取り上げるいくつかのトピックについて疑問がある場合、*[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* は生成 AI ベースのエージェントであり、AI の概念や Microsoft Foundry について質問することができます。 **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** でアプリを開き、**[構成]** ボタンを使用して Foundry プロジェクトとモデルの詳細を入力します。<br/><br/>"Ask Anton は、サポートされる Microsoft 製品ではなく、Microsoft Learn や AI スキル ナビゲーターのコンポーネントでもありません。AI で何が可能であるかを学ぶ際に探求できる AI エージェントの一例にすぎません。"**<br/><br/>Ask Anton をお試しいただき、"そのご感想をぜひ[こちらのフォーム](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}にてお寄せください"。****
 
 ## クリーンアップ
 
