@@ -96,7 +96,7 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
     ![ドキュメント フィールド アナライザーを使用して Contoso の請求書を分析した結果のスクリーンショット。](./media/contoso-invoice-analysis-document-fields.png)
 
-7. 抽出されたフィールドが表示されている右側のペインで、**[結果]** タブを表示すると、JSON 形式の生の結果が表示されます。 **analyzerID** フィールドを確認します。このフィールドには、使用されたアナライザーの種類が含まれています。 事前構築済みの Content Understanding アナライザーの一覧については、[こちら](https://learn.microsoft.com/azure/ai-services/content-understanding/concepts/prebuilt-analyzers)を参照してください。 
+7. 抽出されたフィールドが表示されている右側のペインで、**[結果]** タブを表示すると、JSON 形式の生の結果が表示されます。 **analyzerID** フィールドを確認します。このフィールドには、使用されたアナライザーの種類が含まれています。 事前構築済みの Content Understanding アナライザーの一覧については、[こちら](https://learn.microsoft.com/azure/ai-services/content-understanding/concepts/prebuilt-analyzers)を参照してください。
 
      ![請求書に対してドキュメント アナライザーを使用した際の JSON 結果のスクリーンショット。](./media/content-understanding-layout-json.png)
 
@@ -171,7 +171,7 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
 また、開発者が、**REST API** を使用するか (POST 要求を介してドキュメントを送信し、GET 要求で結果をポーリングする)、または **Python SDK** を使用してアプリケーションに Content Understanding を統合する方法についても学習しました。どちらを使用する場合も、Foundry プレイグラウンドの外部にあるドキュメントをプログラムで分析できます。
 
-> **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton のアバター。](./media/anton-icon.png)<br/>この演習で取り上げるいくつかのトピックについて疑問がある場合、*[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* は生成 AI ベースのエージェントであり、AI の概念や Microsoft Foundry について質問することができます。 **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** でアプリを開き、**[構成]** ボタンを使用して Foundry プロジェクトとモデルの詳細を入力します。<br/><br/>"Ask Anton は、サポートされる Microsoft 製品ではなく、Microsoft Learn や AI スキル ナビゲーターのコンポーネントでもありません。AI で何が可能であるかを学ぶ際に探求できる AI エージェントの一例にすぎません。"**
+> **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton のアバター。](./media/anton-icon.png)<br/>この演習で取り上げるいくつかのトピックについて疑問がある場合、*[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* は生成 AI ベースのエージェントであり、AI の概念や Microsoft Foundry について質問することができます。 **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** でアプリを開き、**[構成]** ボタンを使用して Foundry プロジェクトとモデルの詳細を入力します。<br/><br/>"Ask Anton は、サポートされる Microsoft 製品ではなく、Microsoft Learn や AI スキル ナビゲーターのコンポーネントでもありません。AI で何が可能であるかを学ぶ際に探求できる AI エージェントの一例にすぎません。"**<br/><br/>Ask Anton をお試しいただき、"そのご感想をぜひ[こちらのフォーム](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}にてお寄せください"。****
 
 ## クリーンアップ
 
