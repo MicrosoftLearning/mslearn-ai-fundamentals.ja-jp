@@ -294,7 +294,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
     ![Web 用 VS Code のスクリーンショット。](./media/vs-code-web.png)
 
-1. Web 用 VS Code が開き、環境が設定されたら、右側にある GitHub Copilot **Chat** ペインを閉じるとより広い領域を使用できます。また、**Instructions.md** ファイルには、サンプル コードを実行するために必要な手順が含まれていることに注意してください (これは、左側の VS Code エクスプローラー ペインの **run_agent.py** ファイルにあります)。
+1. Web 用 VS Code が開き、環境が設定されたら、右側にある GitHub Copilot の **[Chat]** ペインを閉じるとより広い領域を使用できます。**Instructions.md** ファイルには、サンプル コードを実行するために必要な手順が含まれています (これは、左側の VS Code エクスプローラー ペインの **run_agent.py** ファイルにあります)。
 1. 下部のターミナル ペインで次のコマンドを入力してコードを実行します。
 
     ```python
@@ -324,6 +324,7 @@ Microsoft Foundry について調べ終わったら、不要な利用料金が�
 1. [Azure portal](https://portal.azure.com){:target="_blank"} (`https://portal.azure.com`) を開き、この演習で使ったプロジェクトをデプロイしたリソース グループの内容を表示します。
 1. ツール バーの **[リソース グループの削除]** を選びます。
 1. リソース グループ名を入力し、削除することを確認します。
+
 <!--
 > **Tip**: If you want to keep the Foundry project, but avoid being charged for the published agent, use the **&vellip;** menu next to the **Publish** drop-down list to delete the agent.
 -->

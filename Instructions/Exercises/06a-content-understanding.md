@@ -40,13 +40,7 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 ## 新しい Foundry ポータルでドキュメントから情報を抽出する
 
 1. "新しい" Foundry ポータルで画面の上部にあるツール バーに移動し、**[ビルド]** を選択します。**
-
-    ![画面上部にある新しい Foundry のツール バーで [ビルド] が選択されている状態を示すスクリーンショット。](./media/new-foundry-build-tab-1.png)
-
-2. [ビルド] ページで、画面の左側にあるメニューに移動します (メニューの下部にある展開アイコンをクリックして展開することが必要な場合があります)。** 左側のメニューから、**[モデル]** を選びます。 次に、[モデル] ページの上部にある **[AI サービス]** を選びます。**
-
-    ![新しい Foundry の [モデル] ページに一覧表示されているコンテンツの解釈機能のスクリーンショット。](./media/new-portal-content-understanding-1.png)
-
+2. [ビルド] ページで、画面の左側にあるメニューに移動します (メニューの下部にある展開アイコンをクリックして展開することが必要な場合があります)。** 左側のメニューから **[デプロイ]** を選択します。 次に、[デプロイ] ページの上部にある **[AI サービス]** を選択します。**
 3. Foundry プレイグラウンドの設定で試すことができる **Content Understanding** 機能を確認します。
    - "Content Understanding - 読み取り": 生テキストの抽出のみ。** "ここにどんなテキストがありますか" という質問に答えます。
    - "Content Understanding - レイアウト": 構造、階層、配置を追加します。** "このコンテンツはどのように整理されていますか" という質問に答えます。
@@ -64,7 +58,7 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
 #### Content Understanding の "レイアウト" 機能を試す**
 
-1. [ビルド - モデル] ページと [AI サービス] タブで **[Content Understanding - レイアウト]** を選択します。****
+1. [AI サービス] タブで、**[Content Understanding - レイアウト]** を選択します。**
 
 2. サンプルの **[layout_checklist.jpg]** を選択し、**[分析の実行]** ボタンを使用して、そこから情報を抽出します。 分析が完了したら、結果を表示します。
 
@@ -78,7 +72,7 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
 #### Content Understanding の他のアナライザー機能を試す
 
-1. [ビルド - モデル] ページと [AI サービス] タブで **[Content Understanding]** を選択して、別の Azure Content Understanding アナライザーをテストします。****
+1. [AI サービス] タブで **[Content Understanding]** を選択して、別の Azure Content Understanding アナライザーをテストします。**
 
 2. [Content Understanding] ページで、**[ドキュメント]** モダリティを選択します。**
 
