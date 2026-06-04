@@ -32,7 +32,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
 1. **［作成］** を選択します プロジェクトが作成されるまで待ちます。 新しい Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。
 
-    ![Foundry ホーム ページのスクリーンショット](./media/foundry-portal-home.png)
+    ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/new-foundry-home-page.png)
 
 ## エージェントを作成する
 
