@@ -68,7 +68,7 @@ Contoso Corp の人事部門は、従業員のサポート作業を減らし、�
 
      新しい Foundry ポータルでプロジェクトを作成すると、次の画像のようなページが開きます。
 
-    ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/new-foundry-home-page.png)
+    ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
 
 1. **[ビルド]** ページで **[エージェント]** タブを選択し、`hr-agent` という名前の新しいエージェントを作成します。
 

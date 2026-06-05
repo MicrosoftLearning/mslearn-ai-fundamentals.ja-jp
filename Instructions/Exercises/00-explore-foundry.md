@@ -29,9 +29,9 @@ Microsoft Foundry では、AI ソリューションの開発に使われるモ�
     - **リソース グループ**: *リソース グループを作成または選択します*
     - **リージョン**: **[こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
 
-1. **［作成］** を選択します プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 新しい Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。
+1. **［作成］** を選択します プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 "新しい" Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。
 
-    ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/new-foundry-home-page.png)
+    ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
 
 ## Microsoft Foundry 用の Azure リソースを確認する
 
