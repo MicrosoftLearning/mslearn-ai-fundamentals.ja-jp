@@ -28,7 +28,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
 1. プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 "新しい" Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。
 
-    ![AI Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
+    ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
 
 ## 生成 AI モデルを使って画像を分析する
 

@@ -35,7 +35,7 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
 4. プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 "新しい" Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。**
 
-    ![AI Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
+    ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
 
 ## 新しい Foundry ポータルでドキュメントから情報を抽出する
 
