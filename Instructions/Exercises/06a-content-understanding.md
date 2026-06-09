@@ -33,9 +33,11 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
     ![[推奨リソースを設定して...] オプションが選択解除されている [プロジェクトの作成] ページのスクリーンショット。](./media/create-new-project.png)
 
-4. プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 "新しい" Foundry ポータルでプロジェクトを作成または選択すると、それが次の画像のようなページで開かれます。**
+4. プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 *新しい* Foundry ポータルでプロジェクトを作成すると、プロジェクト一覧に移動するはずです (*注*: ページをリフレッシュしないと、新しく作成したプロジェクトが表示されない場合があります)。 今作成したプロジェクトを選択すると、次の画像のようなページが開きます。
 
     ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
+    
+    >**ヒント**: ホーム ページに表示される提案や '入門' チュートリアルは閉じてください。 
 
 ## 新しい Foundry ポータルでドキュメントから情報を抽出する
 
@@ -86,7 +88,7 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
 5. 自身の請求書で完全なアナライザーを使用してみましょう。 新しいブラウザー ウィンドウを開きます。 URL `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-fundamentals/refs/heads/main/data/content-understanding/contoso-invoice-1.pdf` を入力して、**[contoso-invoice-1.pdf](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-fundamentals/refs/heads/main/data/content-understanding/contoso-invoice-1.pdf){:target="_blank"}** をダウンロードします。
 
-6. **[ファイルの参照]** リンクを使用して、先ほどダウンロードした **contoso-invoice-1.pdf** ドキュメントをアップロードします。 **[分析の実行]** を選択し、結果を確認します。 テキストがレンダリングされるだけでなく、そのレイアウトもキャプチャされ、フィールドがまとまりのあるカテゴリに整理されていることに注意してください。  
+6. Foundry ポータルの Content Understanding プレイグラウンドに戻り、**[ファイルの参照]** リンクを使用して、今ダウンロードした **contoso-invoice-1.pdf** ドキュメントをアップロードします。 **[分析の実行]** を選択し、結果を確認します。 テキストがレンダリングされるだけでなく、そのレイアウトもキャプチャされ、フィールドがまとまりのあるカテゴリに整理されていることに注意してください。  
 
     ![ドキュメント フィールド アナライザーを使用して Contoso の請求書を分析した結果のスクリーンショット。](./media/contoso-invoice-analysis-document-fields.png)
 
@@ -96,64 +98,215 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
 >**ヒント**: [フィールド] タブには、[結果] タブの生の JSON データから得られた情報が、ユーザー フレンドリな形式で表示されると考えてください。****
 
-## REST API を使用してコンテンツを抽出する方法を理解する
-
-1. 開発者は REST API を使用して、POST 操作を使用して Content Understanding アナライザーに分析対象のドキュメントを送信するアプリを構築できます。 たとえば、請求書を分析するには次のような cUrl コマンドを使用します。
-
-    ```bash
-   curl -i -X POST "{endpoint}/contentunderstanding/analyzers/{analyzerId}:analyze?api-version=2025-11-01" \
-      -H "Ocp-Apim-Subscription-Key: {key}" \
-      -H "Content-Type: application/json" \
-      -d '{
-            "inputs":[
-              {
-                "url": "https://{url_path}/invoice.png"
-              }          
-            ]
-          }'
-    ```
-
-1. cUrl コマンドで何を指定する必要があるかを考えてみましょう。
-   - *analzyerID*
-   - *endpoint*
-   - *キー*
-   - ドキュメントへの *url_path*
-
-1. コマンドを実行すると、応答が JSON 形式で返されます。 分析は非同期で実行されるため、応答には、次のように分析ジョブ固有の **id** 値が含まれており、結果をポーリングするために使用することができます。
-
-    ```json
-   {
-      "id": {resultId},
-      "status": "Running",
-      "result": {
-        "analyzerId": {analyzerId},
-        "apiVersion": "2025-11-01",
-        "createdAt": "YYYY-MM-DDTHH:MM:SSZ",
-        "warnings": [],
-        "contents": []
-      }
-    }
-    ```
-
->**ヒント**: 非同期呼び出しでの結果のポーリングは、操作が完了して最終的な結果が得られるまで、要求の状態を一定間隔で繰り返し確認することを意味します。 この場合の最終的な結果は、分析が完了することです。 結果が返されたら、別の呼び出しを行って結果を取得する必要があります。
-
-1. ID を使用して結果を取得するには、次のようにクライアントから GET 要求を送信する必要があります。
-
-    ```bash
-   curl -i -X GET "{endpoint}/contentunderstanding/analyzerResults/{resultId}?api-version=2025-11-01" \
-      -H "Ocp-Apim-Subscription-Key: {key}"
-    ```
-
-1. cUrl コマンドで何を指定する必要があるかを考えてみましょう。
-   - *resultID*
-   - *endpoint*
-   - *キー*
-
 ## Python SDK を使用してコンテンツを抽出する方法を理解する
 
-1. また、開発者は、コードを使用して分析対象のドキュメントを "ドキュメント フィールド" アナライザーに送信することもできます。** Foundry プレイグラウンドにはコード サンプルが用意されています。 **[コード]** タブを選択して、この応答を処理し、抽出されたフィールドを利用するために使用できるコードを確認します。
+開発者として、コードを使用してコンテンツから意味を抽出することもできます。 Foundry プレイグラウンドでは、Azure Content Understanding で情報抽出を始めるためのさまざまなサンプル コードが提供されています。 
 
-    ![Foundry プレイグラウンドで提供されているサンプル コードのスクリーンショット。](./media/content-understanding-code-example.png)
+![Foundry プレイグラウンドで提供されているサンプル コードのスクリーンショット。](./media/content-understanding-code-example.png)
+
+
+1. ドキュメント レイアウト分析のための Python コードについて詳しく見てみましょう。 Content Understanding プレイグラウンドで **[コード]** タブを選択し、**[モダリティ: ドキュメント]** と **[レイアウト]** アナライザーを選択します。 次のコードが提供されます。
+
+    ```python
+        import sys
+        import json
+        
+        from azure.ai.contentunderstanding import ContentUnderstandingClient
+        from azure.ai.contentunderstanding.models import AnalysisInput, AnalysisResult
+        from azure.core.credentials import AzureKeyCredential
+        from azure.core.exceptions import AzureError
+        from azure.identity import DefaultAzureCredential
+        
+        
+        def main() -> None:
+            # Insert the following configurations.
+            # 1) AZURE_CONTENT_UNDERSTANDING_ENDPOINT - the endpoint to your Content Understanding resource.
+            endpoint = "https://<your-resource>.services.ai.azure.com/"
+        
+            # 2) CONTENT_UNDERSTANDING_KEY - your Content Understanding API key (optional if using DefaultAzureCredential).
+            key = "{{CONTENT_UNDERSTANDING_KEY}}"
+        
+            # 3) FILE_URL - you can replace this with your own URL.
+            file_url = "https://contentunderstanding.ai.azure.com/assets/prebuilt/layout_checklist.jpg"
+        
+            # ANALYZER_ID - the ID of the analyzer to use.
+            analyzer_id = "prebuilt-layout"
+        
+            # API_VERSION - the API version to use.
+            api_version = "2025-11-01"
+        
+            # Set up Content Understanding client.
+            credential = AzureKeyCredential(key) if key and "{{CONTENT_UNDERSTANDING_KEY}}" not in key else DefaultAzureCredential()
+            client = ContentUnderstandingClient(endpoint=endpoint, credential=credential, api_version=api_version)
+        
+            # [START analyze]
+            print(f"Analyzing with {analyzer_id} analyzer...")
+            print(f"  File URL: {file_url}\n")
+        
+            try:
+                poller = client.begin_analyze(
+                    analyzer_id=analyzer_id,
+                    inputs=[AnalysisInput(url=file_url)],
+                )
+                result: AnalysisResult = poller.result()
+            except AzureError as err:
+                print(f"[Azure Error]: {err.message}")
+                sys.exit(1)
+            except Exception as ex:
+                print(f"[Unexpected Error]: {ex}")
+                sys.exit(1)
+            # [END analyze]
+        
+            # [START output_result]
+            print("=" * 50)
+            print("Analysis result:")
+            print("=" * 50 + "\n")
+        
+            max_display_lines = 50
+            result_str = json.dumps(result.as_dict(), indent=2)
+            ret_lines = result_str.splitlines()
+        
+            if len(ret_lines) > max_display_lines:
+                print("\n".join(ret_lines[:max_display_lines]))
+                print(f"\n {len(ret_lines) - max_display_lines} more lines to be displayed...\n")
+            else:
+                print(result_str)
+            # [END output_result]
+        
+        
+        if __name__ == "__main__":
+            main()
+    ```
+
+2. コードで何を構成する必要があるかを検討しましょう。
+   - Content Understanding リソースのエンドポイント
+   - 自分のリソース キー
+   - 分析したいファイルの URL 
+  
+3. サンプル コードで提供されている内容のうち、変更の必要があるものを検討しましょう。 
+   - アナライザー ID ([異なる事前構築済みモデル](https://learn.microsoft.com/azure/ai-services/content-understanding/concepts/prebuilt-analyzers#content-extraction-analyzers)を使用するように変更できます)
+   - API バージョン
+
+4. 構成の設定後、コードで Azure Content Understanding と通信するクライアントが作成されます。 コードによって認証方法が決まります。実際の API キーを提供した場合は、そのキーが直接使用されます。 そうでなければ、`DefaultAzureCredential()` にフォールバックし、環境 (たとえば Azure CLI のログイン) から自動的に認証情報が見つかります。 その後、エンドポイント、選択した認証情報、API バージョンを使用してクライアントが作成されます。
+     
+    ```python
+        # Set up Content Understanding client.
+        credential = AzureKeyCredential(key) if key and "{{CONTENT_UNDERSTANDING_KEY}}" not in key else DefaultAzureCredential()
+        client = ContentUnderstandingClient(endpoint=endpoint, credential=credential, api_version=api_version)
+    ```
+     
+5. 次に、コードによって内容が分析されます。 SDK は分析を長期実行の演算として開始します。 関数 `begin_analyze()` は演算の状態 (分析が成功したかどうか) をチェックするポーラーを返します。 SDK のポーラーは `poller.result()` が呼び出されると自動的に全演算を処理します。
+
+    ```python
+        # [START analyze]
+        print(f"Analyzing with {analyzer_id} analyzer...")
+        print(f"  File URL: {file_url}\n")
+        
+        try:
+            poller = client.begin_analyze(
+                analyzer_id=analyzer_id,
+                inputs=[AnalysisInput(url=file_url)],
+            )
+            result: AnalysisResult = poller.result()
+        except AzureError as err:
+            print(f"[Azure Error]: {err.message}")
+            sys.exit(1)
+        except Exception as ex:
+            print(f"[Unexpected Error]: {ex}")
+            sys.exit(1)
+        # [END analyze]
+    ```
+
+    
+6. 分析の出力は、次のコードで JSON としてフォーマットされ、表示されます。
+
+    ```python
+        # [START output_result]
+        print("=" * 50)
+        print("Analysis result:")
+        print("=" * 50 + "\n")
+    
+        max_display_lines = 50
+        result_str = json.dumps(result.as_dict(), indent=2)
+        ret_lines = result_str.splitlines()
+    
+        if len(ret_lines) > max_display_lines:
+            print("\n".join(ret_lines[:max_display_lines]))
+            print(f"\n {len(ret_lines) - max_display_lines} more lines to be displayed...\n")
+        else:
+            print(result_str)
+        # [END output_result]
+    ```
+
+    >**注**: 上記のコードの多くは、出力を読みやすく見せます。 その目的は非常にシンプルで、分析結果を出力することです。
+
+7. ステップ 1 のコード全体を実行すると、ラボで先に見たような JSON が返ってきます。 次に例を示します。 
+
+    ```json
+    {
+    "id": "",
+    "status": "Succeeded",
+    "result": {
+        "analyzerId": "prebuilt-layout",
+        "apiVersion": "2025-11-01",
+        "createdAt": "",
+        "warnings": [],
+        "contents": [
+            {
+                "path": "input1",
+                "markdown": "",
+                "kind": "document",
+                "startPageNumber": 1,
+                "endPageNumber": 1,
+                "unit": "pixel",
+                "pages": [
+                    {
+                        "pageNumber": 1,
+                        "angle": 0,
+                        "width": 2580,
+                        "height": 3433,
+                        "spans": [
+                            {
+                                "offset": 0,
+                                "length": 2269
+                            }
+                        ],
+                        "words": [
+                            {
+                                "content": "Documents",
+                                "span": {
+                                    "offset": 2,
+                                    "length": 9
+                                },
+                                "confidence": 0.996,
+                                "source": "D(1,213,217,768,201,768,296,214,310)"
+                            },
+                            {
+                                "content": "to",
+                                "span": {
+                                    "offset": 12,
+                                    "length": 2
+                                },
+                                "confidence": 0.999,
+                                "source": "D(1,802,200,906,197,906,293,803,295)"
+                            },
+                            {
+                                "content": "Store",
+                                "span": {
+                                    "offset": 15,
+                                    "length": 5
+                                },
+                                "confidence": 0.998,
+                                "source": "D(1,947,196,1218,189,1219,285,947,292)"
+                            } 
+    ...
+    ```
+
+    >**ヒント**: 自分の環境で実際にコードを実行するには、サンプル コードの冒頭で共有されたセットアップと構成の指示に従う必要があります。
+    ><details>
+    ><summary>クリックすると、その指示が表示されます。</summary>
+    >Visual Studio Code のようなコード エディターで Python ファイルを作成し、sample.py と名前を付けます。 お使いのマシンに Python 3.9 以降がインストールされていることを確認します。 ターミナルでこのファイルを含むディレクトリに移動します。 `python -m pip install azure-ai-contentunderstanding azure-identity` コマンドを使用して、ターミナルで依存関係をインストールします。 次に、コマンド `python sample.py` を使用して、ターミナルでスクリプトを実行します。
+    > </details>    
 
 ## まとめ
 
@@ -163,7 +316,7 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 - **レイアウト**: 構造、階層、配置 (テーブルを含む) をキャプチャしてさらに一歩進みます。"このコンテンツはどのように構成されているか" という質問に答えます。
 - **ドキュメント フィールド**: 機能の組み合わせを使用してフィールドを抽出し、それらをまとまりのあるカテゴリに整理し、分析情報を生成するアナライザー。"このコンテンツは何を意味し、どのように扱えばよいのでしょうか" という質問に答えます。 このような Content Understanding アナライザーでは、複雑な抽出のニーズに対応するために、追加の AI モデル (チャット入力候補モデルや埋め込みモデルなど) のデプロイが必要になる場合があります。
 
-また、開発者が、**REST API** を使用するか (POST 要求を介してドキュメントを送信し、GET 要求で結果をポーリングする)、または **Python SDK** を使用してアプリケーションに Content Understanding を統合する方法についても学習しました。どちらを使用する場合も、Foundry プレイグラウンドの外部にあるドキュメントをプログラムで分析できます。
+開発者がどのようにして **Python SDK** を使用して Content Understanding をアプリケーションに統合するのかについても学習しました。これによって、Foundry プレイグラウンドの外部にあるドキュメントをプログラムで分析できるようになります。
 
 > **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton のアバター。](./media/anton-icon.png)<br/>この演習で取り上げるいくつかのトピックについて疑問がある場合、*[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* は生成 AI ベースのエージェントであり、AI の概念や Microsoft Foundry について質問することができます。 **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** でアプリを開き、**[構成]** ボタンを使用して Foundry プロジェクトとモデルの詳細を入力します。<br/><br/>"Ask Anton は、サポートされる Microsoft 製品ではなく、Microsoft Learn や AI スキル ナビゲーターのコンポーネントでもありません。AI で何が可能であるかを学ぶ際に探求できる AI エージェントの一例にすぎません。"**<br/><br/>Ask Anton をお試しいただき、"そのご感想をぜひ[こちらのフォーム](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}にてお寄せください"。****
 
