@@ -213,7 +213,7 @@ Azure 内に Microsoft Foundry リソースを持つ状態になったので、�
 
     > **注**: このアプリでは、Foundry ツールの Azure Speech が音声の認識と合成に使用されます。
 
-## Computer Vision の詳細を確認する
+### Computer Vision の詳細を確認する
 
 1. `https://aka.ms/computer-images` から **[computers.zip](https://aka.ms/computer-images){:target="_blank"}** をダウンロードし、zip 形式のアーカイブをローカル コンピューター (の任意のフォルダー) に展開します。
 
@@ -221,7 +221,7 @@ Azure 内に Microsoft Foundry リソースを持つ状態になったので、�
 
 1. チャット インターフェイスの下部にある **画像の添付** (&128206;) ボタンを使用して画像をアップロードし、`Tell me about this.` のようなプロンプトを入力します
 
-## 情報の抽出を体験する
+### 情報の抽出を体験する
 
 1. `https://aka.ms/pcb-images` から **[pcbs.zip](https://aka.ms/pcb-images){:target="_blank"}** をダウンロードし、zip 形式のアーカイブをローカル コンピューター (の任意のフォルダー) に展開します。
 
