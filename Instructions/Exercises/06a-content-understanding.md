@@ -29,6 +29,8 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
     - **リソース グループ**: *リソース グループを作成または選択します*
     - **リージョン**: [米国西部]、[スウェーデン中部]、[オーストラリア東部]、または**[こちらの一覧](https://learn.microsoft.com/azure/ai-services/content-understanding/language-region-support)** のいずれかのリージョンを選択します {:target="_blank"}******
 
+    > **注**: Azure サブスクリプションのアクセス許可によっては、推奨されるリソースを設定するオプションをオフにする必要がある場合があります。
+
 3. [推奨リソースを設定して...] オプションの選択を解除します。次に、**[作成]** を選択します。**
 
     ![[推奨リソースを設定して...] オプションが選択解除されている [プロジェクトの作成] ページのスクリーンショット。](./media/create-new-project.png)
@@ -36,8 +38,8 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 4. プロジェクトが作成されるまで待ちます。 これには数分かかることがあります。 *新しい* Foundry ポータルでプロジェクトを作成すると、プロジェクト一覧に移動するはずです (*注*: ページをリフレッシュしないと、新しく作成したプロジェクトが表示されない場合があります)。 今作成したプロジェクトを選択すると、次の画像のようなページが開きます。
 
     ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
-    
-    >**ヒント**: ホーム ページに表示される提案や '入門' チュートリアルは閉じてください。 
+
+    >**ヒント**: ホーム ページに表示される提案や '入門' チュートリアルは閉じてください。
 
 ## 新しい Foundry ポータルでドキュメントから情報を抽出する
 
@@ -100,10 +102,9 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
 ## Python SDK を使用してコンテンツを抽出する方法を理解する
 
-開発者として、コードを使用してコンテンツから意味を抽出することもできます。 Foundry プレイグラウンドでは、Azure Content Understanding で情報抽出を始めるためのさまざまなサンプル コードが提供されています。 
+開発者として、コードを使用してコンテンツから意味を抽出することもできます。 Foundry プレイグラウンドでは、Azure Content Understanding で情報抽出を始めるためのさまざまなサンプル コードが提供されています。
 
 ![Foundry プレイグラウンドで提供されているサンプル コードのスクリーンショット。](./media/content-understanding-code-example.png)
-
 
 1. ドキュメント レイアウト分析のための Python コードについて詳しく見てみましょう。 Content Understanding プレイグラウンドで **[コード]** タブを選択し、**[モダリティ: ドキュメント]** と **[レイアウト]** アナライザーを選択します。 次のコードが提供されます。
 
@@ -181,20 +182,20 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 2. コードで何を構成する必要があるかを検討しましょう。
    - Content Understanding リソースのエンドポイント
    - 自分のリソース キー
-   - 分析したいファイルの URL 
+   - 分析したいファイルの URL
   
-3. サンプル コードで提供されている内容のうち、変更の必要があるものを検討しましょう。 
+3. サンプル コードで提供されている内容のうち、変更の必要があるものを検討しましょう。
    - アナライザー ID ([異なる事前構築済みモデル](https://learn.microsoft.com/azure/ai-services/content-understanding/concepts/prebuilt-analyzers#content-extraction-analyzers)を使用するように変更できます)
    - API バージョン
 
 4. 構成の設定後、コードで Azure Content Understanding と通信するクライアントが作成されます。 コードによって認証方法が決まります。実際の API キーを提供した場合は、そのキーが直接使用されます。 そうでなければ、`DefaultAzureCredential()` にフォールバックし、環境 (たとえば Azure CLI のログイン) から自動的に認証情報が見つかります。 その後、エンドポイント、選択した認証情報、API バージョンを使用してクライアントが作成されます。
-     
+
     ```python
         # Set up Content Understanding client.
         credential = AzureKeyCredential(key) if key and "{{CONTENT_UNDERSTANDING_KEY}}" not in key else DefaultAzureCredential()
         client = ContentUnderstandingClient(endpoint=endpoint, credential=credential, api_version=api_version)
     ```
-     
+
 5. 次に、コードによって内容が分析されます。 SDK は分析を長期実行の演算として開始します。 関数 `begin_analyze()` は演算の状態 (分析が成功したかどうか) をチェックするポーラーを返します。 SDK のポーラーは `poller.result()` が呼び出されると自動的に全演算を処理します。
 
     ```python
@@ -217,7 +218,6 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
         # [END analyze]
     ```
 
-    
 6. 分析の出力は、次のコードで JSON としてフォーマットされ、表示されます。
 
     ```python
@@ -240,65 +240,65 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
     >**注**: 上記のコードの多くは、出力を読みやすく見せます。 その目的は非常にシンプルで、分析結果を出力することです。
 
-7. ステップ 1 のコード全体を実行すると、ラボで先に見たような JSON が返ってきます。 次に例を示します。 
+7. ステップ 1 のコード全体を実行すると、ラボで先に見たような JSON が返ってきます。 次に例を示します。
 
     ```json
     {
-    "id": "",
-    "status": "Succeeded",
-    "result": {
-        "analyzerId": "prebuilt-layout",
-        "apiVersion": "2025-11-01",
-        "createdAt": "",
-        "warnings": [],
-        "contents": [
-            {
-                "path": "input1",
-                "markdown": "",
-                "kind": "document",
-                "startPageNumber": 1,
-                "endPageNumber": 1,
-                "unit": "pixel",
-                "pages": [
-                    {
-                        "pageNumber": 1,
-                        "angle": 0,
-                        "width": 2580,
-                        "height": 3433,
-                        "spans": [
-                            {
-                                "offset": 0,
-                                "length": 2269
-                            }
-                        ],
-                        "words": [
-                            {
-                                "content": "Documents",
-                                "span": {
-                                    "offset": 2,
-                                    "length": 9
-                                },
-                                "confidence": 0.996,
-                                "source": "D(1,213,217,768,201,768,296,214,310)"
-                            },
-                            {
-                                "content": "to",
-                                "span": {
-                                    "offset": 12,
-                                    "length": 2
-                                },
-                                "confidence": 0.999,
-                                "source": "D(1,802,200,906,197,906,293,803,295)"
-                            },
-                            {
-                                "content": "Store",
-                                "span": {
-                                    "offset": 15,
-                                    "length": 5
-                                },
-                                "confidence": 0.998,
-                                "source": "D(1,947,196,1218,189,1219,285,947,292)"
-                            } 
+ "id": "",
+ "status": "Succeeded",
+ "result": {
+  "analyzerId": "prebuilt-layout",
+  "apiVersion": "2025-11-01",
+  "createdAt": "",
+  "warnings": [],
+  "contents": [
+   {
+    "path": "input1",
+    "markdown": "",
+    "kind": "document",
+    "startPageNumber": 1,
+    "endPageNumber": 1,
+    "unit": "pixel",
+    "pages": [
+     {
+      "pageNumber": 1,
+      "angle": 0,
+      "width": 2580,
+      "height": 3433,
+      "spans": [
+       {
+        "offset": 0,
+        "length": 2269
+       }
+      ],
+      "words": [
+       {
+        "content": "Documents",
+        "span": {
+         "offset": 2,
+         "length": 9
+        },
+        "confidence": 0.996,
+        "source": "D(1,213,217,768,201,768,296,214,310)"
+       },
+       {
+        "content": "to",
+        "span": {
+         "offset": 12,
+         "length": 2
+        },
+        "confidence": 0.999,
+        "source": "D(1,802,200,906,197,906,293,803,295)"
+       },
+       {
+        "content": "Store",
+        "span": {
+         "offset": 15,
+         "length": 5
+        },
+        "confidence": 0.998,
+        "source": "D(1,947,196,1218,189,1219,285,947,292)"
+       } 
     ...
     ```
 
@@ -306,7 +306,7 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
     ><details>
     ><summary>クリックすると、その指示が表示されます。</summary>
     >Visual Studio Code のようなコード エディターで Python ファイルを作成し、sample.py と名前を付けます。 お使いのマシンに Python 3.9 以降がインストールされていることを確認します。 ターミナルでこのファイルを含むディレクトリに移動します。 `python -m pip install azure-ai-contentunderstanding azure-identity` コマンドを使用して、ターミナルで依存関係をインストールします。 次に、コマンド `python sample.py` を使用して、ターミナルでスクリプトを実行します。
-    > </details>    
+    > </details>
 
 ## まとめ
 
