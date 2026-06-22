@@ -11,7 +11,7 @@ lab:
 
 # Microsoft Foundry の概要
 
-この演習では、Microsoft Foundry プロジェクトを作成して調べます。
+この演習では、Microsoft Foundry プロジェクトの作成および探索、AI アプリケーションをサポートするために作成できるアセットの探索を行います。これには、音声認識などの AI 機能をサポートする生成 AI モデルやツールも含まれます。 その後、クライアント アプリケーションをプロジェクトに接続し、それらのアセットを使用して共通の AI ワークロードを実装できるようにします。
 
 この演習の所要時間は約 **30** 分です。
 
@@ -152,7 +152,11 @@ Microsoft Foundry ポータルでは、アプリケーション用のエージ�
 
     > **ヒント**: モデル デプロイの名前を覚えておいてください。 この情報は後で必要になります。
 
-1. **[チャット]** ペインで、`What is AI?` のようなメッセージを入力してモデルをテストします。
+1. **[チャット]** ペインで、`Who was Ada Lovelace?` のようなメッセージを入力してモデルをテストします。
+
+    ![プロンプトへの応答があるモデル プレイグラウンドのスクリーンショット。](./media/0-chat-response.png)
+
+1. 応答を確認してから、`Tell me more about her work with Charles Babbage.` などのフォローアップ プロンプトを入力します。
 
 ## 自分の Foundry リソース エンドポイントを使用する
 
@@ -188,8 +192,6 @@ Azure 内に Microsoft Foundry リソースを持つ状態になったので、�
 
 次のプロンプトを試してみましょう。 エージェントは、トレーニング データに基づいて回答するか、Web 検索ツールを使用して Web 上の情報を検索します。
 
-- `Who was Ada Lovelace?`
-- `Tell me more about her work with Charles Babbage.`
 - `Tell me about the ELIZA chatbot.`
 - `How does it compare to modern large language models?`
 - `Find a vintage computer store in Seattle.`

@@ -11,7 +11,7 @@ lab:
 
 # Microsoft Foundry で生成 AI とエージェントの使用を開始する
 
-この演習では、Microsoft Foundry を使用して、生成 AI モデルをデプロイし、確認します。 次に、ユーザーの質問に回答するナレッジ ツールを備えたエージェントでモデルを使用します。
+この演習では、Microsoft Foundry を使用して、生成 AI モデルを展開して探索し、経費申請に関する一般的な質問に回答します。 次に、特定の経費関連の質問に回答するナレッジ ツールを備えたエージェントでモデルを使用します。
 
 > **注**: Microsoft Foundry ポータルなど、Microsoft Foundry の多くのコンポーネントは、継続的に開発が進められています。 これは、人工知能テクノロジの急速な進歩を反映したものです。 実際のユーザー エクスペリエンスは、この演習で使用されている画像や説明と異なる場合があります。
 
@@ -62,17 +62,14 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 プレイグラウンドを使用すると、モデルとチャットし、指示 ("システム プロンプト" とも呼ばれます) やパラメーターなどの設定の変更による影響を観察して、モデルを確認することができます。**
 
 1. 左側のナビゲーション ウィンドウの下部にあるボタンを使ってそれを非表示にし、作業するスペースを増やします。
-1. **[チャット]** ペインで、`Who was Ada Lovelace?` などのプロンプトを入力し、応答を確認します。
+1. **[チャット]** ペインで、`In the context of a business, what is expense management?` などのプロンプトを入力し、応答を確認します。
 
-    ![応答が表示されている [チャット] ペインのスクリーンショット。](./media/0-chat-response.png)
+    ![応答が表示されている [チャット] ペインのスクリーンショット。](./media/chat-response.png)
 
-1. `Tell me more about her work with Charles Babbage.` などのフォローアップ プロンプトを入力し、応答を確認します。
+1. `Tell me about per-diem allowances.` などの新しいプロンプトを入力し、応答を確認します。
+1. `How are they reimbursed?` などの別のプロンプトを使用して会話を続けます。
 
     > **注**:多くの場合、生成 AI のチャット アプリケーションでは、プロンプトに会話履歴が含まれます。そのため、会話のコンテキストは後続のメッセージにも引き継がれます。 この場合、"her" は Ada Lovelace を指していると解釈されます。
-
-1. チャット ペインの右上にある **[新しいチャット]** ボタンを使用して、会話を再開します。 こうすることで、すべての会話履歴は削除されます。
-1. `Tell me about the ELIZA chatbot.` などの新しいプロンプトを入力し、応答を確認します。
-1. `How does it compare with modern LLMs?` などのプロンプトを使用して会話を続けます。
 
 ## モデルとチャットするクライアント コードを表示する
 
@@ -129,11 +126,11 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
    You are a helpful AI assistant who supports employees with expense claims. Provide concise, accurate information only on topics related to expenses. Do not provide any information about topics that are not directly related to expenses.
     ```
 
-1. 次に、`What kinds of business expense are typically reimbursed by employers?` のように、経費清算に関連する新しいユーザー プロンプトを入力します
+1. 次に、`What's a purchasing card?` のように、経費清算に関連する新しいユーザー プロンプトを入力します
 
     経費清算に関する一般的なガイダンスを提供する必要がある応答を確認します。
 
-1. `Tell me about the ELIZA chatbot` のような、経費に関係のない、以前に質問した質問をもう一度尋ねてみます。システム プロンプトが変更された時点で応答を比較します。
+1. `What's the capital of Spain?` のような、経費に関係のない質問を試し、システム プロンプトが変更された時点で応答を比較します。
 
     ここまでは、手順を "プレイグラウンド" で指定しましたが、環境の外部には保存されません。** クライアント アプリケーションでは、次のように、システム プロンプトを **instructions** パラメーターとして **responses.create** メソッドに含める必要があります。
 

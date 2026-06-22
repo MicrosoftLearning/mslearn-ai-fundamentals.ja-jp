@@ -3,7 +3,7 @@ title: Azure での AI アプリとエージェントの開発を開始する
 permalink: index.html
 layout: home
 ---
-これらの実践的な演習は、[Microsoft Learn](https://learn.microsoft.com/training/paths/get-started-ai-apps-agents/) のトレーニング コンテンツをサポートするように設計されています。
+これらのハンズオン演習は、[Microsoft AI スキル ナビゲーター](https://aiskillsnavigator.microsoft.com/explore/search/learningpath-c1207ab7fef2e855e1cebac091002b0b82d99a80c0b10d9bc1b34cdf25be7c5f)のトレーニング コンテンツを補完するように設計されています。
 
 演習を完了するには、Microsoft Azure のサブスクリプションが必要です。 [https://azure.microsoft.com](https://azure.microsoft.com) で無料試用版にサインアップできます。
 

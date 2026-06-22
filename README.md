@@ -1,6 +1,6 @@
 # Microsoft Azure AI の基礎コースの演習
 
-このリポジトリには、[Microsoft Certified:Azure AI Fundamentals](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/) 認定資格をサポートする Microsoft Official Courseware のハンズオン演習のための手順と資産が含まれています。 演習は [Microsoft Learn](https://learn.microsoft.com/training) の関連トレーニング モジュールを補完するように設計されており、これらの演習の<u>サブセット</u>は、公式の講師による指導付きトレーニング コース「[AI-901: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/en-us/training/courses/ai-901t00)」のハンズオン ラボで構成されています。
+このリポジトリには、[Microsoft Certified:Azure AI Fundamentals](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/) 認定資格をサポートする Microsoft Official Courseware のハンズオン演習のための手順と資産が含まれています。 演習は [Microsoft AI スキル ナビゲーター](https://aiskillsnavigator.microsoft.com/explore/search/learningpath-c1207ab7fef2e855e1cebac091002b0b82d99a80c0b10d9bc1b34cdf25be7c5f)の関連トレーニング モジュールを補完するように設計されており、これらの演習の<u>サブセット</u>は、公式の講師による指導付きトレーニング コース「[AI-901: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/training/courses/ai-901t00)」のハンズオン ラボで構成されています。
 
 ## 演習の設計原則
 
