@@ -158,59 +158,56 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
     ![エージェント プレイグラウンドのスクリーンショット。](./media/0-agent-playground.png)
 
-1. 右ペインで、エージェントの定義が含まれている **[YAML]** タブを表示します。 定義には、次のように、モデル、そのパラメーター設定、指定した指示が含まれていることに注意してください。
-
-    ```yml
-    metadata:
-      logo: Avatar_Default.svg
-      microsoft.voice-live.enabled: "false"
-    object: agent.version
-    id: expenses-agent:1
-    name: expenses-agent
-    version: "1"
-    description: ""
-    created_at: 1776115196
-    definition:
-      kind: prompt
-      model: gpt-4.1-mini
-      instructions: You are a helpful AI assistant who supports employees with expense claims. Provide concise, accurate information only on topics related to expenses. Do not provide any information about topics that are not directly related to expenses.
-      temperature: 1
-      top_p: 1
-      tools: []
-    status: active
-    ```
-
-1. **[チャット]** タブに戻り、プロンプト `Who are you?` を入力します
+1. **[チャット]** タブにプロンプト `Who are you?` を入力します
 
     応答には、経費精算アドバイザーとしての役割をエージェントが "認識している" ことが示されるはずです。
 
 1. 経費関連のプロンプトを入力します (例: `How much can I claim for a taxi?`)
 
-    応答は一般的な内容になるでしょう。 正確ではあるものの、従業員にとって特に役立つ内容ではありません。 エージェントに会社の経費ポリシーと手順に関する知識を与える必要があります。
+    回答は、モデルが訓練されたデータに基づいた一般的なものになる可能性が高いです。 正確ではあるものの、従業員にとって特に役立つ内容ではありません。 エージェントに会社の経費ポリシーと手順に関する知識を与える必要があります。
 
-## エージェントにナレッジ ツールを追加する
+## エージェントにツールを追加する
 
-エージェントは、タスクを実行したり情報を検索したりするために "ツール" を使用します。** 一般的な Web 検索ツールまたは単純なファイル検索ツールを使用してナレッジ ソースを提供できます。また、より包括的なエージェント ソリューションが必要な場合は、エージェントを企業内の 1 つ以上のデータ ソースに接続する *Microsoft Foundry IQ* ナレッジ ストアを作成することもできます。 この演習では、簡単なファイル検索ツールを使用します。
+エージェントは、タスクを実行したり情報を検索したりするために "ツール" を使用します。** 一般的な Web 検索ツールまたは単純なファイル検索ツールを使用してナレッジ ソースを提供できます。また、より包括的なエージェント ソリューションが必要な場合は、エージェントを企業内の 1 つ以上のデータ ソースに接続する *Microsoft Foundry IQ* ナレッジ ストアを作成することもできます。
+
+1. エージェント プレイグラウンドの左側のペインで、**[ツール]** セクションがまだ展開されていない場合は展開します。
+
+    モデルをエージェントとして保存した際、Microsoft Foundry が自動的に **Web 検索**ツールを追加している可能性があります。
+
+    > **ヒント**: そうでない場合は、**[ツール]** ドロップダウン リストにこれを追加して、上部の **[保存]** ボタンを使用して変更をエージェントに保存できます。
+
+1. [チャット] ペインで、「`Find me a credit card that's good for business expenses`」というプロンプトを入力し、応答を確認します。
+
+    エージェントは *Web 検索*ツールを使用してインターネット上の最新のクレジット カード取引を探すはずです。
+
+Web 検索ツールは、公共のインターネット上の一般的な情報を見つけるのに最適です。しかし、私たちはエージェントが企業の経費ポリシーのドキュメントから情報を入手できるようにする必要があります。
 
 1. 新しいブラウザー タブを開き、**[expenses_policy.docx](https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/expenses_policy.docx){:target="_blank"}** (`https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/expenses_policy.docx`) を表示します。 これを使用して、エージェントが経費精算に関する質問に回答できるようになるナレッジ ソースを提供します。
 1. **expenses_policy.docx** をローカル コンピューターにダウンロードします。
-1. エージェント プレイグラウンドを含むタブに戻り、左ペインで、まだ展開されていない場合は **[ツール]** セクションを展開します。
-1. **expenses_policy.docx** ファイルをアップロードし、既定のインデックス名で新しいインデックスを作成します。 インデックスが作成されたら、それをエージェントにアタッチします。
+1. エージェント プレイグラウンドを含むタブに戻り、左側のペインの **[ツール]** セクションで **expenses_policy.docx** ファイルをアップロードし、既定のインデックス名で新しいインデックスを作成します。 インデックスが作成されたら、それをエージェントにアタッチします。
 1. エージェント プレイグラウンドの上部にある **[保存]** ボタンを使用して、エージェントの定義を更新します。
-1. 右ペインで、エージェントの定義が含まれている **[YAML]** タブを表示します。 定義には、追加したファイル検索ツールが含まれていることに注意してください (**tools** セクション内)。
+1. **[チャット]** タブで、前と同じ経費関連のプロンプト (たとえば、`How much can I claim for a taxi?`) を入力して応答を表示します。
+
+    今回は、経費データ ソースの情報に基づいた応答が表示されるはずです。
+
+1. `What about a hotel?` や `Can I claim the cost of my dinner?` など、経費関連のプロンプトをいくつか試してみてください
+
+    エージェントにツールが無事に追加されたので、従業員からの経費の問い合わせをサポートするために必要な指示や機能がまとめられました。
+
+1. 右ペインで、エージェントの定義が含まれている **[YAML]** タブを表示します。 その定義に、システム プロンプトで設定した指示や、追加した Web 検索およびファイル検索のツール (**[ツール]** セクション内) が含まれていることがわかります。
 
     ```yml
     metadata:
       logo: Avatar_Default.svg
       description: ""
-      modified_at: "1776115781"
+      modified_at: "1782426769"
       microsoft.voice-live.enabled: "false"
     object: agent.version
     id: expenses-agent:2
     name: expenses-agent
     version: "2"
     description: ""
-    created_at: 1776115782
+    created_at: 1782426769
     definition:
       kind: prompt
       model: gpt-4.1-mini
@@ -218,19 +215,22 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
       temperature: 1
       top_p: 1
       tools:
+        - type: web_search
         - type: file_search
           vector_store_ids:
-            - vs_tmwFZKmfVB3rZJoeaJAcgdy9
+            - vs_erRFXnYdFNlXyK0RHJjn11uL
     status: active
+    instance_identity:
+      principal_id: 44acce74-8425-4e5c-8752-f5e96874eeb4
+      client_id: 44acce74-8425-4e5c-8752-f5e96874eeb4
+    blueprint:
+      principal_id: f5630a7b-af07-4bcd-af2e-5cae44a09a1a
+      client_id: 4b423d44-9d0c-4850-8d7c-a72a8e688d14
+    blueprint_reference:
+      type: ManagedAgentIdentityBlueprint
+      blueprint_id: expenses-agent-ff8f8
+    agent_guid: ff8f8a8a-0fa8-4d30-a715-d6e9588ed9f2
     ```
-
-1. **[チャット]** タブに戻り、前と同じ経費関連のプロンプト (たとえば、`How much can I claim for a taxi?`) を入力して応答を表示します。
-
-    今回は、経費データ ソースの情報に基づいた応答が表示されるはずです。
-
-1. `What about a hotel?` や `Can I claim the cost of my dinner?` など、経費関連のプロンプトをいくつか試してみてください
-
-    お疲れさまでした。 必要なナレッジにアクセスできる作業エージェントがあります。
 
 ## エージェントをプレビューする
 
