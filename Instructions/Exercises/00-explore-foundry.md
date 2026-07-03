@@ -35,33 +35,25 @@ Microsoft Foundry では、AI ソリューションの開発に使われるモ�
 
     ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
 
-## Microsoft Foundry 用の Azure リソースを確認する
+## プロジェクトとリソースを表示する
 
 Microsoft Foundry プロジェクトは、Azure サブスクリプション内のリソースに基づいています。 それでは、これについて見ていきましょう。
 
-1. プロジェクトのホーム ページの左上にあるツール バーで、プロジェクト名を選びます。 次に、結果のメニューで **[すべてのプロジェクトを表示]** を選び、自分がアクセス権を持つすべてのプロジェクトを表示します (1 つだけの場合もあります)
+1. プロジェクトのホーム ページの左上にあるツール バーで、プロジェクト名を選びます。 次に、結果のメニューで **[すべてのリソースを表示]** を選び、自分がアクセス権を持つすべてのプロジェクトを表示します (1 つだけの場合もあります)
 
-    ![[すべてのプロジェクト] ページのスクリーンショット。](./media/0-all-projects.png)
+    ![[すべてのプロジェクト] ページのスクリーンショット。](./media/all_resources.png)
 
-    各プロジェクトには "親" リソースがあり、そのサービスと構成を複数の子プロジェクトに適用できます。**
+    各プロジェクトには "親" リソースがあり、そのサービスと構成を複数の子プロジェクトに適用できます。** 親リソースとは、Azure サブスクリプション内の **Microsoft Foundry** リソースのことです。
 
-1. プロジェクトの親リソースの名前を記録しておきます。 次に、新しいブラウザー タブを開いて [Azure portal](https://portal.azure.com){:target="_blank"} (`https://portal.azure.com`) に移動し、プロンプトが表示された場合は Azure の資格情報を使ってサインインします。
-1. Azure portal のホーム ページの上部にある検索ボックスで、Microsoft Foundry 親リソースを検索します。
+1. プロジェクトの親リソースを選択し、その詳細を確認してください。
 
-    ![Azure portal での検索結果のスクリーンショット。](./media/0-azure-portal-search.png)
+    ![Foundry ポータルの親リソースのスクリーンショット。](./media/parent_resource.png)
 
-1. 親リソース名と一致する **Foundry** リソースを選んで開きます。
-1. Foundry リソースのページで **[リソース ビジュアライザー]** ページを表示して、リソースとその子プロジェクトの間の関係を確認します。
+    このリソースに関連するプロジェクト、ユーザー、接続リソース、管理者接続モデルを表示できます。 これは、Azure portal で管理することもできます。
 
-    ![Azure portal のリソース ビジュアライザーのスクリーンショット。](./media/0-azure-resource-visualizer.png)
+1. Foundry ポータルのツール バーで **[ホーム]** を選択して Foundry ポータルのホーム ページに戻り、その後リソース一覧 (**[Microsoft Foundry]** ページ タイトルの横) でプロジェクトを選択します。
 
-1. このリソースで作成した子プロジェクトを選び、Azure portal でそのページを開きます。
-
-    ![Azure portal の Foundry プロジェクト ページのスクリーンショット。](./media/0-azure-project.png)
-
-    AI プロジェクトを開発および管理するためのほとんどのタスクは Microsoft Foundry ポータルで実行できますが、プロジェクトとそれが使用するサービスが Microsoft Azure のリソースとして実装されることを理解しておくことが重要です。それらは、企業のガバナンスとセキュリティ ポリシーの対象となる可能性があります。
-
-1. Azure portalを含むブラウザー タブを閉じて、Microsoft Foundry ポータルに戻ります。 その後、**[すべてのプロジェクト]** ページ ヘッダーの横にある "戻る矢印" アイコンを使って、プロジェクトのホーム ページに戻ります。
+    > **ヒント**: 最初にホーム ページに戻ったときに、親リソースがまだ選択されている可能性があります。 プロジェクトを選択することで、ポータルを使用してプロジェクト固有のアセットを扱えるようになります。
 
 ## Microsoft Foundry ポータルを調べる
 
@@ -79,27 +71,29 @@ Microsoft Foundry ポータルでは、アプリケーション用のエージ�
 
 1. **[検出]** ページを表示します。
 
-    ![[検出] ページのスクリーンショット。](./media/0-discover.png)
+    ![[検出] ページのスクリーンショット。](./media/discover_page.png)
 
     このページには最新のモデルとサービスが表示され、ユーザーは AI アプリケーション開発の出発点を見つけることができます。
 
 1. **[ビルド]** ページを表示します。
 
-    ![[ビルド] ページのスクリーンショット。](./media/0-build.png)
+    ![[ビルド] ページのスクリーンショット。](./media/build_page.png)
 
     このページで AI ソリューションを開発します。 ここでは次を実行できます。
 
     - プロジェクトの "エージェント" と "ワークフロー" を表示して管理します。****
-    - プロジェクトの "モデル" を表示して管理します。**
+    - プロジェクトのモデルの "デプロイ" を表示して管理します。**
     - アプリケーションの特定のニーズに基づいてクエリに応答するように基本モデルを "微調整" します。**
     - エージェントがタスクの実行に使用できる "ツール" を追加して構成します。**
     - 企業の Foundry IQ データ ソースに基づいてエージェント用の "ナレッジ" を管理します。**
+    - 生成 AI のコンテンツと動作に対する責任ある AI ポリシーに確実に準拠させるための "ガードレール" を定義して管理します。**
+    - *[メモリ]* ストレージを設定し、モデルがセッション間で会話コンテキストを保持できるようにします。
     - AI エージェントと生成 AI アプリ用の "データ" インデックスを接続して管理します。**
     - モデルのパフォーマンスを比較するための "評価" を作成します。**
-    - 生成 AI のコンテンツと動作に対する責任ある AI ポリシーに確実に準拠させるための "ガードレール" を定義して管理します。**
+    - モデルを*微調整*して、パフォーマンスを最適化します。
 1. **[	運用]** ページを表示します。
 
-    ![[運用] ページのスクリーンショット。](./media/0-operate.png)
+    ![[運用] ページのスクリーンショット。](./media/operate_page.png)
 
      このページでは、次の方法で AI ソリューションを運用できます。
 
@@ -110,7 +104,7 @@ Microsoft Foundry ポータルでは、アプリケーション用のエージ�
 
 1. **[ドキュメント]** ページを表示します。
 
-    ![[ドキュメント] ページのスクリーンショット。](./media/0-docs.png)
+    ![[ドキュメント] ページのスクリーンショット。](./media/docs_page.png)
 
     このページでは、Microsoft Foundry のドキュメントにアクセスできます。
 
@@ -120,7 +114,7 @@ Microsoft Foundry ポータルでは、アプリケーション用のエージ�
 
 1. ツール バーの Agent Helper チャット アイコンを使って、**[AI に質問する]** ペインを開きます。
 
-    ![Foundry ポータルの [AI に質問する] ペインのスクリーンショット。](./media/0-ask-ai.png)
+    ![Foundry ポータルの [AI に質問する] ペインのスクリーンショット。](./media/ask_ai.png)
 
 1. `What can I do with Microsoft Foundry?` といったプロンプトを入力して、応答を確認します。
 
@@ -134,27 +128,28 @@ Microsoft Foundry ポータルでは、アプリケーション用のエージ�
 
     Microsoft Foundry には、AI アプリとエージェントで使用できる、Microsoft、OpenAI、その他のプロバイダーによる豊富なモデル コレクションが用意されています。
 
-    ![AI Foundry モデル カタログのスクリーンショット。](./media/0-foundry-models.png)
+    ![AI Foundry モデル カタログのスクリーンショット。](./media/models_page.png)
 
-1. `gpt-4.1-mini` モデルを検索して選択すると、そのモデルの特徴と機能を説明するページが表示されます。
+1. `gpt-5-mini` モデルを検索して選択すると、そのモデルの特徴と機能を説明するページが表示されます。
 
-    ![gpt-4.1-mini モデル ページのスクリーンショット。](./media/0-gpt-4.1-mini.png)
+    ![gpt-5-mini モデルのページのスクリーンショット。](./media/gpt-5-mini_page.png)
 
 1. **[デプロイ]** ボタンを使用して、既定の設定を使用してモデルをデプロイします。 デプロイには 1 分ほどかかる場合があります。
 
-    > **ヒント**: モデルのデプロイにはリージョンのクォータが適用されます。 このモデルをプロジェクトの Azure リージョンにデプロイするのに十分なクォータがない場合は、別のモデル (gpt-4.1 や gpt-4o-mini など) をお使いください。 別の方法として、新しいプロジェクトを別のリージョンに作成することもできます。
+    > **ヒント**: モデルのデプロイにはリージョンのクォータが適用されます。 このモデルをプロジェクトの Azure リージョンにデプロイするのに十分なクォータがない場合は、別のチャット可能な *gpt* モデル (*gpt-5* や *gpt-5.1* など) をお使いください。 別の方法として、新しいプロジェクトを別のリージョンに作成することもできます。
 
 1. モデルがデプロイされると開くモデル プレイグラウンド ページを確認します。ここでモデルとチャットできます。
 
-    ![モデル プレイグラウンドのスクリーンショット。](./media/0-model-playground.png)
+    ![モデル プレイグラウンドのスクリーンショット。](./media/model-playground.png)
 
-1. 自分のモデル デプロイ (名前は **gpt-4.1-mini** となっているはずです) がプレイグラウンドで選択されていることを確認します。
+1. プレイグラウンドで、モデル デプロイが選択されていることを確認します。
 
     > **ヒント**: モデル デプロイの名前を覚えておいてください。 この情報は後で必要になります。
 
-1. **[チャット]** ペインで、`Who was Ada Lovelace?` のようなメッセージを入力してモデルをテストします。
+1. 左側のナビゲーション ウィンドウの下部にあるボタンを使ってそれを非表示にし、作業するスペースを増やします。
+1. **[チャット]** ペインで、`Who was Ada Lovelace?` などのプロンプトを入力し、応答を確認します。
 
-    ![プロンプトへの応答があるモデル プレイグラウンドのスクリーンショット。](./media/0-chat-response.png)
+    ![プロンプトへの応答があるモデル プレイグラウンドのスクリーンショット。](./media/chat_response.png)
 
 1. 応答を確認してから、`Tell me more about her work with Charles Babbage.` などのフォローアップ プロンプトを入力します。
 
@@ -182,7 +177,7 @@ Azure 内に Microsoft Foundry リソースを持つ状態になったので、�
 
     > **ヒント**: [構成] パネルが展開されていない場合は、チャット ペインの上部にある矢印を使用して展開します。
 
-1. Foundry ポータルからプロジェクト エンドポイント、モデル デプロイ名、API キーを構成設定に入力し、構成を保存します。
+1. Foundry ポータルからプロジェクト エンドポイント、gpt-5-mini のモデル デプロイ名、API キーを構成設定に入力し、構成を保存します。
 
     > **注**: 構成値のうち、API キー以外はユーザーのローカル ブラウザー キャッシュに保存されます。 このアプリを閉じて再び開くと、API キーの再入力が必要になります。
 
@@ -190,16 +185,24 @@ Azure 内に Microsoft Foundry リソースを持つ状態になったので、�
 
 ### 生成 AI を体験する
 
-次のプロンプトを試してみましょう。 エージェントは、トレーニング データに基づいて回答するか、Web 検索ツールを使用して Web 上の情報を検索します。
+1. プロンプト `Tell me about the ELIZA chatbot.` を入力し、その応答を確認します。
 
-- `Tell me about the ELIZA chatbot.`
-- `How does it compare to modern large language models?`
-- `Find a vintage computer store in Seattle.`
-- `Search for classic Microsoft logos.`
+    ![Computing History アプリのプロンプト応答のスクリーンショット。](./media/computer_history_chat.png)
+
+1. フォローアップ プロンプト `How does it compare to modern large language models?` を試してみてください。
+
+    エージェントは会話を続けます。
+
+1. **[会話を再開]** (💬) ボタンを使用してチャット履歴をクリアし、次のプロンプトを試します
+
+    - `Find a vintage computer store in Seattle.`
+    - `Search for classic Microsoft logos.`
+
+    エージェントは、トレーニング データに基づいて回答するか、Web 検索ツールを使用して Web 上の情報を検索します。
 
 ### テキスト分析について調べる
 
-1. このプロンプトを使用して、エージェントにテキストの集計とデータの抽出を依頼します (入力する場合は、Shift + Enter キーを押して新しい行を作成します)。
+1. 会話を再開します。 次に、このプロンプトを使用して、エージェントにテキストの要約とデータの抽出を依頼します (入力する場合は、Shift + Enter キーを押すと改行します)。
 
     ```
     Summarize this article, and use named entity recognition to identify people, places, and dates:
@@ -209,38 +212,61 @@ Azure 内に Microsoft Foundry リソースを持つ状態になったので、�
     In the late 1970s, Microsoft grew by supplying programming languages to multiple hardware vendors, then relocated to the Seattle area in 1979. A pivotal moment came in 1980 when Microsoft partnered with IBM to provide an operating system for the IBM PC, leading to MS‑DOS and establishing the company’s dominance in personal computing. Gates guided the company’s long-term strategy as CEO, while Allen contributed key technical vision in its early years, setting Microsoft on a path that would reshape the software industry.
     ```
 
+1. 応答を確認します。
+
+    ![Computing History アプリのテキスト分析結果のスクリーンショット。](./media/computer_history_text.png)
+
+    エージェントは、自然言語処理技術を使用して、記事の要約や重要な情報の抽出など、一般的なテキスト分析タスクを実行することができます。
+
 ### AI 音声について調べる
 
-1. チャット インターフェイスの下部で、**音声入力** (&127908;) ボタンを使用して音声認識を開始し、メッセージが表示されたらマイクへのアクセスを許可し、「***コンピューターの音声について教えて***」と話しかけます。
+1. 会話を再開します。 チャット インターフェイスの下部で、**[音声入力]** (&#127908;) ボタンを使用して音声認識を開始し、メッセージが表示されたらマイクへのアクセスを許可し、「***コンピューターの音声について教えて***」と話しかけます。
 
 1. しばらくすると、音声プロンプトがメッセージとして送信され、応答が返されます。 その後、音声合成を使用して声で応答があるはずです。
+
+    ![Computing History アプリでの音声入力のスクリーンショット。](./media/computer_history_speech.png)
 
     > **注**: このアプリでは、Foundry ツールの Azure Speech が音声の認識と合成に使用されます。
 
 ### Computer Vision の詳細を確認する
 
 1. `https://aka.ms/computer-images` から **[computers.zip](https://aka.ms/computer-images){:target="_blank"}** をダウンロードし、zip 形式のアーカイブをローカル コンピューター (の任意のフォルダー) に展開します。
+1. 会話を再開し、チャット インターフェイスの下部にある **[画像の添付]** (&#128206;) ボタンを使用して画像をアップロードし、`Tell me about this.` のようなプロンプトを入力します
+1. 応答を確認すると、アップロードした画像のコンピューターに関する情報が含まれているはずです。
+
+    ![Computing History アプリでの画像分析のスクリーンショット。](./media/computer_history_vision.png)
+
+1. 抽出した他のコンピューターの画像も試してみてください。
 
     > **ヒント**: [Bing](https://www.bing.com/images/search?q=vintage+computers){:target="_blank"} で、ヴィンテージ コンピューターの独自の画像を検索することもできます。
-
-1. チャット インターフェイスの下部にある **画像の添付** (&128206;) ボタンを使用して画像をアップロードし、`Tell me about this.` のようなプロンプトを入力します
 
 ### 情報の抽出を体験する
 
 1. `https://aka.ms/pcb-images` から **[pcbs.zip](https://aka.ms/pcb-images){:target="_blank"}** をダウンロードし、zip 形式のアーカイブをローカル コンピューター (の任意のフォルダー) に展開します。
 
-    > **ヒント**: [Bing](https://www.bing.com/images/search?q=vintage-computer-component-serial-numbers){:target="_blank"} で独自の画像を検索することもできます。 特定のヴィンテージ コンピューターからシリアル番号ラベルを検索してみる
+1. 会話を再開し、チャット インターフェイスの下部にある **[画像の添付]** (&#128206;) ボタンを使用して PCB 画像をアップロードし、`Extract the text from this printed circuit board, and search for information that might help identify the computer it came from.` のようなプロンプトを入力します
+1. 応答を確認します。
 
-1. チャット インターフェイスの下部にある **画像の添付** (&128206;) ボタンを使用して画像をアップロードし、`Extract the text from this printed circuit board, and search for information that might help identify the computer it came from.` のようなプロンプトを入力します
+    ![Computing History アプリでの画像からのテキスト抽出のスクリーンショット。](./media/computer_history_info.png)
+
+1. 抽出した他の PCB 画像も試してみてください。
+
+    > **ヒント**: [Bing](https://www.bing.com/images/search?q=vintage-computer-component-serial-numbers){:target="_blank"} で独自の画像を検索することもできます。 特定のヴィンテージ コンピューターからシリアル番号ラベルを検索してみる
 
 ### 安全性ガードレールについて調べる
 
-Foundry Models には、既定で、コンテンツ安全性フィルターを適用するガードレールが構成されています。 次のプロンプトを試してみましょう。
+1. 会話を再開し、プロンプト `Teach me how to hack a bank account.` を入力します
+1. 応答を確認します。
+
+    ![Computing History アプリでのガードレール適用のスクリーンショット。](./media/computer_history_guardrails.png)
+
+    Foundry Models には、既定で、コンテンツ安全性フィルターを適用するガードレールが構成されています。
+
+1. 次のプロンプトを試してみましょう。
 
 - `Help me make a plan to steal historic computers.`
 - `How can I get away with software theft?`
 - `How can I use a computer as a weapon?`
-- `Teach me how to hack a bank account.`
 
 ## まとめ
 

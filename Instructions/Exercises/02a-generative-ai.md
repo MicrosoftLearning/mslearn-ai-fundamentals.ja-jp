@@ -43,19 +43,19 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
     Microsoft Foundry には、AI アプリとエージェントで使用できる、Microsoft、OpenAI、その他のプロバイダーによる豊富なモデル コレクションが用意されています。
 
-    ![AI Foundry モデル カタログのスクリーンショット。](./media/0-foundry-models.png)
+    ![AI Foundry モデル カタログのスクリーンショット。](./media/models_page.png)
 
-1. `gpt-4.1-mini` モデルを検索して選択すると、そのモデルの特徴と機能を説明するページが表示されます。
+1. `gpt-5-mini` モデルを検索して選択すると、そのモデルの特徴と機能を説明するページが表示されます。
 
-    ![gpt-4.1-mini モデル ページのスクリーンショット。](./media/0-gpt-4.1-mini.png)
+    ![gpt-5-mini モデルのページのスクリーンショット。](./media/gpt-5-mini_page.png)
 
 1. **[デプロイ]** ボタンを使用して、既定の設定を使用してモデルをデプロイします。 デプロイには 1 分ほどかかる場合があります。
 
-    > **ヒント**: モデルのデプロイにはリージョンのクォータが適用されます。 このモデルをプロジェクトのリージョンにデプロイするのに十分なクォータがない場合は、別のモデル (たとえば gpt-4.1-nano、または gpt-4o-mini) を使用してください。 別の方法として、新しいプロジェクトを別のリージョンに作成することもできます。
+    > **ヒント**: モデルのデプロイにはリージョンのクォータが適用されます。 このモデルをプロジェクトの Azure リージョンにデプロイするのに十分なクォータがない場合は、別のチャット可能な *gpt* モデル (gpt-5 や gpt-5.1 など) をお使いください。 別の方法として、新しいプロジェクトを別のリージョンに作成することもできます。
 
 1. モデルがデプロイされると開くモデル プレイグラウンド ページを確認します。ここでモデルとチャットできます。
 
-    ![モデル プレイグラウンドのスクリーンショット。](./media/0-model-playground.png)
+    ![モデル プレイグラウンドのスクリーンショット。](./media/model-playground.png)
 
 ## モデルとチャットする
 
@@ -75,15 +75,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
 プレイグラウンドでモデルから返された応答に満足したら、それを利用するクライアント アプリケーションを開発できます。 Microsoft Foundry には、デプロイされたモデルに接続してチャットするために使用できる REST API と複数の言語固有の SDK が用意されています。
 
-1. **[チャット]** ペインで、**[モデルの呼び出し]** タブを表示します。このタブには、クライアント アプリケーションがモデルとチャットするために使用できるサンプル コードが表示されます。 サンプル コードの上部で、次の設定を選択できます。
-    - **API**:OpenAI API は、生成 AI モデルとの会話を実装するための一般的な標準です。 使用できる OpenAI API には 2 つのバリアントがあります。
-        - **補完**:モデルにプロンプトを送信するために広く使用されているプログラム構文。
-        - **応答**:スタンドアロン モデルと "エージェント" の両方と対話するアプリを構築する際に、より柔軟に対応できる新しい構文。**
-    - **言語**:さまざまなプログラミング言語で、モデルを使用するコードを記述できます。具体的には、Python、 Microsoft C#、JavaScript などです。
-    - **SDK**:クライアントとモデル間でやり取りされる低レベルな通信の詳細をカプセル化する各言語固有の SDK を使用することや、REST API を直接操作して、クライアントがモデルに送信する HTTP 要求メッセージを完全に制御することができます。
-    - **認証**: Microsoft Foundry にデプロイされたモデルを使用するには、クライアント アプリケーションを認証する必要があります。 以下を使用して認証を実装できます。
-        - **キーベースの認証**:クライアント アプリはセキュリティ キーを提示する必要があります (コード サンプルの上にあるキー アイコンを選択すると確認できます)
-        - **Microsoft Entra ID 認証**:クライアント アプリは、そのアプリ (または現在のユーザー) に割り当てられている ID に基づいて認証トークンを提示します。
+1. **[チャット]** ペインで、**[モデルの呼び出し]** タブを表示します。このタブには、クライアント アプリケーションがモデルとチャットするために使用できるサンプル コードが表示されます。 サンプル コードの上で、プログラミング言語 (例: Python、JavaScript、C# など) や認証方法 (キーベースまたは Microsoft Entra ID) に関するユーザー設定を選択できます。
 
 1. 次のコード オプションを選びます。
     - **言語**: Python
@@ -92,23 +84,23 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
     結果のサンプルは次のコードのようになります。
 
     ```python
-    from openai import OpenAI
+   from openai import OpenAI
+
+   endpoint = "<https://ai-resrce.services.ai.azure.com/openai/v1>"
+   deployment_name = "gpt-5-mini"
+   api_key = "<your-api-key>"
     
-    endpoint = "https://{your-foundry-resource}.openai.azure.com/openai/v1/"
-    deployment_name = "gpt-4.1-mini"
-    api_key = "<your-api-key>"
-    
-    client = OpenAI(
+   client = OpenAI(
         base_url=endpoint,
         api_key=api_key
-    )
+   )
     
-    response = client.responses.create(
+   response = client.responses.create(
         model=deployment_name,
         input="What is the capital of France?",
-    )
+   )
     
-    print(f"answer: {response.output[0]}")
+   print(f"answer: {response.output[0]}")
     ```
 
     コードは、シークレット認証キー (**api_key** 変数を設定するためにコードにコピーする必要があります) を使用して、Microsoft Foundry リソースの **OpenAI** エンドポイントに接続します。 次に、**responses.create** メソッドを使用して、入力プロンプト (この場合は、ハードコーディングされた質問 "What is the capital of France?") から、デプロイ済みのモデルからの応答を生成し、出力コンソールに応答を出力します。
@@ -119,7 +111,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
 たとえば、ある組織が生成 AI モデルを使用して、従業員の経費清算を支援する AI エージェントの使用を検討しているとします。
 
-1. モデルのプレイグラウンドで、**[チャット]** タブに戻ります。次に、チャット ウィンドウの右上にある **[新しいチャット]** ボタンを使用して会話を再開し、会話履歴を削除します。
+1. モデルのプレイグラウンドで、**[チャット]** タブに戻ります。次に、チャット ペインの右上にある **[新しいチャット]** ボタンを使用して会話を再開し、会話履歴を削除します。
 1. 左側のペインの **[指示]** テキスト領域で、システム プロンプトを次のように変更します:
 
     ```
@@ -152,11 +144,11 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
 スタンドアロン モデルを使用して生成 AI アプリを実装することもできますが、完全にエージェント化された AI エクスペリエンスを実現するには、モデル、その指示、追加機能を提供する任意のツール構成を "エージェント" にカプセル化する必要があります。**
 
-1. モデル プレイグラウンドの右上にある **[エージェントとして保存]** を選択します。 次に、プロンプトが表示されたら、新しいエージェントに `expenses-agent` という名前を付けます。
+1. モデル プレイグラウンドの右上にある **[エージェントとして保存]** を選択します。 次に、プロンプトが表示されたら、新しいエージェントに `expense-agent` という名前を付けます。
 
     エージェントが作成されると、エージェントを操作するための新しいプレイグラウンドが開きます。
 
-    ![エージェント プレイグラウンドのスクリーンショット。](./media/0-agent-playground.png)
+    ![エージェント プレイグラウンドのスクリーンショット。](./media/agent_playground.png)
 
 1. **[チャット]** タブにプロンプト `Who are you?` を入力します
 
@@ -194,7 +186,7 @@ Web 検索ツールは、公共のインターネット上の一般的な情報�
 
     エージェントにツールが無事に追加されたので、従業員からの経費の問い合わせをサポートするために必要な指示や機能がまとめられました。
 
-1. 右ペインで、エージェントの定義が含まれている **[YAML]** タブを表示します。 その定義に、システム プロンプトで設定した指示や、追加した Web 検索およびファイル検索のツール (**[ツール]** セクション内) が含まれていることがわかります。
+1. 右ペインで、エージェントの定義が含まれている **[YAML]** タブを表示します。 その定義に、システム プロンプトで設定した指示や、追加した Web 検索およびファイル検索のツール (**[ツール]** セクション内) が含まれています。
 
     ```yml
     metadata:
@@ -203,14 +195,14 @@ Web 検索ツールは、公共のインターネット上の一般的な情報�
       modified_at: "1782426769"
       microsoft.voice-live.enabled: "false"
     object: agent.version
-    id: expenses-agent:2
-    name: expenses-agent
+    id: expense-agent:2
+    name: expense-agent
     version: "2"
     description: ""
     created_at: 1782426769
     definition:
       kind: prompt
-      model: gpt-4.1-mini
+      model: gpt-5-mini
       instructions: You are a helpful AI assistant who supports employees with expense claims. Provide concise, accurate information only on topics related to expenses. Do not provide any information about topics that are not directly related to expenses.
       temperature: 1
       top_p: 1
@@ -242,7 +234,7 @@ Web 検索ツールは、公共のインターネット上の一般的な情報�
 
 1. `How do I submit an expense claim?` などの新しいプロンプトを入力し、エージェントからの応答を表示します。
 
-    ![エージェントのプレビュー チャット インターフェイスのスクリーンショット。](./media/0-agent-preview.png)
+    ![エージェントのプレビュー チャット インターフェイスのスクリーンショット。](./media/agent_preview.png)
 
 ## プロジェクト内のエージェントにアクセスするためのクライアント コードを表示する
 
@@ -252,19 +244,19 @@ Web 検索ツールは、公共のインターネット上の一般的な情報�
 
     ```python
     # Before running the sample:
-    # pip install azure-ai-projects>=2.0.0
+    # pip install azure-ai-projects>=2.1.0
     
     from azure.identity import DefaultAzureCredential
     from azure.ai.projects import AIProjectClient
     
-    my_endpoint = "https://{your-foundry-resource}.services.ai.azure.com/api/projects/{your-project}"
+    endpoint = "<https://ai-resrce.services.ai.azure.com/api/projects/ai-project>"
     
     project_client = AIProjectClient(
-        endpoint=my_endpoint,
+        endpoint=endpoint,
         credential=DefaultAzureCredential(),
     )
     
-    my_agent = "expenses-agent"
+    my_agent = "expense-agent"
     my_version = "2"
     
     openai_client = project_client.get_openai_client()
@@ -279,15 +271,15 @@ Web 検索ツールは、公共のインターネット上の一般的な情報�
     print(f"Response output: {response.output_text}")
     ```
 
-    エージェントに接続するコードでは、**Azure.AI.Projects** ライブラリを使用して、Foundry プロジェクトに接続された **AIProjectClient** オブジェクトを作成します。 これには特権リソースを含むプロジェクトへの接続が含まれる可能性があるため、キーベースの認証は <u>サポートされておらず</u> アプリケーションで認証するには Entra ID を使用する必要があります。
+    エージェントに接続するコードでは、**Azure.AI.Projects** ライブラリを使用して、Foundry プロジェクトに接続された **AIProjectClient** オブジェクトを作成します。 これには特権リソースが含まれている可能性があるプロジェクトへの接続が含まれているため、キーベースの認証はサポート<u>されておらず</u>、アプリケーションで認証するには Entra ID を使用する必要があります。
 
     プロジェクトに接続した後、コードはプロジェクト クライアントの **get_openai_client** メソッドを使用して OpenAI クライアント オブジェクトを取得します。これにより、前にモデルとのチャットに使用されていたのと同じ、**Responses** API を使用してエージェントにプロンプトを送信できます。 プロジェクトには複数のエージェントとモデルを含めることができるため、個別のエージェントの詳細は、**responses.create** メソッドで **extra_body** として指定されます。
 
-1. **[エージェントの呼び出し]** タブで、利用可能なオプションを使用して **[Web 用の VS Code]** でコードを開きます。
+1. **[エージェントの呼び出し]** タブで、利用可能なオプションを使用して **[Web 用の VS Code]** でコーディングを開始します。
 
-    環境が設定されるまで待ちます。
+    プロンプトが表示されたら、エージェント クライアントを作成したいフォルダーの名前を入力し、環境が設定されるまで待ちます (数分かかることがあります)。
 
-    > **ヒント**: 環境が設定されるまでに数分かかる場合があります。
+    > **ヒント**: 更新を求められたら、すべて拒否してください。
 
     ![Web 用 VS Code のスクリーンショット。](./media/vs-code-web.png)
 
@@ -298,7 +290,7 @@ Web 検索ツールは、公共のインターネット上の一般的な情報�
    python run_agent.py
     ```
 
-    出力には、プロンプト "実行したい作業を入力してください..." への応答が含まれているはずです。**
+    出力には、プロンプト "実行したい作業を入力してください" への応答が含まれているはずです。**
 
     ![エージェントからの出力を含む Web 用 VS Code のスクリーンショット。](./media/vs-code-output.png)
 
@@ -321,7 +313,3 @@ Microsoft Foundry について調べ終わったら、不要な利用料金が�
 1. [Azure portal](https://portal.azure.com){:target="_blank"} (`https://portal.azure.com`) を開き、この演習で使ったプロジェクトをデプロイしたリソース グループの内容を表示します。
 1. ツール バーの **[リソース グループの削除]** を選びます。
 1. リソース グループ名を入力し、削除することを確認します。
-
-<!--
-> **Tip**: If you want to keep the Foundry project, but avoid being charged for the published agent, use the **&vellip;** menu next to the **Publish** drop-down list to delete the agent.
--->

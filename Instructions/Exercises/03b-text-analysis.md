@@ -40,11 +40,11 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
 1. これで、モデルを探索する準備ができました。 **[検出]** ページで **[モデル]** タブを選択して Microsoft Foundry モデル カタログを表示します。
 
-    ![AI Foundry モデル カタログのスクリーンショット。](./media/0-foundry-model-catalog.png)
+    ![AI Foundry モデル カタログのスクリーンショット。](./media/models_page.png)
 
-2. `gpt-4.1` モデルを検索して選択すると、そのモデルの特徴と機能を説明するページが表示されます。
+2. `gpt-5-mini` モデルを検索して選択すると、そのモデルの特徴と機能を説明するページが表示されます。
 
-    ![既定の設定のデプロイ オプションが強調されている gpt-4.1 モデル ページのスクリーンショット。](./media/0-gpt-4.1.png)
+    ![既定の設定のデプロイ オプションが強調されている gpt-5-mini モデル ページのスクリーンショット。](./media/gpt-5-mini_page.png)
 
 3. **[デプロイ]** ボタンを使い、"既定の設定" を使ってモデルをデプロイします。** デプロイが完了するまで待ちます。 デプロイが完了するとチャット プレイグラウンドに自動的に移動し、そこでモデルの機能をテストできます。
 
@@ -52,100 +52,55 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
 **感情分析**は、一般的な "自然言語処理" (NLP) タスクです。** これは、テキストが肯定的、中立的、または否定的な感情を伝えるかどうかを判断するために使用されます。レビュー、ソーシャル メディアの投稿、その他の主観的なドキュメントを分類するのに役立ちます。
 
-1. チャット プレイグラウンドで、次のプロンプトを入力します。
+1. [チャット プレイグラウンド] ページで左側のナビゲーション ウィンドウの下部にあるボタンを使ってそれを非表示にし、作業するスペースを増やします。
+1. 左側のペインで、既定の **[指示]** を次に設定します。
 
     ```
-    Analyze the following review, and determine whether the sentiment is positive, neutral, or negative:
-    ---
-    I spent several nights at the Riverside Heights Hotel during a fall trip, and the experience was outstanding from start to finish. The welcome at arrival was warm and attentive, and the staff consistently went out of their way to be helpful. The overall atmosphere made my stay smooth and relaxing, and the location was extremely convenient for getting around the city. I left with a very positive impression and would confidently recommend this hotel to others looking for a pleasant and stress‑free stay.
-    ---
+   You are an AI assistant that analyzes and summarizes text.
     ```
 
-1. 応答を確認します。これには、テキストのセンチメントの分析が含まれているはずです。
-
-    ![チャット プレイグラウンドの感情分析結果のスクリーンショット。](./media/text-01.png)
-
-1. 次のプロンプトを入力して、別のレビューを分析します。
+1. **[チャット]** ペインで、次のプロンプトを入力します (Ctrl + Enter キーを押すと改行します)。
 
     ```
+   Summarize this review as a single, short paragraph:
 
-    What about this one?
-    ---
-    I was disappointed with my visit to the Harbor View Inn earlier this year. The front desk process took much longer than expected, and staff responses to questions felt rushed and unhelpful. The room had ongoing maintenance issues, inconsistent internet access, and noticeable noise from the hallway throughout the night. Overall, the experience fell short of expectations, and I would not choose to stay there again.        
-    ---
-    ```
-
-    独自のプロンプトを作成し、さらに実験してかまいません。
-
-### 名前付きエントリの抽出
-
-**名前付きエンティティ**は、テキストで言及されている人、場所、日付、その他の重要な項目です。
-
-1. チャット ペインの上部にある **[新しいチャット]** (&#128172;) ボタンを使って、会話を再開します。 こうすることで、すべての会話履歴は削除されます。
-
-2. 次のプロンプトを入力して、結果を確認します。
-
-    ```
-    List the named entities mentioned in this text:
-    ---
-    Welcome to the Global Innovation Workshop!
-    We’re excited to host sessions in London, Toronto, Chicago, and Austin this spring.
-    Visit our event page for specific dates, venues, and city details.
-    ---
-    ```
-
-    モデルによって、テキストで言及されている特定の場所が識別されているはずです。
-
-    ![チャット プレイグラウンドでの固有表現認識の結果のスクリーンショット。](./media/text-02.png)
-
-### テキストを要約する
-
-**[要約]** を使うと、ドキュメントの主要なポイントを、より短い文章にまとめることができます。
-
-1. チャット ペインの上部にある **[新しいチャット]** (&#128172;) ボタンを使って、会話を再開します。 こうすることで、すべての会話履歴は削除されます。
-1. 次のプロンプトを入力して、結果を確認します。
-
-    ```
-
-    Summarize the following meeting transcript in a single paragraph
-    ---
-    Jordan Lee: “We should pick a retreat location that’s convenient for most people—Chicago and Nashville came to mind first.”
-    Anika Sharma: “Chicago is central, but the venue costs there can add up quickly.”
-    Carlos Ramirez: “I looked into a few alternatives, and Phoenix seems much easier when it comes to flights and space.”
-    Jordan Lee: “That makes sense—Phoenix does offer more flexibility than Chicago or Portland.”
-    Anika Sharma: “Portland would be enjoyable, but from a planning standpoint, Phoenix is simpler.”
-    Carlos Ramirez: “Exactly. It scales better and avoids some of the pricing issues.”
-    Jordan Lee: “So it sounds like Phoenix is our strongest option overall.”
-    Anika Sharma: “Yes, I’m comfortable choosing Phoenix over the other cities.”
-    Carlos Ramirez: “Agreed—let’s move forward with Phoenix for the retreat.”
+   This AI training course provides a clear and engaging introduction to core concepts such as machine learning, neural networks, and generative AI, making it accessible even to learners with limited prior experience. The course consistently reinforces key ideas through practical examples and hands-on exercises, which helps learners build confidence while applying AI techniques in real-world scenarios.
+    
+   Another strength is the emphasis on modern tools and workflows, including prompt design and model evaluation, which are highly relevant for current industry needs. The instructors communicate complex topics in a simple, structured way, and the course materials are well organized to support progressive learning. I particularly appreciated how the course revisits important themes like model accuracy, responsible AI, and iterative improvement across multiple modules, reinforcing their importance.
+    
+   Overall, this course offers a highly practical and well-rounded learning experience for anyone looking to develop foundational and applied skills in AI.
     ```
 
     モデルによってテキストの要約が生成されるはずです。
 
-    ![チャット プレイグラウンドの要約結果のスクリーンショット。](./media/text-03.png)
+    ![チャット プレイグラウンドのテキスト要約結果のスクリーンショット。](./media/text_summary.png)
+
+    大規模言語モデル (LLM) は、自然言語処理やテキスト分析を起源とする機械学習技術に基づいて構築されており、テキストの要約、名前のある実体 (人名や地名など) の抽出、そしてセンチメント、トピック、スタイルなどの要素に基づく文書の分類を得意とします。
 
 ## 特殊な言語分析ツールを使用する
 
 多くの場合、一般的な生成 AI ワークロード用にトレーニングされた言語モデルを使って優れたテキスト分析ジョブを実行できますが、より特殊なツールをエージェントで使うと、さらに正確な予測結果を得られる場合があります。
 
-**Foundry Tools の Azure Language** は統計的技法を使って構造化された確定的な結果を返す専用のアナライザーを備えており、自動化されたパイプラインでの一貫性のある出力に最適です。
+**Foundry Tools の Azure Language** は統計的技法を使って構造化された決定論的結果を返す専用のアナライザーを備えており、自動化されたパイプラインでの一貫性のある出力に最適です。
 
 1. Foundry ポータルで画面上部のメニューに移動し、**[ビルド]** を選びます。
 
-2. *[ビルド]* ページで、画面の左側にあるメニューに移動します (展開が必要な場合があります)。 メニューで **[デプロイ]** を選択します。 次に、*[デプロイ]* ページの上部にある **[AI サービス]** を選択します。
+1. *[ビルド]* ページで、画面の左側にあるメニューに移動します (展開が必要な場合があります)。 メニューで **[デプロイ]** を選択します。 次に、*[デプロイ]* ページの上部にある **[AI サービス]** を選択します。
 
-    ![新しい Foundry Models ページに一覧表示されている言語機能のスクリーンショット。](./media/foundry-ai-services.png)
+    Microsoft Foundry Tools には、音声、翻訳、言語、コンテンツの解釈の一般的なワークロードをサポートする複数の AI サービス (旧 Microsoft Cognitive Services) が含まれています。
+
+    ![Foundry の AI サービス ページのスクリーンショット。](./media/ai_services.png)
 
 ### 言語を検出する
 
 テキストが複数の言語のいずれかである可能性があるシナリオでは、多くの場合、分析ワークフローの最初のステップは、後続の処理に最適なモデルまたはエージェントにテキストをルーティングできるよう、主言語を決定することです。
 
-1. AI サービスの一覧から、**[Azure Language - 言語検出]** アナライザーを選びます。
-2. **[入力テキスト]** の一覧で、提供されているサンプル ドキュメントの 1 つを選びます。 次に、**[検出]** ボタンを使って、サンプルが記述されている言語を検出します。
+1. AI サービスの一覧で、**[Azure Language - 言語検出]** アナライザーを選びます。
+1. **[入力テキスト]** の一覧で、提供されているサンプル ドキュメントの 1 つを選びます。 次に、**[検出]** ボタンを使って、サンプルが記述されている言語を検出します。
 
-    ![プレイグラウンドで検出された言語のスクリーンショット](./media/text-04.png)
+    ![プレイグラウンドで検出された言語のスクリーンショット](./media/language_detection.png)
 
-3. 検出された言語の詳細を確認した後、**[編集]** ボタン アイコンをクリックして、入力テキストを再び編集可能にします。 次のことができるようになりました。
+1. 検出された言語の詳細を確認した後、**[編集]** ボタン アイコンを使用して、入力テキストを再び編集可能にします。 次のことができるようになりました。
     - 別のサンプルを選びます。
     - 独自のテキストを入力します。
     - テキスト ファイルをアップロードする。
@@ -156,22 +111,20 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
     ¡Hola! Me llamo Josefina y vivo en Madrid, España. Soy doctora en un hospital, ¡lo que me mantiene muy ocupada!
     ```
 
-4. 独自の入力で実験します。
+1. 独自の入力で実験します。
 
     > **ヒント**: `https://www.bing.com/translator` にある [Bing 翻訳ツール](https://www.bing.com/translator){:target="_blank"} を使って、自分では話せない言語のテキストを生成できます。
-
-5. 実験が終わったら、AI サービスの一覧に戻ります。 プレイグラウンド画面の上部にある [戻る] ボタンをクリックできます。
 
 ### テキスト内の PII を識別する
 
 プライバシー ポリシーと法律を遵守するため、多くの場合、組織は名前、住所、電話番号、メール アドレス、その他の個人の詳細などの**個人を特定できる情報 (PII)** を検出してリダクトする必要があります。
 
-1. AI サービスの一覧で、**[Azure Language - テキスト PII 抽出]** アナライザーを選びます。
+1. [言語検出プレイグラウンド] ページの **[タイプ]** ドロップダウン リストで **[テキスト PII 抽出]** を選択します (または、AI サービスの一覧に戻って **[Azure Language - テキスト PII 抽出]** を選択します)。
 2. **[入力テキスト]** の一覧で、提供されているサンプル ドキュメントの 1 つを選びます。 次に、**[検出]** ボタンを使って、テキスト内の PII の値を検出します。
 
-    ![プレイグラウンドで検出された PII のスクリーンショット](./media/text-05.png)
+    ![プレイグラウンドで検出された PII のスクリーンショット](./media/pii_extraction.png)
 
-3. 検出された PII の詳細を確認した後、**[編集]** ボタンをクリックして、入力テキストを再び編集可能にします。 次のことができるようになりました。
+3. 検出された PII の詳細を確認した後、**[編集]** ボタンを使用して、入力テキストを再び編集可能にします。 次のことができるようになりました。
     - 別のサンプルを選びます。
     - 独自のテキストを入力します。
     - テキスト ファイルをアップロードする。
@@ -193,32 +146,27 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
 Foundry には、Azure Language のいくつかの機能のサンプル コードが用意されています。 サンプル コードを使って、独自のクライアント アプリケーションの作成を開始できます。
 
-1. 右側の **[コード]** タブを選んで、PII 識別のサンプル コードを表示します。
+1. 右側の **[コード]** タブを選んで、次のような PII 識別のサンプル コードを表示します。
 
-    ![プレイグラウンドで開かれている [コード] タブのスクリーンショット。](./media/text-05-code.png)
-
->**ヒント**: 参照用に、Python での同じサンプル コードを以下に示します。 コードをコピーし、好みの Python 開発環境 (Visual Studio Code など) で実行できます。 Azure Language エンドポイントとキーの環境変数を作成する必要があります。コード サンプル ウィンドウで確認できます。
-
-```python
-
-    key = "paste-your-key-here"
-    endpoint = "paste-your-endpoint-here"
-
-    from azure.ai.textanalytics import TextAnalyticsClient
-    from azure.core.credentials import AzureKeyCredential
-
-    # Authenticate the client using your key and endpoint 
-    def authenticate_client():
+    ```python
+   key = "<your-api-key>"
+   endpoint = "https://ai-resrce.cognitiveservices.azure.com/"
+    
+   from azure.ai.textanalytics import TextAnalyticsClient
+   from azure.core.credentials import AzureKeyCredential
+    
+   # Authenticate the client using your key and endpoint 
+   def authenticate_client():
         ta_credential = AzureKeyCredential(key)
         text_analytics_client = TextAnalyticsClient(
                 endpoint=endpoint, 
                 credential=ta_credential)
         return text_analytics_client
-
-    client = authenticate_client()
-
-    # Example method for detecting sensitive information (PII) from text 
-    def pii_recognition_example(client):
+    
+   client = authenticate_client()
+    
+   # Example method for detecting sensitive information (PII) from text 
+   def pii_recognition_example(client):
         documents = [
             "$documents"
         ]
@@ -232,8 +180,10 @@ Foundry には、Azure Language のいくつかの機能のサンプル コー�
                 print(" Confidence Score: {}".format(entity.confidence_score))
                 print(" Offset: {}".format(entity.offset))
                 print(" Length: {}".format(entity.length))
-    pii_recognition_example(client)
-```
+   pii_recognition_example(client)
+    ```
+
+>**ヒント**: コードをコピーし、好みの Python 開発環境 (Visual Studio Code など) で実行できます。 Azure Language エンドポイントとキーの環境変数を作成する必要があります。コード サンプル ウィンドウで確認できます。
 
 ## まとめ
 
@@ -247,9 +197,3 @@ Microsoft Foundry の調査が完了したら、不要になったリソース�
 
 1. [https://portal.azure.com](https://portal.azure.com) で **Azure portal** を開き、作成したリソースを含むリソース グループを選択します。
 1. **[リソース グループの削除]** を選び、**リソース グループの名前を入力**して、確定します。 これでリソース グループが削除されます。
-
-## 詳細情報
-
-- [Foundry の進化](https://learn.microsoft.com/azure/foundry/what-is-foundry#evolution-of-foundry)を確認する
-- [Foundry Tools の Azure Language](https://learn.microsoft.com/azure/ai-services/language-service/overview) についての詳細を確認する
-- [個人を特定できる情報 (PII) の検出](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/overview)についての詳細を確認する
