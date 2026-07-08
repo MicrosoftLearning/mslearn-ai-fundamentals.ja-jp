@@ -2,6 +2,9 @@
 lab:
   title: Microsoft Foundry でテキスト分析を開始する
   description: Microsoft Foundry を使用して、さまざまな種類のテキスト分析を試します。
+  level: 200
+  duration: 25 minutes
+  islab: true
   primarytopics:
     - Microsoft Foundry
 ---
@@ -12,7 +15,7 @@ lab:
 
 Foundry でテキストを分析するには、"2 つのアプローチ" があります。自然言語プロンプトを使って幅広いタスクを処理する**汎用 AI モデル**と、特定のタスクについての構造化された確定的な結果を返す**専用言語ツール**です。** 両方を調べると、各アプローチを使用すべきときをより明確に理解できます。
 
-この演習の最初の部分では、"新しい" Foundry ポータルのチャット プレイグラウンドで汎用 AI モデルを使います。** この演習の 2 番目の部分では、Foundry ツールでの Azure Language の機能をいくつか調べます。
+この演習の最初の部分では、Foundry ポータルのチャット プレイグラウンドで汎用 AI モデルを使います。 この演習の 2 番目の部分では、Foundry ツールでの Azure Language の機能をいくつか調べます。
 
 この演習は約 **20** 分かかります。
 
