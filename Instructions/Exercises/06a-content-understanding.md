@@ -17,8 +17,6 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
 この演習の所要時間はおよそ **25** 分です。
 
->**注**: この演習では、"新しい" Foundry ポータルのエクスペリエンスを利用します。**
-
 ## Microsoft Foundry プロジェクトを作成する
 
 1. Web ブラウザーで [Microsoft Foundry](https://ai.azure.com){:target="_blank"} (`https://ai.azure.com`) を開いてビルドを開始します。Azure の資格情報を使ってサインインします。
@@ -35,66 +33,43 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
     ![Foundry プロジェクトのホーム ページのスクリーンショット。](./media/foundry-portal-home.png)
 
-    >**ヒント**: ホーム ページに表示される提案や '入門' チュートリアルは閉じてください。
+    >**ヒント**: ホーム ページに表示される提案やヒントは閉じてください。
 
-## 新しい Foundry ポータルでドキュメントから情報を抽出する
+## *Content Understanding* を使用してドキュメントから情報を抽出する
 
 1. Foundry ポータルで画面の上部にあるツール バーに移動し、**[ビルド]** を選択します。
 2. *[ビルド]* ページで、画面の左側のメニュー (展開が必要な場合があります) で、**[デプロイ]** を選択します。 次に、[デプロイ] ページの上部にある **[AI サービス]** を選択します。**
-3. Foundry プレイグラウンドの設定で試すことができる **Content Understanding** 機能を確認します。
-   - "Content Understanding - 読み取り": 生テキストの抽出のみ。** "ここにどんなテキストがありますか" という質問に答えます。
-   - "Content Understanding - レイアウト": 構造、階層、配置を追加します。** "このコンテンツはどのように整理されていますか" という質問に答えます。
-   - *Content Understanding*: フィールドと構造を抽出し、分析情報を生成して、完全なアナライザー機能を提供します。 "このコンテンツは何を意味し、どのように扱えばよいのでしょうか" という質問に答えます。
+3. **[Content Understanding]** を選択して *Content Understanding* ツールのプレイグラウンドを開きます。
 
-#### Content Understanding の "読み取り" 機能を試す**
+    ![[Content Understanding] プレイグラウンドのスクリーンショット。](./media/content-understanding.png)
 
-1. **[Content Understanding - 読み取り]** を選択します。 "読み取り" 機能は、コンテンツの解釈の最初のステップであり、テキストの読み取りと抽出を行いますが、まだ構造や意味を理解しようとはしません。**
+4. **[OCR/読み取り]** を選択し、**[モダリティ]** 一覧で **[ドキュメント]** が選択され、アナライザーの一覧で **[OCR/読み取り]** が選択されていることを確認してください。
 
-2. サンプルの **[read_barcode.pdf]** を選択し、**[分析の実行]** ボタンを使用して情報をドキュメントから抽出します。 分析が完了したら、結果を表示します。
+5. いずれかのサンプルを選択し、**[分析を実行する]** ボタンを使用してドキュメントから情報を抽出します。 分析が完了したら、結果を表示します。
 
-    ![サンプルの請求書の分析結果のスクリーンショット。](./media/new-portal-read-barcode.png)
+    ![OCR の分析結果のスクリーンショット。](./media/new-portal-read-barcode.png)
 
-3. [戻る] ボタンを選択して前のページに戻り、他の機能をテストします。
+6. 右側のペインで、**[Markdown]**、**[段落]**、**[結果]** のタブをレビューし、アナライザーがドキュメントから読み取ったデータを確認します。
 
-#### Content Understanding の "レイアウト" 機能を試す**
+    *[OCR/読み取り]* アナライザーはドキュメントからテキストを抽出します。 しかし、時にはドキュメント内のテキストの*レイアウト*に関する追加情報を抽出することが有用な場合もあります。
 
-1. [AI サービス] タブで、**[Content Understanding - レイアウト]** を選択します。**
+7. アナライザーの一覧から **[レイアウト]** を選択します。 続けて、使用可能なサンプルのいずれかを選択し、**[分析を実行する]** ボタンを使用して、そこから情報を抽出します。 分析が完了したら、結果を表示します。
 
-2. サンプルの **[layout_checklist.jpg]** を選択し、**[分析の実行]** ボタンを使用して、そこから情報を抽出します。 分析が完了したら、結果を表示します。
+    ![レイアウトの分析結果テーブルのスクリーンショット。](./media/content-understanding-layout-table.png)
 
-    ![layout_checklist の分析結果のスクリーンショット。](./media/content-understanding-layout-analysis.png)
+8. 右側のペインで、**[Markdown]**、**[段落]**、**[テーブル]**、**[結果]** のタブを確認し、ドキュメントのデータ レイアウトがアナライザーによってどのように解釈されたかを確認します。
 
-3. コンテンツ出力で、**[テーブル]** タブを選択します。"レイアウト" アナライザーでコンテンツのテキストと構造の両方をどのようにキャプチャできるかを確認します。**
+    テキストやページのレイアウトを抽出すると、スキャンするドキュメントに一貫性のある明確に定義した構造が必要な場合に役立ちます。 しかし多くの場合、どのテキスト値がどのデータ フィールドに対応するかを識別する必要があるため、より具体的なアナライザーが必要です。
 
-    ![layout_checklist の分析結果の表のスクリーンショット。](./media/content-understanding-layout-table.png)
+9. アナライザーの種類の一覧で **[調達]** を選択し、次に **[入荷]** アナライザーを選択します。
 
-4. [戻る] ボタンを選択して前のページに戻り、他の機能をテストします。
+    > **ヒント**: フィールド抽出にはカスタム モデルが必要なため、このプロセス中にモデルのデプロイを促されることがあります。 これが起きた場合は、**[キャンセル]** をクリックしてください。<br><br>分析は実行<u>しないでください</u>。ここでは、事前に準備した分析結果をレビューします。
 
-#### Content Understanding の他のアナライザー機能を試す
+    ![入荷の分析結果テーブルのスクリーンショット。](./media/content-understanding-receipt.png)
 
-1. [AI サービス] タブで **[Content Understanding]** を選択して、別の Azure Content Understanding アナライザーをテストします。**
+10. 右側のペインで、**[フィールド]**、**[Markdown]**、**[段落]**、**[結果]** のタブを確認し、アナライザーによってドキュメントから抽出されたデータを確認します。
 
-2. [Content Understanding] ページで、**[ドキュメント]** モダリティを選択します。**
-
-    ![[ドキュメント モダリティ] が選択されている完全なアナライザーのスクリーンショット。](./media/full-content-analzyer-document.png)
-
-3. [ドキュメント] モダリティの横にあるドロップダウン メニューから [ドキュメント フィールド] を選択します。**** まだ構成されていないモデルをデプロイするように求められた場合は、**[モデルのデプロイ]** を選択します。
-
-    >**ヒント**: "ドキュメント フィールド" およびその他の複雑な抽出ニーズでは、各デプロイが特定のモデルのバージョンまたは機能に関連付けられているため、複数の AI モデルをデプロイする必要があります。** Azure AI Foundry で複数のモデルを使用すると、さまざまな種類の処理タスクをより効果的に処理でき、各ニーズに適したモデルを柔軟に選択できます。
-
-4. ドロップダウン メニューから推奨される [チャットの入力候補モデル] と [埋め込みモデル] を選択します。**** 次に、**[変更の適用]** を選択します。 変更が適用されたら、[構成] パネルを閉じます。**
-
-5. 自身の請求書で完全なアナライザーを使用してみましょう。 新しいブラウザー ウィンドウを開きます。 URL `https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-fundamentals/refs/heads/main/data/content-understanding/contoso-invoice-1.pdf` を入力して、**[contoso-invoice-1.pdf](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-fundamentals/refs/heads/main/data/content-understanding/contoso-invoice-1.pdf){:target="_blank"}** をダウンロードします。
-
-6. Foundry ポータルの Content Understanding プレイグラウンドに戻り、**[ファイルの参照]** リンクを使用して、今ダウンロードした **contoso-invoice-1.pdf** ドキュメントをアップロードします。 **[分析の実行]** を選択し、結果を確認します。 テキストがレンダリングされるだけでなく、そのレイアウトもキャプチャされ、フィールドがまとまりのあるカテゴリに整理されていることに注意してください。  
-
-    ![ドキュメント フィールド アナライザーを使用して Contoso の請求書を分析した結果のスクリーンショット。](./media/contoso-invoice-analysis-document-fields.png)
-
-7. 抽出されたフィールドが表示されている右側のペインで、**[結果]** タブを表示すると、JSON 形式の生の結果が表示されます。 **analyzerID** フィールドを確認します。このフィールドには、使用されたアナライザーの種類が含まれています。 事前構築済みの Content Understanding アナライザーの一覧については、[こちら](https://learn.microsoft.com/azure/ai-services/content-understanding/concepts/prebuilt-analyzers)を参照してください。
-
-     ![請求書に対してドキュメント アナライザーを使用した際の JSON 結果のスクリーンショット。](./media/content-understanding-layout-json.png)
-
->**ヒント**: [フィールド] タブには、[結果] タブの生の JSON データから得られた情報が、ユーザー フレンドリな形式で表示されると考えてください。****
+    **[フィールド]** タブには、**[結果]** タブにある未加工の JSON からの情報のユーザーフレンドリなバージョンが表示されます。クライアント アプリケーションはこの方法で分析結果を受け取ります。
 
 ## Python SDK を使用してコンテンツを抽出する方法を理解する
 
@@ -102,103 +77,43 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 
 ![Foundry プレイグラウンドで提供されているサンプル コードのスクリーンショット。](./media/content-understanding-code-example.png)
 
-1. ドキュメント レイアウト分析のための Python コードについて詳しく見てみましょう。 Content Understanding プレイグラウンドで **[コード]** タブを選択し、**[モダリティ: ドキュメント]** と **[レイアウト]** アナライザーを選択します。 次のコードが提供されます。
+1. ドキュメント レイアウト分析のための Python コードについて詳しく見てみましょう。 Content Understanding プレイグラウンドで、**[入荷]** アナライザーの結果を表示する際に **[コード]** タブを選択します。次のコードが提供されています。
 
-    ```python
-        import sys
-        import json
-        
-        from azure.ai.contentunderstanding import ContentUnderstandingClient
-        from azure.ai.contentunderstanding.models import AnalysisInput, AnalysisResult
-        from azure.core.credentials import AzureKeyCredential
-        from azure.core.exceptions import AzureError
-        from azure.identity import DefaultAzureCredential
-        
-        
-        def main() -> None:
-            # Insert the following configurations.
-            # 1) AZURE_CONTENT_UNDERSTANDING_ENDPOINT - the endpoint to your Content Understanding resource.
-            endpoint = "https://<your-resource>.services.ai.azure.com/"
-        
-            # 2) CONTENT_UNDERSTANDING_KEY - your Content Understanding API key (optional if using DefaultAzureCredential).
-            key = "{{CONTENT_UNDERSTANDING_KEY}}"
-        
-            # 3) FILE_URL - you can replace this with your own URL.
-            file_url = "https://contentunderstanding.ai.azure.com/assets/prebuilt/layout_checklist.jpg"
-        
-            # ANALYZER_ID - the ID of the analyzer to use.
-            analyzer_id = "prebuilt-layout"
-        
-            # API_VERSION - the API version to use.
-            api_version = "2025-11-01"
-        
-            # Set up Content Understanding client.
-            credential = AzureKeyCredential(key) if key and "{{CONTENT_UNDERSTANDING_KEY}}" not in key else DefaultAzureCredential()
-            client = ContentUnderstandingClient(endpoint=endpoint, credential=credential, api_version=api_version)
-        
-            # [START analyze]
-            print(f"Analyzing with {analyzer_id} analyzer...")
-            print(f"  File URL: {file_url}\n")
-        
-            try:
-                poller = client.begin_analyze(
-                    analyzer_id=analyzer_id,
-                    inputs=[AnalysisInput(url=file_url)],
-                )
-                result: AnalysisResult = poller.result()
-            except AzureError as err:
-                print(f"[Azure Error]: {err.message}")
-                sys.exit(1)
-            except Exception as ex:
-                print(f"[Unexpected Error]: {ex}")
-                sys.exit(1)
-            # [END analyze]
-        
-            # [START output_result]
-            print("=" * 50)
-            print("Analysis result:")
-            print("=" * 50 + "\n")
-        
-            max_display_lines = 50
-            result_str = json.dumps(result.as_dict(), indent=2)
-            ret_lines = result_str.splitlines()
-        
-            if len(ret_lines) > max_display_lines:
-                print("\n".join(ret_lines[:max_display_lines]))
-                print(f"\n {len(ret_lines) - max_display_lines} more lines to be displayed...\n")
-            else:
-                print(result_str)
-            # [END output_result]
-        
-        
-        if __name__ == "__main__":
-            main()
-    ```
-
-2. コードで何を構成する必要があるかを検討しましょう。
-   - Content Understanding リソースのエンドポイント
-   - 自分のリソース キー
-   - 分析したいファイルの URL
-  
-3. サンプル コードで提供されている内容のうち、変更の必要があるものを検討しましょう。
-   - アナライザー ID ([異なる事前構築済みモデル](https://learn.microsoft.com/azure/ai-services/content-understanding/concepts/prebuilt-analyzers#content-extraction-analyzers)を使用するように変更できます)
-   - API バージョン
-
-4. 構成の設定後、コードで Azure Content Understanding と通信するクライアントが作成されます。 コードによって認証方法が決まります。実際の API キーを提供した場合は、そのキーが直接使用されます。 そうでなければ、`DefaultAzureCredential()` にフォールバックし、環境 (たとえば Azure CLI のログイン) から自動的に認証情報が見つかります。 その後、エンドポイント、選択した認証情報、API バージョンを使用してクライアントが作成されます。
-
-    ```python
+    ```python  
+    import sys
+    import json
+    
+    from azure.ai.contentunderstanding import ContentUnderstandingClient
+    from azure.ai.contentunderstanding.models import AnalysisInput, AnalysisResult
+    from azure.core.credentials import AzureKeyCredential
+    from azure.core.exceptions import AzureError
+    from azure.identity import DefaultAzureCredential
+    
+    def main() -> None:
+        # Insert the following configurations.
+        # 1) AZURE_CONTENT_UNDERSTANDING_ENDPOINT - the endpoint to your Content Understanding resource.
+        endpoint = "<https://content-project-resource.services.ai.azure.com/>"
+    
+        # 2) CONTENT_UNDERSTANDING_KEY - your Content Understanding API key (optional if using DefaultAzureCredential).
+        key = "{{CONTENT_UNDERSTANDING_KEY}}"
+    
+        # 3) FILE_URL - you can replace this with your own URL.
+        file_url = "{{FILE_URL}}"
+    
+        # ANALYZER_ID - the ID of the analyzer to use.
+        analyzer_id = "prebuilt-receipt"
+    
+        # API_VERSION - the API version to use.
+        api_version = "2025-11-01"
+    
         # Set up Content Understanding client.
         credential = AzureKeyCredential(key) if key and "{{CONTENT_UNDERSTANDING_KEY}}" not in key else DefaultAzureCredential()
         client = ContentUnderstandingClient(endpoint=endpoint, credential=credential, api_version=api_version)
-    ```
-
-5. 次に、コードによって内容が分析されます。 SDK は分析を長期実行の演算として開始します。 関数 `begin_analyze()` は演算の状態 (分析が成功したかどうか) をチェックするポーラーを返します。 SDK のポーラーは `poller.result()` が呼び出されると自動的に全演算を処理します。
-
-    ```python
+    
         # [START analyze]
         print(f"Analyzing with {analyzer_id} analyzer...")
         print(f"  File URL: {file_url}\n")
-        
+    
         try:
             poller = client.begin_analyze(
                 analyzer_id=analyzer_id,
@@ -212,11 +127,7 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
             print(f"[Unexpected Error]: {ex}")
             sys.exit(1)
         # [END analyze]
-    ```
-
-6. 分析の出力は、次のコードで JSON としてフォーマットされ、表示されます。
-
-    ```python
+    
         # [START output_result]
         print("=" * 50)
         print("Analysis result:")
@@ -232,86 +143,20 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
         else:
             print(result_str)
         # [END output_result]
+    
+    if **name** == "**main**":
+        main()
     ```
 
-    >**注**: 上記のコードの多くは、出力を読みやすく見せます。 その目的は非常にシンプルで、分析結果を出力することです。
-
-7. ステップ 1 のコード全体を実行すると、ラボで先に見たような JSON が返ってきます。 次に例を示します。
-
-    ```json
-    {
-
- "id": "",
- "status": "Succeeded",
- "result": {
-  "analyzerId": "prebuilt-layout",
-  "apiVersion": "2025-11-01",
-  "createdAt": "",
-  "warnings": [],
-  "contents": [
-   {
-    "path": "input1",
-    "markdown": "",
-    "kind": "document",
-    "startPageNumber": 1,
-    "endPageNumber": 1,
-    "unit": "pixel",
-    "pages": [
-     {
-      "pageNumber": 1,
-      "angle": 0,
-      "width": 2580,
-      "height": 3433,
-      "spans": [
-       {
-        "offset": 0,
-        "length": 2269
-       }
-      ],
-      "words": [
-       {
-        "content": "Documents",
-        "span": {
-         "offset": 2,
-         "length": 9
-        },
-        "confidence": 0.996,
-        "source": "D(1,213,217,768,201,768,296,214,310)"
-       },
-       {
-        "content": "to",
-        "span": {
-         "offset": 12,
-         "length": 2
-        },
-        "confidence": 0.999,
-        "source": "D(1,802,200,906,197,906,293,803,295)"
-       },
-       {
-        "content": "Store",
-        "span": {
-         "offset": 15,
-         "length": 5
-        },
-        "confidence": 0.998,
-        "source": "D(1,947,196,1218,189,1219,285,947,292)"
-       }
-    ...
-    ```
-
-    >**ヒント**: 自分の環境で実際にコードを実行するには、サンプル コードの冒頭で共有されたセットアップと構成の指示に従う必要があります。
-    ><details>
-    ><summary>クリックすると、その指示が表示されます。</summary>
-    >Visual Studio Code のようなコード エディターで Python ファイルを作成し、sample.py と名前を付けます。 お使いのマシンに Python 3.9 以降がインストールされていることを確認します。 ターミナルでこのファイルを含むディレクトリに移動します。 `python -m pip install azure-ai-contentunderstanding azure-identity` コマンドを使用して、ターミナルで依存関係をインストールします。 次に、コマンド `python sample.py` を使用して、ターミナルでスクリプトを実行します。
-    > </details>
+    コードは Foundry リソース内の Content Understanding ツールに接続し、ドキュメント ファイルを *prebuilt-receipt* アナライザーに送信します。 このアナライザーは非同期で動作し、**[結果]** タブに表示された分析結果を JSON 形式で返します。
 
 ## まとめ
 
 この演習では、Foundry の Azure Content Understanding を調べ、非構造化コンテンツを構造化された使用可能なデータに変換する方法について学習しました。 各アナライザーを前のアナライザーの機能を基に構築し、次の 3 つのアナライザーを試しました。
 
-- **読み取り**: 構造や意味を解釈することなく、ドキュメントから生のテキストを抽出します。"ここにはどんなテキストがありますか" という質問に答えます。
-- **レイアウト**: 構造、階層、配置 (テーブルを含む) をキャプチャしてさらに一歩進みます。"このコンテンツはどのように構成されているか" という質問に答えます。
-- **ドキュメント フィールド**: 機能の組み合わせを使用してフィールドを抽出し、それらをまとまりのあるカテゴリに整理し、分析情報を生成するアナライザー。"このコンテンツは何を意味し、どのように扱えばよいのでしょうか" という質問に答えます。 このような Content Understanding アナライザーでは、複雑な抽出のニーズに対応するために、追加の AI モデル (チャット入力候補モデルや埋め込みモデルなど) のデプロイが必要になる場合があります。
+- **[読み取り]**: 構造や意味の解釈はせずにドキュメントから未加工のテキストを抽出します。
+- **[レイアウト]**: さらに一歩進んで、構造や階層をキャプチャします。
+- **[入荷]**: 複数の機能を組み合わせてテキスト値を抽出し、それをデータ フィールドにマッピングするドキュメント固有のアナライザーです。
 
 開発者がどのようにして **Python SDK** を使用して Content Understanding をアプリケーションに統合するのかについても学習しました。これによって、Foundry プレイグラウンドの外部にあるドキュメントをプログラムで分析できるようになります。
 
