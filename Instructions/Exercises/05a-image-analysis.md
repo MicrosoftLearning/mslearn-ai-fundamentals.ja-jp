@@ -34,7 +34,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
 
 ## 生成 AI モデルを使って画像を分析する
 
-Computer Vision のモデルを使うと、AI システムは画像ベースのデータ (写真、ビデオ、その他の視覚要素など) を解釈できます。 この演習では、意欲的なシェフがビジョン対応モデルを使って食材の画像を解釈して関連するレシピを提案するのを、AI エージェントの開発者が支援する方法について説明します。
+Computer Vision のモデルを使うと、AI システムは画像ベースのデータ (写真、ビデオ、その他の視覚要素など) を解釈できます。 この演習では、エージェントでコンピューター ビジョンを使用して、古いコンピューター ハードウェアを識別する方法について説明します。
 
 1. 新しいブラウザー タブで、**[images.zip](https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/images.zip){:target="_blank"}** `https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/images.zip` をローカル コンピューターにダウンロードします。
 1. ダウンロードしたアーカイブをローカル フォルダーに抽出し、それに含まれるファイルを確認します。 これらのファイルは、AI を使って分析する画像です。
@@ -49,19 +49,17 @@ Computer Vision のモデルを使うと、AI システムは画像ベースの�
     ![モデル プレイグラウンドのスクリーンショット。](./media/model-playground.png)
 
 1. 左側のナビゲーション ウィンドウの下部にあるボタンを使ってそれを非表示にし、作業するスペースを増やします。
-1. 左側のペインで、**[指示]** を `You are an AI cooking assistant who helps chefs with recipes.` に設定します
+1. 左側のペインで、**[指示]** を `You are an AI assistant that helps people identify vintage computer hardware.` に設定します
 1. チャット ペインの **[画像のアップロード]** ボタンを使って、コンピューター上に抽出した画像のいずれかを選びます。 画像がプロンプト領域に追加されます。
+
+1. `What can you tell me about this?` のようなプロンプト テキストを入力し、アップロードした画像とテキストの両方を含むプロンプトを送信します。
+1. 応答を確認すると、アップロードした画像に関する情報が含まれているはずです。
 
     追加した画像を選んで表示できます。
 
    ![プロンプトに画像が含まれるチャットのスクリーンショット。](./media/image_prompt.png)
 
-1. `What recipes can I use this in?` のようなプロンプト テキストを入力し、アップロードした画像とテキストの両方を含むプロンプトを送信します。
-1. 応答を確認します。これには、アップロードした画像に関連するレシピの提案が含まれているはずです。
-
-   ![画像ベースのプロンプトへの応答を含むチャット アプリのスクリーンショット。](./media/image_analysis.png)
-
-1. `How should I cook this?` や `What desserts could I make with this?` などの他の画像を含むプロンプトを送信します
+1. `What is this?` や `Tell me about this.` などの他の画像を含むプロンプトを送信します
 
 ### コードの表示
 
@@ -100,11 +98,11 @@ Computer Vision のモデルを使うと、AI システムは画像ベースの�
     print(f"answer: {response.output[0]}")
     ```
 
-    > **ヒント**: 職場または学校アカウントを使って Azure にサインインしていて、Azure サブスクリプションに十分なアクセス許可がある場合は、VS Code for Web でサンプル コードを開いて実行し、画像ベースの入力内容を試すことができます。 サービスの **key** は、(サンプル コードの上にある) モデル のプレイグラウンドの **Code** タブで取得できます。また、画像 **[orange.jpg](https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/orange.jpg){:target="_blank"}** を `https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/orange.jpg`で使用できます。 OpenAI API を使用した画像の分析について詳しくは、[OpenAI のドキュメント](https://platform.openai.com/docs/guides/images-vision#analyze-images)をご覧ください。
+    > **ヒント**: 職場または学校アカウントを使って Azure にサインインしていて、Azure サブスクリプションに十分なアクセス許可がある場合は、VS Code for Web でサンプル コードを開いて実行し、画像ベースの入力内容を試すことができます。 サービスの **key** は、(サンプル コードの上にある) モデル のプレイグラウンドの **Code** タブで取得できます。また、画像 **[joystick.png](https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/joystick.png){:target="_blank"}** を `https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/joystick.png`で使用できます。 OpenAI API を使用した画像の分析について詳しくは、[OpenAI のドキュメント](https://platform.openai.com/docs/guides/images-vision#analyze-images)をご覧ください。
 
 ## 生成 AI モデルを使って新しい画像を作成する
 
-ここまでは、視覚的な入力を処理する生成 AI モデルの機能を調べてきました。 ここでは、AI シェフ エージェントをサポートするための適切な画像を Web サイト上に置きたいものとします。 モデルで視覚的な出力を生成する方法を見てみましょう。
+ここまでは、視覚的な入力を処理する生成 AI モデルの機能を調べてきました。 ここでは、コンピューティング履歴エージェントをサポートするための適切な画像を Web サイト上に置きたいものとします。 モデルで視覚的な出力を生成する方法を見てみましょう。
 
 > **注**: このタスクを実行するには、画像生成モデルにアクセスできるサブスクリプションが必要です。
 
@@ -121,7 +119,7 @@ Computer Vision のモデルを使うと、AI システムは画像ベースの�
     "これらのモデルのいずれかがサブスクリプションまたは Azure リージョンで使用できない場合は、使用可能な別のテキストから画像への変換モデルをデプロイします。"**
 
 1. モデルがデプロイされると、画像プレイグラウンドでそれが開きます。
-1. 目的の画像を説明するプロンプトを入力します (例: `A chef preparing a meal.`)。生成された画像を確認します。
+1. 目的の画像を説明するプロンプトを入力します (例: `A vintage PC with a CRT monitor.`)。生成された画像を確認します。
 
    ![生成された画像を含む画像プレイグラウンドのスクリーンショット。](./media/generated_image.png)
 
@@ -168,7 +166,7 @@ Computer Vision のモデルを使うと、AI システムは画像ベースの�
 
 > **注**: このタスクを実行するには、動画生成モデルにアクセスできるサブスクリプションが必要です。
 
-静的な画像に加えて、AI シェフ エージェントの Web サイトにビデオ コンテンツを含めることができます。
+静的な画像に加えて、コンピューティング履歴エージェントの Web サイトにビデオ コンテンツを含めることができます。
 
 1. 画像生成モデルのヘッダーの横にある "戻る" 矢印を使って (またはナビゲーション ウィンドウで **[モデル]** ページを選んで)、プロジェクトでのモデル デプロイを表示します。
 1. **[基本モデルをデプロイする]** を選んでモデル カタログを開きます。
@@ -183,7 +181,7 @@ Computer Vision のモデルを使うと、AI システムは画像ベースの�
     サブスクリプションに Sora-2 モデルが含まれている場合、利用可能な最新モデルへのアクセスの依頼が必要になる場合があります。**
 
 1. モデルがデプロイされると、ビデオ プレイグラウンドでそれが開きます。
-1. 目的の動画を説明するプロンプトを入力します (例: `A chef in a busy kitchen.`)。生成された動画を確認します。
+1. 目的の動画を説明するプロンプトを入力します (例: `A retro computer game.`)。生成された動画を確認します。
 
    ![生成されたビデオを含むビデオ プレイグラウンドのスクリーンショット。](./media/generated_video.png)
 
