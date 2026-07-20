@@ -95,7 +95,7 @@ Computer Vision のモデルを使うと、AI システムは画像ベースの�
         }],
     )
     
-    print(f"answer: {response.output[0]}")
+    print(f"answer: {response.output_text}")
     ```
 
     > **ヒント**: 職場または学校アカウントを使って Azure にサインインしていて、Azure サブスクリプションに十分なアクセス許可がある場合は、VS Code for Web でサンプル コードを開いて実行し、画像ベースの入力内容を試すことができます。 サービスの **key** は、(サンプル コードの上にある) モデル のプレイグラウンドの **Code** タブで取得できます。また、画像 **[joystick.png](https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/joystick.png){:target="_blank"}** を `https://microsoftlearning.github.io/mslearn-ai-fundamentals/data/joystick.png`で使用できます。 OpenAI API を使用した画像の分析について詳しくは、[OpenAI のドキュメント](https://platform.openai.com/docs/guides/images-vision#analyze-images)をご覧ください。
