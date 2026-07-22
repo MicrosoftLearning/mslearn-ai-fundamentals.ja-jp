@@ -244,12 +244,12 @@ Azure 内に Microsoft Foundry リソースを持つ状態になったので、�
 
 1. `https://aka.ms/pcb-images` から **[pcbs.zip](https://aka.ms/pcb-images){:target="_blank"}** をダウンロードし、zip 形式のアーカイブをローカル コンピューター (の任意のフォルダー) に展開します。
 
-1. 会話を再開し、チャット インターフェイスの下部にある **[画像の添付]** (&#128206;) ボタンを使用して PCB 画像をアップロードし、`Extract the text from this printed circuit board, and search for information that might help identify the computer it came from.` のようなプロンプトを入力します
+1. 会話を再開し、チャット インターフェイスの下部にある **[画像の添付]** (&#128206;) ボタンを使用して PCB 画像をアップロードし、`What can you tell me about this printed circuit board?` のようなプロンプトを入力します
 1. 応答を確認します。
 
     ![Computing History アプリでの画像からのテキスト抽出のスクリーンショット。](./media/computer_history_info.png)
 
-1. 抽出した他の PCB 画像も試してみてください。
+1. 抽出した他の PCB の画像を試して、それが発生した可能性のあるコンピューターの種類を特定するのにエージェントが役立つかどうかを確認します。
 
     > **ヒント**: [Bing](https://www.bing.com/images/search?q=vintage-computer-component-serial-numbers){:target="_blank"} で独自の画像を検索することもできます。 特定のヴィンテージ コンピューターからシリアル番号ラベルを検索してみる
 

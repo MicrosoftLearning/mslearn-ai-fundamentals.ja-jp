@@ -1,21 +1,16 @@
-# AI-901 トレーナー ラボの選択
+# AI-901 トレーナー向けノート
 
-このコース「[AI-901: Azure での AI の基礎](https://learn.microsoft.com/training/courses/ai-901t00)」には、1 日のコースに収まるように調整された講師による指導付きトレーニングとして指定されたラボのサブセットが含まれます。
+この「[AI-901: Introduction to AI in Azure](https://learn.microsoft.com/training/courses/ai-901t00)」のコースは、このリポジトリ内のラボを含んだ対話型ラボ体験を含む、1 日のコースとして設計されています。
 
-> 注意: 講師は、指導する際に、すべての AI-901 ラボのセットからさらにモジュールを選んで追加できます。
+> 注: GitHub のラボのリポジトリは ILT のコースと 1 対 1 でマッピングされなくなりました。 ラボは複数の学習モダリティをサポートしており、ILT のコースでは 1 つ<u>または複数の</u>リポジトリのラボの一部しか使用されないことがあります。
 
-## ILT 対応の AI-901 ラボ
+AI-901 コースには、このリポジトリの Microsoft Foundry ベースのラボと、https://github.com/MicrosoftLearning/mslearn-ai-concepts の概念ラボの *<u>両方</u>* が含まれています。 1 日の配信では、これらのラボの一部しか入れられないことが多いため、このリポジトリ内の Foundry ベースのラボをおすすめします。 しかし、概念ラボをデモとして、学習者がさらに探求するための場所として、あるいは技術的な問題が発生した際に機能している Azure 環境へのアクセスを学生に提供するための代替ラボとして使用することも検討できます。
 
-このコースで使用する AI-901 のラボは、[モジュール](https://learn.microsoft.com/training/paths/get-started-ai-apps-agents/)ごとに次のように対応しています。 
+公式の配信では、ラボは Authotized Lab Hoster (ALH) によってホスト環境で提供されます。 ラボの指示は、以下の GitHub ページ サイトでマイペースで進めることも、ホストなしで完了することもできます。
 
-| AI-901 モジュール | ラボ名 | 手順 |
-| --- | --- | --- |
-| AI-901 Azure で AI の使用を開始する | Microsoft Foundry の概要 | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2345150) |
-| AI-901 Azure で生成 AI とエージェントの使用を開始する |  Microsoft Foundry で生成 AI とエージェントの使用を開始する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2347367) |
-| AI-901 Azure でテキスト分析の使用を開始する | Microsoft Foundry でテキスト分析を開始する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2347911) |
-| AI-901 Azure で音声の使用を開始する | Microsoft Foundry で音声の使用を開始する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2347368) |
-| AI-901 Azure で Computer Vision の使用を開始する | Microsoft Foundry で Computer Vision の使用を開始する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2347912) |
-| AI-901 Azure で AI 搭載の情報抽出の使用を開始する | Microsoft Foundry で Content Understanding の使用を開始する | [ラボの手順](https://go.microsoft.com/fwlink/?linkid=2347369) |
+- [mslearn-ai-concepts](https://microsoftlearning.github.io/mslearn-ai-concepts/)
+- [mslearn-ai-fundamentals](https://microsoftlearning.github.io/mslearn-ai-fundamentals/)
 
+> **注**: ラボの*内容*に問題 (不正確な指示やスクリーンショット、文法の問題、古いコードなど) がある場合は、ラボが含まれているリポジトリでイシューを作成してください。 *ラボのホスティング環境*に関する問題 (パフォーマンスや信頼性、Azure ポリシーの制限など) が発生した場合は、<u>ラボのホスト側にイシューを報告してください</u>。
 
 

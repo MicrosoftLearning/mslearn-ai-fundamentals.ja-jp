@@ -39,7 +39,7 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
 ## 汎用 AI モデルのテキスト分析機能を調べる
 
-演習のこのパートでは、汎用言語モデルを使って、自然言語プロンプトでテキスト分析を実行します。 言語モデルでは、プロンプトだけでさまざまなタスクを処理できます。
+まず、チャット インターフェイスを使用して、プロンプ​​トを生成 AI モデルに送信し、一般的なテキスト分析タスク (テキストの要約) を実行してみましょう。
 
 1. これで、モデルを探索する準備ができました。 **[検出]** ページで **[モデル]** タブを選択して Microsoft Foundry モデル カタログを表示します。
 
@@ -51,9 +51,11 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
 3. **[デプロイ]** ボタンを使い、"既定の設定" を使ってモデルをデプロイします。** デプロイが完了するまで待ちます。 デプロイが完了するとチャット プレイグラウンドに自動的に移動し、そこでモデルの機能をテストできます。
 
-### 感情を分析する
+### テキストを要約する
 
-**感情分析**は、一般的な "自然言語処理" (NLP) タスクです。** これは、テキストが肯定的、中立的、または否定的な感情を伝えるかどうかを判断するために使用されます。レビュー、ソーシャル メディアの投稿、その他の主観的なドキュメントを分類するのに役立ちます。
+テキスト処理における一般的な要件は、大量のテキストを最も重要なポイントに絞り出すために *要約* することです。
+
+たとえば、1980 年代に発売された家庭用コンピューターのレビューを含む古いコンピューター業界雑誌の記事を見つけたとします。 全文を読むのではなく、レビュアーが見つけた主な長所と短所を強調する要約を生成し、全体の結論を作成するのがよいかもしれません。
 
 1. [チャット プレイグラウンド] ページで左側のナビゲーション ウィンドウの下部にあるボタンを使ってそれを非表示にし、作業するスペースを増やします。
 1. 左側のペインで、既定の **[指示]** を次に設定します。
@@ -62,19 +64,21 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
    You are an AI assistant that analyzes and summarizes text.
     ```
 
-1. **[チャット]** ペインで、次のプロンプトを入力します (Ctrl + Enter キーを押すと改行します)。
+1. 次のプロンプトを入力します (Ctrl + Enter キーを押すと改行できます)。
 
     ```
-   Summarize this review as a single, short paragraph:
+   Summarize this review as a single short paragraph:
 
-   This AI training course provides a clear and engaging introduction to core concepts such as machine learning, neural networks, and generative AI, making it accessible even to learners with limited prior experience. The course consistently reinforces key ideas through practical examples and hands-on exercises, which helps learners build confidence while applying AI techniques in real-world scenarios.
-    
-   Another strength is the emphasis on modern tools and workflows, including prompt design and model evaluation, which are highly relevant for current industry needs. The instructors communicate complex topics in a simple, structured way, and the course materials are well organized to support progressive learning. I particularly appreciated how the course revisits important themes like model accuracy, responsible AI, and iterative improvement across multiple modules, reinforcing their importance.
-    
-   Overall, this course offers a highly practical and well-rounded learning experience for anyone looking to develop foundational and applied skills in AI.
+   Commodore 64: A Strong Contender in the Home Computer Market
+
+   Commodore's long-awaited Commodore 64 has finally arrived on dealers' shelves, and first impressions suggest that the company may have another substantial success on its hands. Priced aggressively and boasting a full 64K of RAM, the machine offers specifications that would have seemed remarkable in a home computer only a short time ago. Its colourful graphics and impressive sound capabilities place it among the most capable entertainment-oriented systems currently available.
+
+   Particularly noteworthy is the SID sound generator, which produces effects and musical output far beyond what users have come to expect from machines in this price bracket. Software houses are already expressing strong interest in the platform, and the combination of advanced graphics and sound should make the Commodore 64 an attractive proposition for both game developers and serious hobbyists alike.
+
+   The machine is not without its shortcomings, however. The keyboard, while serviceable, lacks the solid feel of some competing systems, and Commodore's documentation will do little to reassure newcomers to computing. Furthermore, prospective purchasers may wish to consider the total cost of ownership, as disk drives and other peripherals remain relatively expensive. Nevertheless, the Commodore 64 enters the market as one of the most compelling home computers currently available and is likely to be a significant force in the months ahead.
     ```
 
-    モデルによってテキストの要約が生成されるはずです。
+    モデルによって、レビューの要約が生成されます。
 
     ![チャット プレイグラウンドのテキスト要約結果のスクリーンショット。](./media/text_summary.png)
 
@@ -94,6 +98,10 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
     ![Foundry の AI サービス ページのスクリーンショット。](./media/ai_services.png)
 
+    > **ヒント**: 場合によっては、インターフェイスが多少異なり、左側のペインの最上位項目が **[モデル]** で、AI サービスの一覧が **[サービス]** ページに表示されることがあります。
+
+1. 使用可能なサービスに注意してください。これには言語検出や PII 編集のための Azure Language サービスが含まれます。
+
 ### 言語を検出する
 
 テキストが複数の言語のいずれかである可能性があるシナリオでは、多くの場合、分析ワークフローの最初のステップは、後続の処理に最適なモデルまたはエージェントにテキストをルーティングできるよう、主言語を決定することです。
@@ -108,15 +116,21 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
     - 独自のテキストを入力します。
     - テキスト ファイルをアップロードする。
 
-    たとえば、次の入力テキストを入力して、それが記述されている言語を検出します。
+   たとえば、あるヴィンテージ コンピューターを見つけ、その歴史に興味を持ったとしましょう。 コンピューターのケースに次のテキストが書かれたラベルを見つけました。 そのテキストを入力し、それが記述されている言語を検出します。
 
     ```
-    ¡Hola! Me llamo Josefina y vivo en Madrid, España. Soy doctora en un hospital, ¡lo que me mantiene muy ocupada!
+   CPC 464
+   Art.-Nr.: 31020
+   Serien-Nr.: 464-87-041256
+   220–240 V ~ 50 Hz
+   40 W
+   Hergestellt in Korea
+   SCHNEIDER RUNDFUNKWERKE AG
+   Türkheim/Unterallgäu
+   Bundesrepublik Deutschland
     ```
 
-1. 独自の入力で実験します。
-
-    > **ヒント**: `https://www.bing.com/translator` にある [Bing 翻訳ツール](https://www.bing.com/translator){:target="_blank"} を使って、自分では話せない言語のテキストを生成できます。
+    > **ヒント**: さらに詳しく調べる場合は、Foundry Tools の [AI サービス] ページに **Text Translator** サービスが含まれており、それを使用してテキストを翻訳することができます。
 
 ### テキスト内の PII を識別する
 
@@ -132,11 +146,24 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
     - 独自のテキストを入力します。
     - テキスト ファイルをアップロードする。
 
-    たとえば、次の入力テキストを入力し、それに含まれている PII を検出します。
+    たとえば、購入したヴィンテージ コンピューターの箱の中に次の請求書を見つけたとします。
 
     ```
-    Maria Garcia called from 020 7946 0958 and asked to send documents to 42 Market Road, London, UK, SW1A 1AA.
+   Tailspin Toys Ltd
+   Invoice
+   14 September 1984
+    
+   Customer:
+     Margaret Ellis
+     128 High Street, Reading, Berkshire RG1 2AB
+     Telephone: 021 685 4215
+    
+   Item: ZX Spectrum 48K home computer (includes power supply, RF lead, and user manual)
+   Price: £79.00
+   Payment received:  £79.00
     ```
+
+    このテキストを入力し、その中に含まれている個人を特定できる情報を見つけ出します。
 
 4. 独自の入力で実験します。 Azure Language では、PII の広範な一覧を認識できます。 クラスの全リストは[ここ](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list)で確認できます。 そのようなエンティティの一部を次に示します。
 

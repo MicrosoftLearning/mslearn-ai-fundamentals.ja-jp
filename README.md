@@ -1,18 +1,24 @@
-# Microsoft Azure AI の基礎コースの演習
+# Azure での AI アプリとエージェントの開発を開始する
 
-このリポジトリには、[Microsoft Certified:Azure AI Fundamentals](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/) 認定資格をサポートする Microsoft Official Courseware のハンズオン演習のための手順と資産が含まれています。 演習は [Microsoft AI スキル ナビゲーター](https://aiskillsnavigator.microsoft.com/explore/search/learningpath-c1207ab7fef2e855e1cebac091002b0b82d99a80c0b10d9bc1b34cdf25be7c5f)の関連トレーニング モジュールを補完するように設計されており、これらの演習の<u>サブセット</u>は、公式の講師による指導付きトレーニング コース「[AI-901: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/training/courses/ai-901t00)」のハンズオン ラボで構成されています。
+このリポジトリには、[Microsoft AI スキル ナビゲーター](https://aiskillsnavigator.microsoft.com/explore/search/learningpath-c1207ab7fef2e855e1cebac091002b0b82d99a80c0b10d9bc1b34cdf25be7c5f)の関連するトレーニング モジュールの実践的な演習で使用する指示やアセットが含まれています。
 
-## 演習の設計原則
+> **重要**: このラボを完了するには、[Microsoft Azure サブスクリプション](https://azure.microsoft.com/pricing/purchase-options/azure-account)が必要です。
 
-リポジトリの演習は、Microsoft Learn を使ってマイペースで進める学習者と、公式に提供される講師による指導付きトレーニングの学生の、<u>両方</u>をサポートするように設計されています。 ほとんどの場合、マイペースで進める学習者は自分のクラウド サブスクリプションを提供する必要がありますが、公式の講師による指導付きコースに参加する学生には、通常、コースに含まれる個々の演習を完了するために使用できるサブスクリプションが提供されます。 Microsoft は、Microsoft 認定ラボ ホスティング会社 (ALH) によって提供されるもの以外の環境では、このリポジトリの演習の講師による指導付き提供をサポートしていません。
+## AI-901 トレーナー向けノート
 
-演習は、互いに独立して単独で実施できるように設計されています。 これにより、各演習で新しい Microsoft Foundry プロジェクトを作成する手順がいくつか重複します。
+この「[AI-901: Introduction to AI in Azure](https://learn.microsoft.com/training/courses/ai-901t00)」のコースは、このリポジトリ内のラボを含んだ対話型ラボ体験を含む、1 日のコースとして設計されています。
 
-このリポジトリの演習に付いている番号は、公式ラーニング パスと講師による指導付きの資料でのモジュールのフローが反映された、推奨される論理シーケンスを示します。 番号は、講師による指導付きのコースの対応するスライド デッキまたは "ラボ" を示すものでは<u>ありません</u>。
+> 注: GitHub のラボのリポジトリは ILT のコースと 1 対 1 でマッピングされなくなりました。 ラボは複数の学習モダリティをサポートしており、ILT のコースでは 1 つ<u>または複数の</u>リポジトリのラボの一部しか使用されないことがあります。
 
-トレーナーは、自分の判断で "任意の" 演習を講師による指導付きデモンストレーションとして使用できます。** ただし、ホストされたラボ プロファイルとクラウド サブスクリプションは、コースに学生ラボとして含まれない演習では提供されない場合があることに注意してください。また、ラボ プロファイルで提供 "される" 演習固有のホストされたサブスクリプションには、他の演習の完了を妨げるポリシーが適用されている場合があります。** トレーナーには、使用可能なラボ プロファイルをテストし、必要に応じて独自のクラウド サブスクリプションをデモに使うことをお勧めします。
+AI-901 コースには、このリポジトリの Microsoft Foundry ベースのラボと、https://github.com/MicrosoftLearning/mslearn-ai-concepts の概念ラボの *<u>両方</u>* が含まれています。 1 日の配信では、これらのラボの一部しか入れられないことが多いため、このリポジトリ内の Foundry ベースのラボをおすすめします。 しかし、概念ラボをデモとして、学習者がさらに探求するための場所として、あるいは技術的な問題が発生した際に機能している Azure 環境へのアクセスを学生に提供するための代替ラボとして使用することも検討できます。
 
-Azure サブスクリプションを使用できない場合は、[mslearn-ai-concepts](https://github.com/MicrosoftLearning/mslearn-ai-concepts) リポジトリの演習がフォールバック アクティビティとして使用される場合があります。 これらの演習では Foundry テクノロジではなく概念学習のオブジェクトに焦点を当てていますが、その多くは Foundry ユーザー インターフェイスと同様の外観を反映するブラウザー ベースのアプリを使用します。
+公式の配信では、ラボは Authotized Lab Hoster (ALH) によってホスト環境で提供されます。 ラボの指示は、以下の GitHub ページ サイトでマイペースで進めることも、ホストなしで完了することもできます。
+
+- [mslearn-ai-concepts](https://microsoftlearning.github.io/mslearn-ai-concepts/)
+- [mslearn-ai-fundamentals](https://microsoftlearning.github.io/mslearn-ai-fundamentals/)
+
+> **注**: ラボの*内容*に問題 (不正確な指示やスクリーンショット、文法の問題、古いコードなど) がある場合は、ラボが含まれているリポジトリでイシューを作成してください。 *ラボのホスティング環境*に関する問題 (パフォーマンスや信頼性、Azure ポリシーの制限など) が発生した場合は、<u>ラボのホスト側にイシューを報告してください</u>。
+
 
 ## このリポジトリへの投稿
 
