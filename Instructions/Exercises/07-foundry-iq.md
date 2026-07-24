@@ -11,9 +11,20 @@ lab:
 
 # Microsoft Foundry で Foundry IQ の使用を開始する
 
-Contoso Corp の人事部門は、従業員のサポート作業を減らし、人事のポリシーと手続きに関するクエリのためのセルフサービス ソリューションを提供することで従業員を支援したいと考えています。
+![Anton の画像。](./media/anton-icon.png)<br/>**こんにちは、Anton です。**<br/>このラボでは、私がヒントを出しながらサポートします。Microsoft Foundry IQ で HR ドキュメントに含まれるナレッジを使用して従業員からの HR 関連の問題についてアドバイスする AI エージェントを作成します。
 
-この演習では、Microsoft Foundry IQ を使用して、人事ドキュメントに含まれるナレッジを使用して人事関連の問題について従業員にアドバイスする AI エージェントを作成します。
+より対話型のヘルプが必要な場合は、*[Ask Anton](https://aka.ms/choose-anton){:target="_blank"}* アプリで私とチャットできます。
+
+<details>
+<strong><i><a href="https://aka.ms/choose-anton" target="_blank">Ask Anton</a></i></strong> は、AI の概念や Microsoft Foundry の技術に関する質問に答えることができる生成 AI エージェントです。 <code>https://aka.ms/choose-anton</code> から、2 つのバージョンで使用できます。
+<ul>
+<li><strong>Azure ベースの</strong>: 最適なエクスペリエンスです (Azure サブスクリプションと Foundry プロジェクト内のモデルのデプロイが必要です)。<i></i></li>
+<li><strong>ブラウザーベース</strong>: ブラウザーで小さな言語モデルを使用します (機能は制限されています。古い、または低スペックのデバイスでは動作が遅くなるか "ベーシック" モードでしか動作しないことがあります)。<i></i></li>
+</ul>
+<blockquote><i>Ask Anton は、サポートされている Microsoft 製品、Microsoft Learn、AI スキル ナビゲーターのコンポーネントのいずれでも<u>ありません</u>。</i>
+</blockquote>
+</details>
+<hr/>
 
 この演習の所要時間は約 **20** 分です。
 
@@ -23,7 +34,7 @@ Contoso Corp の人事部門は、従業員のサポート作業を減らし、�
 
 まず、人事のポリシーと手続きのドキュメント用にエンタープライズ データ ソースを設定します。 このシナリオでは、Contoso Corp. の人事部門が Azure AI 検索を使用して人事ドキュメントのインデックスを作成し、簡単に検索できるようにします。
 
-> **注**:簡略化のため、この演習では 1 つの Azure AI 検索リソースを使用します。 これが実際のボリュームや多様なデータを表すものではないのは明らかですが、原則を説明するには役立ちます。
+> ![Anton の画像。](./media/anton-icon.png)<br/>**注**:簡略化のため、この演習では 1 つの Azure AI 検索リソースを使用します。 これが実際のボリュームや多様なデータを表すものではないのは明らかですが、原則を説明するには役立ちます。
 
 1. Web ブラウザーで、[Azure portal](https://portal.azure.com){:target="_blank"} (`https://portal.azure.com`) を開きます。 メッセージが表示されたら、Azure 資格情報を使用してサインインします。
 
@@ -33,7 +44,7 @@ Contoso Corp の人事部門は、従業員のサポート作業を減らし、�
 
     Azure portal の下部にあるペインに Cloud Shell のコマンド ライン インターフェイスが表示されます。 作業しやすくするために、このウィンドウのサイズを変更したり最大化したりすることができます。
 
-    > **注**: *PowerShell* 環境を使用するクラウド シェルを以前に作成している場合は、それを ***Bash*** に切り替えること。
+    > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: *PowerShell* 環境を使用するクラウド シェルを以前に作成している場合は、それを ***Bash*** に切り替えてください。
 
 1. Cloud Shell ペインで、次のコマンドを入力して、この演習のコード ファイルを含む GitHub リポジトリをクローンします (コマンドを入力するか、クリップボードにコピーしてから、コマンド ラインで右クリックし、プレーンテキストとして貼り付けます)。
 
@@ -66,7 +77,7 @@ Contoso Corp の人事部門は、従業員のサポート作業を減らし、�
 1. お使いの Web ブラウザーで [Microsoft Foundry](https://ai.azure.com){:target="_blank"} (`https://ai.azure.com`) を開いて**ビルドを開始**します。Azure の資格情報を使ってサインインします。
 1. まだ有効になっていない場合は、ページ上部のツール バーで **[新しい Foundry]** オプションを有効にします。 次に、メッセージが表示されたら、新しいプロジェクトを一意の名前で作成します。Azure AI 検索をデプロイしたリソース グループにプロジェクトをデプロイするための **[詳細設定オプション]** 領域が展開します。
 
-    > **注**: Azure サブスクリプションのアクセス許可によっては、推奨されるリソースを設定するオプションをオフにする必要がある場合があります。
+    > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: Azure サブスクリプションのアクセス許可によっては、推奨されるリソースを設定するオプションをオフにする必要がある場合があります。
 
     新しい Foundry ポータルでプロジェクトを作成すると、次の画像のようなページが開きます。
 
@@ -120,13 +131,13 @@ Foundry IQ は、エージェントがナレッジ ベースとして使用で�
 
     ![AI 検索リソースが選択されている Foundry IQ ページのスクリーンショット。](./media/foundry-iq-search.png)
 
-    > **重要**: 運用ソリューションでは、通常、Microsoft Entra ID 認証を使用する必要があります。 この演習では、便宜上キーベースの認証を使用しています。
+    > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: 運用ソリューションでは、通常、*Microsoft Entra ID* 認証を使用する必要があります。 この演習では、便宜上キーベースの認証を使用しています。
 
 1. Azure AI 検索リソースを接続します。 しばらくすると開き、そこにナレッジ ベースを作成できるようになります。
 
     ![ナレッジ ベースのページのスクリーンショット。](./media/knowledge-bases.png)
 
-    > **注**:Foundry IQ のナレッジ ストアをサポートできるように、Foundry プロジェクトに Azure AI 検索リソースを追加しています。 Foundry IQ は<u>*常に*</u> Azure AI 検索リソースを使用して、アクセスしているデータの場所に関係なく、1 つ以上のナレッジ ベースのベクトル インデックスを作成することを理解しておくことが重要です。 この場合、データが Azure AI 検索 インデックス*にも*あるかもしれませんが、データ レイク、SharePoint サイト、その他の場所にある場合でも、Azure AI 検索 リソースを Foundry プロジェクトにアタッチする必要があります。
+    > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: Foundry IQ のナレッジ ストアをサポートできるように、Foundry プロジェクトに Azure AI 検索 リソースを追加しておきます。 Foundry IQ は<u>*常に*</u> Azure AI 検索リソースを使用して、アクセスしているデータの場所に関係なく、1 つ以上のナレッジ ベースのベクトル インデックスを作成することを理解しておくことが重要です。 この場合、データが Azure AI 検索 インデックス*にも*あるかもしれませんが、データ レイク、SharePoint サイト、その他の場所にある場合でも、Azure AI 検索 リソースを Foundry プロジェクトにアタッチする必要があります。
 
 ### ナレッジ ベースの作成
 
@@ -197,8 +208,6 @@ Foundry IQ は、エージェントがナレッジ ベースとして使用で�
 
 Foundry IQ を使用すると、生成 AI ソリューションで普及している検索拡張生成 (RAG) パターンのカスタム実装よりも多くの利点があります。 ナレッジへのアクセスを 1 つのツールに一元化することで、データ ソースの選択と取得ロジックを Foundry IQ にオフロードでき、コードやデータ アクセス ロジックを複製することなく、複数のエージェント間でナレッジ ソースを再利用できます。
 
-> **[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}**<br/>![Anton のアバター。](./media/anton-icon.png)<br/>このラボで取り上げるいくつかのトピックについて疑問がある場合、*[Ask Anton](https://aka.ms/azk-anton){:target="_blank"}* は生成 AI ベースのエージェントであり、AI の概念や Microsoft Foundry について質問することができます。 **[https://aka.ms/azk-anton](https://aka.ms/azk-anton){:target="_blank"}** でアプリを開き、**[構成]** ボタンを使用して Foundry プロジェクトとモデルの詳細を入力します。<br/><br/>"Ask Anton は、サポートされる Microsoft 製品ではなく、Microsoft Learn や AI スキル ナビゲーターのコンポーネントでもありません。AI で何が可能であるかを学ぶ際に探求できる AI エージェントの一例にすぎません。"**<br/><br/>Ask Anton をお試しいただき、"そのご感想をぜひ[こちらのフォーム](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}にてお寄せください"。****
-
 ## クリーンアップ
 
 Microsoft Foundry について調べ終わったら、不要な利用料金が発生しないように、この演習で作成したリソースを削除する必要があります。
@@ -206,3 +215,5 @@ Microsoft Foundry について調べ終わったら、不要な利用料金が�
 1. [Azure portal](https://portal.azure.com){:target="_blank"} (`https://portal.azure.com`) を開き、この演習で使ったプロジェクトをデプロイしたリソース グループの内容を表示します。
 1. ツール バーの **[リソース グループの削除]** を選びます。
 1. リソース グループ名を入力し、削除することを確認します。
+
+> ![Anton のアバター。](./media/anton-icon.png)<br/>このラボで [*Ask Anton*](https://aka.ms/choose-anton){:target="_blank"} アプリを使用した場合は、[そのエクスペリエンスについてお聞かせください。](https://forms.office.com/r/fC0ndfBQeK){:target="_blank"}

@@ -13,10 +13,10 @@ lab:
 
 ![Anton の画像。](./media/anton-icon.png)<br/>**こんにちは、Anton です。**<br/>このラボで、生成 AI モデルを展開しエージェントを作成する作業を進められるよう、ヒントやコツを使ってサポートします。
 
-また、*Ask Anton* アプリで私とやり取りすることもできます。
+より対話型のヘルプが必要な場合は、*[Ask Anton](https://aka.ms/choose-anton){:target="_blank"}* アプリで私とチャットできます。
 
 <details>
-<strong><i><a href="https://aka.ms/choose-anton" target="_blank">Ask Anton</a></i></strong> は <code>https://aka.ms/choose-anton</code> から 2 つの形式で入手できます。
+<strong><i><a href="https://aka.ms/choose-anton" target="_blank">Ask Anton</a></i></strong> は、AI の概念や Microsoft Foundry の技術に関する質問に答えることができる生成 AI エージェントです。 <code>https://aka.ms/choose-anton</code> から、2 つのバージョンで使用できます。
 <ul>
 <li><strong>Azure ベースの</strong>: 最適なエクスペリエンスです (Azure サブスクリプションと Foundry プロジェクト内のモデルのデプロイが必要です)。<i></i></li>
 <li><strong>ブラウザーベース</strong>: ブラウザーで小さな言語モデルを使用します (機能は制限されています。古い、または低スペックのデバイスでは動作が遅くなるか "ベーシック" モードでしか動作しないことがあります)。<i></i></li>
