@@ -39,7 +39,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
     - **Foundry リソース**: *AI Foundry リソースに有効な名前を入力します。*
     - **[サブスクリプション]**:"*ご自身の Azure サブスクリプション*"
     - **リソース グループ**: *リソース グループを作成または選択します*
-    - **リージョン**: **[こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
+    - **リージョン**: [こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#supported-regions){:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
 
     > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: Azure サブスクリプションのアクセス許可によっては、推奨されるリソースを設定するオプションをオフにする必要がある場合があります。
 

@@ -40,7 +40,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
     - **Foundry リソース**: "Foundry リソースの有効な名前"。**
     - **[サブスクリプション]**:"*ご自身の Azure サブスクリプション*"
     - **リソース グループ**: *リソース グループを作成または選択します*
-    - **リージョン**: [こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability){:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
+    - **リージョン**: [こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#supported-regions){:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
 
     > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: Azure サブスクリプションのアクセス許可によっては、推奨されるリソースを設定するオプションをオフにする必要がある場合があります。
 
@@ -204,7 +204,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
     from azure.identity import DefaultAzureCredential
     from azure.ai.projects import AIProjectClient
     
-    endpoint = "<https://ai-resrce.services.ai.azure.com/api/projects/ai-project>"
+    endpoint = "https://ai-resrce.services.ai.azure.com/api/projects/ai-project"
     
     project_client = AIProjectClient(
         endpoint=endpoint,

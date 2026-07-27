@@ -42,7 +42,7 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
     - **Foundry リソース**: *AI Foundry リソースに有効な名前を入力します。*
     - **[サブスクリプション]**:"*ご自身の Azure サブスクリプション*"
     - **リソース グループ**: *リソース グループを作成または選択します*
-    - **リージョン**: **[こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
+    - **リージョン**: [こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#supported-regions){:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
 
     > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: Azure サブスクリプションのアクセス許可によっては、推奨されるリソースを設定するオプションをオフにする必要がある場合があります。
 
@@ -107,13 +107,13 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
 1. Foundry ポータルで画面上部のメニューに移動し、**[ビルド]** を選びます。
 
-1. *[ビルド]* ページで、画面の左側にあるメニューに移動します (展開が必要な場合があります)。 メニューで **[デプロイ]** を選択します。 次に、*[デプロイ]* ページの上部にある **[AI サービス]** を選択します。
+1. *[ビルド]* ページで、画面の左側にあるメニューに移動します (展開が必要な場合があります)。 メニューで **[デプロイ]** を選択します。 次に、[デプロイ] ページの上部にある **[AI サービス]** を選択します。**
+
+    > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: 場合によっては、左側のウィンドウで **[サービス]** ページを選択すると、AI サービスの一覧が表示されるインターフェイスが若干異なる場合があります。
 
     Microsoft Foundry Tools には、音声、翻訳、言語、コンテンツの解釈の一般的なワークロードをサポートする複数の AI サービス (旧 Microsoft Cognitive Services) が含まれています。
 
     ![Foundry の AI サービス ページのスクリーンショット。](./media/ai_services.png)
-
-    > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: 場合によっては、インターフェイスが多少異なり、左側のペインの最上位項目が **[モデル]** で、AI サービスの一覧が **[サービス]** ページに表示されることがあります。
 
 1. 使用可能なサービスに注意してください。これには言語検出や PII 編集のための Azure Language サービスが含まれます。
 
@@ -180,7 +180,7 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
     このテキストを入力し、その中に含まれている個人を特定できる情報を見つけ出します。
 
-4. 独自の入力で実験します。 Azure Language では、PII の広範な一覧を認識できます。 クラスの全リストは[ここ](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list)で確認できます。 そのようなエンティティの一部を次に示します。
+4. 独自の入力で実験します。 Azure Language では、PII の広範な一覧を認識できます。 全リストは[ここ](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list){:target="_blank"}で確認できます。 そのようなエンティティの一部を次に示します。
 
     - 人名
     - 電子メール アドレス

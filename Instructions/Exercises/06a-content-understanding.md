@@ -36,7 +36,7 @@ lab:
     - **Foundry リソース**: *AI Foundry リソースに有効な名前を入力します。*
     - **[サブスクリプション]**:"*ご自身の Azure サブスクリプション*"
     - **リソース グループ**: *リソース グループを作成または選択します*
-    - **リージョン**: [米国西部]、[スウェーデン中部]、[オーストラリア東部]、または**[こちらの一覧](https://learn.microsoft.com/azure/ai-services/content-understanding/language-region-support)** のいずれかのリージョンを選択します {:target="_blank"}******
+    - **リージョン**: [米国西部]、[スウェーデン中部]、[オーストラリア東部]、または[こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#supported-regions)のいずれかのリージョンを選択します {:target="_blank"}******
 
     > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: Azure サブスクリプションのアクセス許可によっては、推奨されるリソースを設定するオプションをオフにする必要がある場合があります。
 
@@ -53,7 +53,7 @@ Azure Content Understanding は Foundry サービスの 1 つであり、AI モ�
 1. Foundry ポータルで画面の上部にあるツール バーに移動し、**[ビルド]** を選択します。
 1. *[ビルド]* ページで、画面の左側のメニュー (展開が必要な場合があります) で、**[デプロイ]** を選択します。 次に、[デプロイ] ページの上部にある **[AI サービス]** を選択します。**
 
-    > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: 場合によっては、インターフェイスが多少異なり、左側のペインの最上位項目が **[モデル]** で、AI サービスの一覧が **[サービス]** ページに表示されることがあります。
+    > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: 場合によっては、左側のウィンドウで **[サービス]** ページを選択すると、AI サービスの一覧が表示されるインターフェイスが若干異なる場合があります。
 
 1. **[Content Understanding]** を選択して *Content Understanding* ツールのプレイグラウンドを開きます。
 
