@@ -204,7 +204,7 @@ Microsoft Foundry では "プロジェクト" を使って、AI ソリューシ�
     from azure.identity import DefaultAzureCredential
     from azure.ai.projects import AIProjectClient
     
-    endpoint = "https://ai-resrce.services.ai.azure.com/api/projects/ai-project"
+    endpoint = "<https://ai-resrce.services.ai.azure.com/api/projects/ai-project>"
     
     project_client = AIProjectClient(
         endpoint=endpoint,
