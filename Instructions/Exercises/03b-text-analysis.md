@@ -42,7 +42,7 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
     - **Foundry リソース**: *AI Foundry リソースに有効な名前を入力します。*
     - **[サブスクリプション]**:"*ご自身の Azure サブスクリプション*"
     - **リソース グループ**: *リソース グループを作成または選択します*
-    - **リージョン**: **[こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#region-availability)**{:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
+    - **リージョン**: [こちらの一覧](https://learn.microsoft.com/azure/foundry/openai/how-to/responses#supported-regions){:target="_blank"}にある、**AI Foundry の推奨**リージョンのいずれかを選択します
 
     > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: Azure サブスクリプションのアクセス許可によっては、推奨されるリソースを設定するオプションをオフにする必要がある場合があります。
 
@@ -107,9 +107,9 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
 1. Foundry ポータルで画面上部のメニューに移動し、**[ビルド]** を選びます。
 
-1. *[ビルド]* ページで、画面の左側にあるメニューに移動します (展開が必要な場合があります)。 メニューで **[デプロイ]** を選択します。 次に、[デプロイ] ページの上部にある **[AI サービス]** を選択します。**
+1. *[ビルド]* ページで、画面の左側にあるメニューに移動します (展開が必要な場合があります)。 メニューの **[サービス]** ページを選択します。
 
-    > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: 場合によっては、左側のウィンドウで **[サービス]** ページを選択すると、AI サービスの一覧が表示されるインターフェイスが若干異なる場合があります。
+    > ![Anton の画像。](./media/anton-icon.png)<br/>**ヒント**: 場合によっては、**[デプロイ]** ページを選択し、その **[AI サービス]** タブを選択して AI サービスの一覧を表示するときのインターフェイスが若干異なる場合があります。
 
     Microsoft Foundry Tools には、音声、翻訳、言語、コンテンツの解釈の一般的なワークロードをサポートする複数の AI サービス (旧 Microsoft Cognitive Services) が含まれています。
 
@@ -151,7 +151,7 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
 プライバシー ポリシーと法律を遵守するため、多くの場合、組織は名前、住所、電話番号、メール アドレス、その他の個人の詳細などの**個人を特定できる情報 (PII)** を検出してリダクトする必要があります。
 
-1. [言語検出プレイグラウンド] ページの **[タイプ]** ドロップダウン リストで **[テキスト PII 抽出]** を選択します (または、AI サービスの一覧に戻って **[Azure Language - テキスト PII 抽出]** を選択します)。
+1. [言語検出プレイグラウンド] ページの **[タイプ]** ドロップダウン リストで **[テキスト PII 編集]** を選択します (または、AI サービスの一覧に戻って **[Azure Language - テキスト PII 編集]** を選択します)。
 2. **[入力テキスト]** の一覧で、提供されているサンプル ドキュメントの 1 つを選びます。 次に、**[検出]** ボタンを使って、テキスト内の PII の値を検出します。
 
     ![プレイグラウンドで検出された PII のスクリーンショット](./media/pii_extraction.png)
@@ -180,7 +180,7 @@ Foundry でテキストを分析するには、"2 つのアプローチ" があ�
 
     このテキストを入力し、その中に含まれている個人を特定できる情報を見つけ出します。
 
-4. 独自の入力で実験します。 Azure Language では、PII の広範な一覧を認識できます。 クラスの全リストは[ここ](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list)で確認できます。 そのようなエンティティの一部を次に示します。
+4. 独自の入力で実験します。 Azure Language では、PII の広範な一覧を認識できます。 全リストは[ここ](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories-list){:target="_blank"}で確認できます。 そのようなエンティティの一部を次に示します。
 
     - 人名
     - 電子メール アドレス
